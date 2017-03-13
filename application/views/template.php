@@ -231,7 +231,7 @@
                 <!-- START BREADCRUMB -->
                 <ul class="breadcrumb">
                     <li>Menu</li>
-                    <?php if($active == "KHS" | $active == "Transkip Nilai Sementara" | $active == "Transkip Nilai Akhir") { echo '<li>Layanan</li>'; } ?>
+                    <?php if($active == "KHS" | $active == "Pengajuan Judul" | $active == "Seminar Proposal" | $active == "Seminar hasil" | $active == "Sidang" | $active == "Transkip Nilai Sementara" | $active == "Transkip Nilai Akhir" | $active == "Surat Keterangan Aktif Kuliah" | $active == "Surat Keterangan Beasiswa" | $active == "Surat Keterangan Berkelakuan Baik" | $active == "Surat Keterangan Masih Kuliah") { echo '<li>Layanan</li>'; } ?>
                     <?php if($active == "Pengajuan Judul" | $active == "Seminar Proposal" | $active == "Seminar Hasil" | $active == "Sidang") { echo '<li>TA</li>'; } ?>
                     <li <?php if($active == "KHS" | $active == "Transkip Nilai Sementara" | $active == "KP" | $active == "TA") {echo 'class="active"'; } ?>><?php echo $active; ?></li>
                 </ul>

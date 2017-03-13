@@ -48,7 +48,14 @@ class Surat_keterangan_beasiswa_model extends CI_Model {
         return $this->db->replace('surat_keterangan_beasiswa', $data);
     }
     
-     public function delete_entry($id) {
+    public function update_status($id,$status)
+    {
+        $this->db->set('status', $status);
+        $this->db->where('surat_keterangan_beasiswa_id', $id);
+        $this->db->update('surat_keterangan_beasiswa');
+    }
+    
+    public function delete_entry($id) {
         $this->db->delete('surat_keterangan_beasiswa', array('surat_keterangan_beasiswa_id' => $id));
     }
     

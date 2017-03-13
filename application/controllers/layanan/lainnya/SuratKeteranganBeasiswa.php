@@ -28,21 +28,7 @@ class SuratKeteranganBeasiswa extends CI_Controller {
                     $data['extra'] = "";
                     $this->parser->parse('template', $data);
                 } else if ($this->session->userdata('hak_akses') == 'Sekretaris Jurusan') {
-                    $data['title_bar'] = "Application";
-                    $data['active'] = "Surat Keterangan Beasiswa";
-                    $data['page_title'] = "Page Title";
-                    $data['query'] = $this->surat_keterangan_beasiswa_model->get_entries();
-                    $data['activity'] = $this->log_aktifitas_model->get_where_entries();
-                    $data['content'] = "layanan/lainnya/surat-keterangan-beasiswa";
-                    $data['this_page_plugin'] =
-                        '
-                            <script type="text/javascript" src="' . base_url() . 'assets/js/plugins/icheck/icheck.min.js"></script>
-                            <script type="text/javascript" src="' . base_url() . 'assets/js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js"></script>
-                                
-                            <script type="text/javascript" src="' . base_url() . 'assets/js/plugins/datatables/jquery.dataTables.min.js"></script>
-                        ';
-                    $data['extra'] = "";
-                    $this->parser->parse('template', $data);
+                    
                 } else if ($this->session->userdata('hak_akses') == 'Pegawai') {
                     $data['title_bar'] = "Application";
                     $data['active'] = "Surat Keterangan Beasiswa";
@@ -195,6 +181,7 @@ class SuratKeteranganBeasiswa extends CI_Controller {
                 header("Content-Disposition: attachment; filename='Surat Keterangan Beasiswa-$datas->nim.docx'");
                 readfile($temp_file);
                 unlink($temp_file);
+                $this->surat_keterangan_beasiswa_model->update_status($id,'Sedang');
             } else {
                     redirect(base_url() . 'authentication');
             }

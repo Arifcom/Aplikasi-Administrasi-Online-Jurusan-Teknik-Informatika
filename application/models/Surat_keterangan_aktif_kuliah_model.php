@@ -55,7 +55,7 @@ class Surat_keterangan_aktif_kuliah_model extends CI_Model {
         $this->db->update('surat_keterangan_aktif_kuliah');
     }
     
-     public function delete_entry($id) {
+    public function delete_entry($id) {
         $this->db->delete('surat_keterangan_aktif_kuliah', array('surat_keterangan_aktif_kuliah_id' => $id));
     }
     

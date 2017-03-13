@@ -27,15 +27,7 @@ class SuratKeteranganMasihKuliah extends CI_Controller {
                         ';
                     $this->parser->parse('template', $data);
                 } else if ($this->session->userdata('hak_akses') == 'Sekretaris Jurusan') {
-                    $data['title_bar'] = "Application";
-                    $data['folder'] = "Layanan";
-                    $data['active'] = "Surat Keterangan Masih Kuliah";
-                    $data['page_title'] = "Page Title";
-                    $data['query'] = $this->surat_keterangan_masih_kuliah_model->get_entries();
-                    $data['activity'] = $this->log_aktifitas_model->get_where_entries();
-                    $data['content'] = "layanan/lainnya/surat-keterangan-masih-kuliah";
-                    $data['this_page_plugin'] = "";
-                    $this->parser->parse('template', $data);
+                    
                 } else if ($this->session->userdata('hak_akses') == 'Pegawai') {
                     $data['title_bar'] = "Application";
                     $data['folder'] = "Layanan";
@@ -190,6 +182,7 @@ class SuratKeteranganMasihKuliah extends CI_Controller {
                 header("Content-Disposition: attachment; filename='Surat Keterangan Masih Kuliah-$datas->nim.docx'");
                 readfile($temp_file);
                 unlink($temp_file);
+                $this->surat_keterangan_masih_kuliah_model->update_status($id,'Sedang');
                 } else {
                         redirect(base_url() . 'authentication');
                 }

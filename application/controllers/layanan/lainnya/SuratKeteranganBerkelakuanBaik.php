@@ -27,15 +27,7 @@ class SuratKeteranganBerkelakuanBaik extends CI_Controller {
                         ';
                     $this->parser->parse('template', $data);
                 } else if ($this->session->userdata('hak_akses') == 'Sekretaris Jurusan') {
-                    $data['title_bar'] = "Application";
-                    $data['folder'] = "Layanan";
-                    $data['active'] = "Surat Keterangan Berkelakuan Baik";
-                    $data['page_title'] = "Page Title";
-                    $data['query'] = $this->surat_keterangan_berkelakuan_baik_model->get_entries();
-                    $data['activity'] = $this->log_aktifitas_model->get_where_entries();
-                    $data['content'] = "layanan/lainnya/surat-keterangan-berkelakuan-baik";
-                    $data['this_page_plugin'] = "";
-                    $this->parser->parse('template', $data);
+                    
                 } else if ($this->session->userdata('hak_akses') == 'Pegawai') {
                     $data['title_bar'] = "Application";
                     $data['folder'] = "Layanan";
@@ -190,6 +182,7 @@ class SuratKeteranganBerkelakuanBaik extends CI_Controller {
                 header("Content-Disposition: attachment; filename='Surat Keterangan Berkelakuan Baik-$datas->nim.docx'");
                 readfile($temp_file);
                 unlink($temp_file);
+                $this->surat_keterangan_berkelakuan_baik_model->update_status($id,'Sedang');
                 } else {
                         redirect(base_url() . 'authentication');
                 }

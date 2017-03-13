@@ -15,7 +15,7 @@ class TranskipNilaiAkhir extends CI_Controller {
                     $data['title_bar'] = "Application";
                     $data['active'] = "Transkip Nilai Akhir";
                     $data['page_title'] = "Page Title";
-                    $data['query'] = "";
+                    $data['query'] = $this->transkip_nilai_akhir_model->get_entries();
                     $data['activity'] = $this->log_aktifitas_model->get_where_entries();
                     $data['content'] = "layanan/transkip-nilai-akhir";
                     $data['this_page_plugin'] =
@@ -28,26 +28,12 @@ class TranskipNilaiAkhir extends CI_Controller {
                     $data['extra'] = "";
                     $this->parser->parse('template', $data);
                 } else if ($this->session->userdata('hak_akses') == 'Sekretaris Jurusan') {
-                    $data['title_bar'] = "Application";
-                    $data['active'] = "Transkip Nilai Akhir";
-                    $data['page_title'] = "Page Title";
-                    $data['query'] = "";
-                    $data['activity'] = $this->log_aktifitas_model->get_where_entries();
-                    $data['content'] = "layanan/transkip-nilai-akhir";
-                    $data['this_page_plugin'] =
-                        '
-                            <script type="text/javascript" src="' . base_url() . 'assets/js/plugins/icheck/icheck.min.js"></script>
-                            <script type="text/javascript" src="' . base_url() . 'assets/js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js"></script>
-                                
-                            <script type="text/javascript" src="' . base_url() . 'assets/js/plugins/datatables/jquery.dataTables.min.js"></script>
-                        ';
-                    $data['extra'] = "";
-                    $this->parser->parse('template', $data);
+                    
                 } else if ($this->session->userdata('hak_akses') == 'Pegawai') {
                     $data['title_bar'] = "Application";
                     $data['active'] = "Transkip Nilai Akhir";
                     $data['page_title'] = "Page Title";
-                    $data['query'] = "";
+                    $data['query'] = $this->transkip_nilai_akhir_model->get_entries();
                     $data['activity'] = $this->log_aktifitas_model->get_where_entries();
                     $data['content'] = "layanan/transkip-nilai-akhir";
                     $data['this_page_plugin'] =

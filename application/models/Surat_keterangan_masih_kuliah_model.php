@@ -48,7 +48,14 @@ class Surat_keterangan_masih_kuliah_model extends CI_Model {
         return $this->db->replace('surat_keterangan_masih_kuliah', $data);
     }
     
-     public function delete_entry($id) {
+    public function update_status($id,$status)
+    {
+        $this->db->set('status', $status);
+        $this->db->where('surat_keterangan_masih_kuliah_id', $id);
+        $this->db->update('surat_keterangan_masih_kuliah');
+    }
+    
+    public function delete_entry($id) {
         $this->db->delete('surat_keterangan_masih_kuliah', array('surat_keterangan_masih_kuliah_id' => $id));
     }
     
