@@ -12,11 +12,33 @@ class PengajuanJudul extends CI_Controller {
         public function index()
         {
                 if ($this->session->userdata('hak_akses') == 'Ketua Jurusan') {
-                    
+                    $data['title_bar'] = "Application";
+                    $data['active'] = "Pengajuan Judul";
+                    $data['page_title'] = "Penganjuan Judul";
+                    $data['query'] = "";
+                    $data['activity'] = $this->log_aktifitas_model->get_where_entries();
+                    $data['content'] = "";
+                    $data['this_page_plugin'] = "";
+                    $data['extra'] = "";
+                    $this->parser->parse('template', $data);
                 } else if ($this->session->userdata('hak_akses') == 'Sekretaris Jurusan') {
                     
                 } else if ($this->session->userdata('hak_akses') == 'Pegawai') {
-                    
+                    $data['title_bar'] = "Application";
+                    $data['active'] = "Pengajuan Judul";
+                    $data['page_title'] = "Pengajuan Judul";
+                    $data['query'] = $this->ta_pengajuan_judul_model->get_entries();
+                    $data['activity'] = $this->log_aktifitas_model->get_where_entries();
+                    $data['content'] = "layanan/ta/pengajuan-judul";
+                    $data['this_page_plugin'] =
+                        '
+                            <script type="text/javascript" src="' . base_url() . 'assets/js/plugins/icheck/icheck.min.js"></script>
+                            <script type="text/javascript" src="' . base_url() . 'assets/js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js"></script>
+
+                            <script type="text/javascript" src="' . base_url() . 'assets/js/plugins/datatables/jquery.dataTables.min.js"></script>
+                        ';
+                    $data['extra'] = "";
+                    $this->parser->parse('template', $data);
                 } else {
                     $data['title_bar'] = "Application";
                     $data['active'] = "Pengajuan Judul";

@@ -195,6 +195,7 @@ class SuratKeteranganAktifKuliah extends CI_Controller {
                 header("Content-Disposition: attachment; filename='Surat Keterangan Aktif Kuliah-$datas->nim.docx'");
                 readfile($temp_file);
                 unlink($temp_file);
+                $this->surat_keterangan_aktif_kuliah_model->update_status($id,'Sedang');
             } else {
                     redirect(base_url() . 'authentication');
             }

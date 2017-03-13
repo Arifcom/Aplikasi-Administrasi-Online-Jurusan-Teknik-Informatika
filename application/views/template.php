@@ -92,14 +92,14 @@
                     <?php
                     if ($this->session->userdata('hak_akses') == 'Ketua Jurusan') {
                     ?>
-                    <li class="xn-openable <?php if ($active == "KHS" | $active == "Transkip Nilai Sementara" | $active == "KP" | $active == "TA" | $active == "Surat Keterangan Aktif Kuliah" | $active == "Surat Keterangan Beasiswa" | $active == "Surat Keterangan Berkelakuan Baik" | $active == "Surat Keterangan Masih Kuliah") { echo 'active'; } ?>">
+                    <li class="xn-openable <?php if ($active == "KHS" | $active == "Transkip Nilai Sementara" | $active == "Transkip Nilai Akhir" | $active == "KP" | $active == "TA" | $active == "Surat Keterangan Aktif Kuliah" | $active == "Surat Keterangan Beasiswa" | $active == "Surat Keterangan Berkelakuan Baik" | $active == "Surat Keterangan Masih Kuliah" | $active == "Pengajuan Judul" | $active == "Seminar Proposal" | $active == "Seminar Hasil" | $active == "Sidang") { echo 'active'; } ?>">
                         <a href="#"><span class="fa fa-users"></span> <span class="xn-text">Layanan</span></a>
                         <ul>
                             <li <?php if ($active == "KHS") { echo 'class="active"'; } ?>><a href="<?php echo base_url(); ?>ketua-jurusan/layanan/khs"> KHS</a></li>
-                            <li class="xn-openable <?php if ($active == "Penagajuan Judul" | $active == "Seminar Proposal" | $active == "Seminar Hasil" | $active == "Sidang") { echo 'active'; } ?>">
+                            <li class="xn-openable <?php if ($active == "Pengajuan Judul" | $active == "Seminar Proposal" | $active == "Seminar Hasil" | $active == "Sidang") { echo 'active'; } ?>">
                                 <a href="#"> TA</a>
                                 <ul>
-                                    <li <?php if ($active == "Penagajuan Judul") { echo 'class="active"'; } ?>><a href=""> Penagajuan Judul</a></li>
+                                    <li <?php if ($active == "Pengajuan Judul") { echo 'class="active"'; } ?>><a href="<?php echo base_url(); ?>ketua-jurusan/layanan/ta/pengajuan-judul"> Penagajuan Judul</a></li>
                                     <li <?php if ($active == "Seminar Proposal") { echo 'class="active"'; } ?>><a href=""> Seminar Proposal</a></li>
                                     <li <?php if ($active == "Seminar Hasil") { echo 'class="active"'; } ?>><a href=""> Seminar Hasil</a></li>
                                     <li <?php if ($active == "Sidang") { echo 'class="active"'; } ?>><a href=""> Sidang</a></li>
@@ -126,17 +126,17 @@
                     <?php 
                     } else if ($this->session->userdata('hak_akses') == 'Pegawai') {
                     ?>
-                    <li class="xn-openable <?php if ($active == "KHS" | $active == "Transkip Nilai Sementara" | $active == "KP" | $active == "TA" | $active == "Surat Keterangan Aktif Kuliah" | $active == "Surat Keterangan Beasiswa" | $active == "Surat Keterangan Berkelakuan Baik" | $active == "Surat Keterangan Masih Kuliah") { echo 'active'; } ?>">
+                    <li class="xn-openable <?php if ($active == "KHS" | $active == "Transkip Nilai Sementara" | $active == "Transkip Nilai Akhir" | $active == "KP" | $active == "TA" | $active == "Surat Keterangan Aktif Kuliah" | $active == "Surat Keterangan Beasiswa" | $active == "Surat Keterangan Berkelakuan Baik" | $active == "Surat Keterangan Masih Kuliah" | $active == "Pengajuan Judul" | $active == "Seminar Proposal" | $active == "Seminar Hasil" | $active == "Sidang") { echo 'active'; } ?>">
                         <a href="#"><span class="fa fa-users"></span> <span class="xn-text">Layanan</span></a>
                         <ul>
                             <li <?php if ($active == "KHS") { echo 'class="active"'; } ?>><a href="<?php echo base_url(); ?>pegawai/layanan/khs"> KHS</a></li>
-                            <li class="xn-openable <?php if ($active == "Penagajuan Judul" | $active == "Seminar Proposal" | $active == "Seminar Hasil" | $active == "Sidang") { echo 'active'; } ?>">
+                            <li class="xn-openable <?php if ($active == "Pengajuan Judul" | $active == "Seminar Proposal" | $active == "Seminar Hasil" | $active == "Sidang") { echo 'active'; } ?>">
                                 <a href="#"> TA</a>
                                 <ul>
-                                    <li <?php if ($active == "Penagajuan Judul") { echo 'class="active"'; } ?>><a href=""> Penagajuan Judul</a></li>
-                                    <li <?php if ($active == "Seminar Proposal") { echo 'class="active"'; } ?>><a href=""> Seminar Proposal</a></li>
-                                    <li <?php if ($active == "Seminar Hasil") { echo 'class="active"'; } ?>><a href=""> Seminar Hasil</a></li>
-                                    <li <?php if ($active == "Sidang") { echo 'class="active"'; } ?>><a href=""> Sidang</a></li>
+                                    <li <?php if ($active == "Pengajuan Judul") { echo 'class="active"'; } ?>><a href="<?php echo base_url(); ?>pegawai/layanan/ta/pengajuan-judul"> Penagajuan Judul</a></li>
+                                    <li <?php if ($active == "Seminar Proposal") { echo 'class="active"'; } ?>><a href="<?php echo base_url(); ?>pegawai/layanan/ta/seminar-proposal"> Seminar Proposal</a></li>
+                                    <li <?php if ($active == "Seminar Hasil") { echo 'class="active"'; } ?>><a href="<?php echo base_url(); ?>pegawai/layanan/ta/seminar-hasil"> Seminar Hasil</a></li>
+                                    <li <?php if ($active == "Sidang") { echo 'class="active"'; } ?>><a href="<?php echo base_url(); ?>pegawai/layanan/ta/sidang"> Sidang</a></li>
                                 </ul>
                             </li>
                             <li class="xn-openable <?php if ($active == "Transkip Nilai Sementara" | $active == "Transkip Nilai Akhir") { echo 'active'; } ?>">
