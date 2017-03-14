@@ -14,6 +14,9 @@
                 </div>
                 <div class="panel-body">
                     <?php echo $this->session->flashdata('flash_data'); ?>
+                    <button class="btn btn-info" type="submit">Tambah Pengguna</button>
+                    <div class="clearfix"></div>
+                    <br>
                     <table class="table datatable_simple">
                         <thead>
                             <tr>

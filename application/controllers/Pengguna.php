@@ -1,5 +1,5 @@
 <?php
-class KelolaPengguna extends CI_Controller {
+class Pengguna extends CI_Controller {
     
         public function __construct()
         {
@@ -12,11 +12,11 @@ class KelolaPengguna extends CI_Controller {
         {
                 if ($this->session->userdata('hak_akses') == 'Administrator') {
                     $data['title_bar'] = "Application";
-                    $data['active'] = "Kelola Pengguna";
-                    $data['page_title'] = "Kelola Pengguna";
+                    $data['active'] = "Pengguna";
+                    $data['page_title'] = "Pengguna";
                     $data['query'] = $this->pengguna_model->get_entries();
                     $data['activity'] = $this->log_aktifitas_model->get_where_entries();
-                    $data['content'] = "kelola-pengguna";
+                    $data['content'] = "pengguna";
                     $data['this_page_plugin'] =
                         '
                             <script type="text/javascript" src="' . base_url() . 'assets/js/plugins/icheck/icheck.min.js"></script>

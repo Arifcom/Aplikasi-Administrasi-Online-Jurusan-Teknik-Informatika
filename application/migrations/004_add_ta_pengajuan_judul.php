@@ -37,6 +37,11 @@ class Migration_Add_ta_pengajuan_judul extends CI_Migration {
                                 'type'          => 'VARCHAR',
                                 'constraint'    => '50'
                         ),
+                        'status_calon_pembimbing'=>
+                        array(
+                                'type'          => 'ENUM("Diterima","ditolak")',
+                                'null'          => FALSE,
+                        ),
                         'status'=>
                         array(
                                 'type'          => 'ENUM("Belum","Sedang","Selesai")',

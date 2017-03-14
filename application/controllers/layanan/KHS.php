@@ -46,7 +46,7 @@ class KHS extends CI_Controller {
                 } else {
                     $data['title_bar'] = "Application";
                     $data['active'] = "KHS";
-                    $data['page_title'] = "Page Title";
+                    $data['page_title'] = "KHS";
                     $data['query'] = "";
                     $data['activity'] = $this->log_aktifitas_model->get_where_entries();
                     $data['content'] = "layanan/formulir-layanan/khs";

@@ -160,7 +160,7 @@
                     <?php 
                     } else if ($this->session->userdata('hak_akses') == 'Administrator') {
                     ?>
-                    <li <?php if ($active == "Kelola Pengguna") { echo 'class="active"'; }?>><a href="<?php echo base_url(); ?>administrator/kelola-pengguna"><span class="fa fa-user"></span> <span class="xn-text">Kelola Pengguna</span></a></li>
+                    <li <?php if ($active == "Pengguna") { echo 'class="active"'; }?>><a href="<?php echo base_url(); ?>administrator/pengguna"><span class="fa fa-user"></span> <span class="xn-text">Pengguna</span></a></li>
                     <?php
                     }
                     ?>
