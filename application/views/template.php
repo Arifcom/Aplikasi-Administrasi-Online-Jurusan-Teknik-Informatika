@@ -100,9 +100,9 @@
                                 <a href="#"> TA</a>
                                 <ul>
                                     <li <?php if ($active == "Pengajuan Judul") { echo 'class="active"'; } ?>><a href="<?php echo base_url(); ?>ketua-jurusan/layanan/ta/pengajuan-judul"> Penagajuan Judul</a></li>
-                                    <li <?php if ($active == "Seminar Proposal") { echo 'class="active"'; } ?>><a href=""> Seminar Proposal</a></li>
-                                    <li <?php if ($active == "Seminar Hasil") { echo 'class="active"'; } ?>><a href=""> Seminar Hasil</a></li>
-                                    <li <?php if ($active == "Sidang") { echo 'class="active"'; } ?>><a href=""> Sidang</a></li>
+                                    <li <?php if ($active == "Seminar Proposal") { echo 'class="active"'; } ?>><a href="<?php echo base_url(); ?>ketua-jurusan/layanan/ta/seminar-proposal"> Seminar Proposal</a></li>
+                                    <li <?php if ($active == "Seminar Hasil") { echo 'class="active"'; } ?>><a href="<?php echo base_url(); ?>ketua-jurusan/layanan/ta/seminar-hasil"> Seminar Hasil</a></li>
+                                    <li <?php if ($active == "Sidang") { echo 'class="active"'; } ?>><a href="<?php echo base_url(); ?>ketua-jurusan/layanan/ta/sidang"> Sidang</a></li>
                                 </ul>
                             </li>
                             <li class="xn-openable <?php if ($active == "Transkip Nilai Sementara" | $active == "Transkip Nilai Akhir") { echo 'active'; } ?>">
@@ -248,15 +248,15 @@
         <div class="message-box animated fadeIn" data-sound="alert" id="mb-signout">
             <div class="mb-container">
                 <div class="mb-middle">
-                    <div class="mb-title"><span class="fa fa-sign-out"></span> Log <strong>Out</strong> ?</div>
+                    <div class="mb-title"><span class="fa fa-sign-out"></span> Keluar ?</div>
                     <div class="mb-content">
-                        <p>Are you sure you want to log out?</p>                    
-                        <p>Press No if youwant to continue work. Press Yes to logout current user.</p>
+                        <p>Apakah Anda yakin ingin keluar ?</p>                    
+                        <p>Klik iya jika ingin keluar.</p>
                     </div>
                     <div class="mb-footer">
                         <div class="pull-right">
-                            <a href="<?php echo base_url() . 'authentication/logout' ?>" class="btn btn-success btn-lg">Yes</a>
-                            <button class="btn btn-default btn-lg mb-control-close">No</button>
+                            <a href="<?php echo base_url() . 'authentication/logout' ?>" class="btn btn-success btn-lg">Iya</a>
+                            <button class="btn btn-default btn-lg mb-control-close">Tidak</button>
                         </div>
                     </div>
                 </div>

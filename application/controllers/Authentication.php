@@ -34,6 +34,15 @@ class Authentication extends CI_Controller {
                     } else if ($this->session->userdata('hak_akses') == 'Sekretaris Jurusan') {
                         $this->log_aktifitas_model->insert_entry("Anda Berhasil Login");
                         redirect(base_url() . 'sekretaris-jurusan');
+                    } else if ($this->session->userdata('hak_akses') == 'Koordinator TA') {
+                        $this->log_aktifitas_model->insert_entry("Anda Berhasil Login");
+                        redirect(base_url() . 'koordinator-ta');
+                    } else if ($this->session->userdata('hak_akses') == 'Koordinator KP') {
+                        $this->log_aktifitas_model->insert_entry("Anda Berhasil Login");
+                        redirect(base_url() . 'koordinator-kp');
+                    } else if ($this->session->userdata('hak_akses') == 'Kepala Laboratorium') {
+                        $this->log_aktifitas_model->insert_entry("Anda Berhasil Login");
+                        redirect(base_url() . 'kepala-laboratorium');
                     } else if ($this->session->userdata('hak_akses') == 'Dosen') {
                         $this->log_aktifitas_model->insert_entry("Anda Berhasil Login");
                         redirect(base_url() . 'dosen');

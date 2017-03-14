@@ -12,4 +12,19 @@ class Pengguna_model extends CI_Model {
         return $query;
     }
     
+    public function insert_entry()
+    {
+        $data = array(
+            'pengguna_id'        => $this->input->post('nip'),
+            'email'        => $this->input->post('email'),
+            'password'        =>  md5($this->input->post('password')),
+            'nama_depan'        => $this->input->post('nama_depan'),
+            'nama_belakang'     => $this->input->post('nama_belakang'),
+            'hak_akses'        => $this->input->post('hak_akses'),
+            'date'              => date('Y-m-d'),
+            'time'              => date('H:i:s')
+        );
+        return $this->db->insert('pengguna', $data);
+    }
+    
 }

@@ -14,7 +14,7 @@
                 </div>
                 <div class="panel-body">
                     <?php echo $this->session->flashdata('flash_data'); ?>
-                    <button class="btn btn-info" type="submit">Tambah Pengguna</button>
+                    <a href="<?php echo base_url(); ?>administrator/pengguna/tambah" class="btn btn-info">Tambah Pengguna</a>
                     <div class="clearfix"></div>
                     <br>
                     <table class="table datatable_simple">

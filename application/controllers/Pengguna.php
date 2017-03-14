@@ -16,12 +16,12 @@ class Pengguna extends CI_Controller {
                     $data['page_title'] = "Pengguna";
                     $data['query'] = $this->pengguna_model->get_entries();
                     $data['activity'] = $this->log_aktifitas_model->get_where_entries();
-                    $data['content'] = "pengguna";
+                    $data['content'] = "pengguna/index";
                     $data['this_page_plugin'] =
                         '
                             <script type="text/javascript" src="' . base_url() . 'assets/js/plugins/icheck/icheck.min.js"></script>
                             <script type="text/javascript" src="' . base_url() . 'assets/js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js"></script>
-                                
+                                     
                             <script type="text/javascript" src="' . base_url() . 'assets/js/plugins/datatables/jquery.dataTables.min.js"></script>
                         ';
                     $data['extra'] = "";
@@ -29,5 +29,61 @@ class Pengguna extends CI_Controller {
                 } else {
                     redirect(base_url() . 'authentication');
                 }
+        }
+        
+        public function create()
+        {
+                if ($this->session->userdata('hak_akses') == 'Administrator') {
+                    $data['title_bar'] = "Application";
+                    $data['active'] = "Pengguna";
+                    $data['page_title'] = "Tambah Pengguna";
+                    $data['query'] = "";
+                    $data['activity'] = $this->log_aktifitas_model->get_where_entries();
+                    $data['content'] = "pengguna/tambah";
+                    $data['this_page_plugin'] =
+                        '
+                            <script type="text/javascript" src="' . base_url() . 'assets/js/plugins/icheck/icheck.min.js"></script>
+                            <script type="text/javascript" src="' . base_url() . 'assets/js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js"></script>
+                                
+                            <script type="text/javascript" src="' . base_url() . 'assets/js/plugins/bootstrap/bootstrap-select.js"></script>        
+
+                            <script type="text/javascript" src="' . base_url() . 'assets/js/plugins/validationengine/languages/jquery.validationEngine-en.js"></script>
+                            <script type="text/javascript" src="' . base_url() . 'assets/js/plugins/validationengine/jquery.validationEngine.js"></script>        
+
+                            <script type="text/javascript" src="' . base_url() . 'assets/js/plugins/jquery-validation/jquery.validate.js"></script>  
+                        ';
+                    $data['extra'] =
+                        '
+                            <script type="text/javascript">
+                                var jvalidate = $("#jvalidate").validate({
+                                    ignore: [],
+                                    rules: {    
+                                            nip: {
+                                                    required: true
+                                            },
+                                            email: {
+                                                    required: true
+                                            },
+                                            password: {
+                                                    required: true
+                                            },
+                                            confirm_password: {
+                                                    required: true,
+                                                    equalTo: "#password"
+                                            }
+                                        }                                        
+                                    });                                    
+                            </script>
+                        ';
+                    $this->parser->parse('template', $data);
+                } else {
+                    redirect(base_url() . 'authentication');
+                }
+        }
+        
+        public function insert()
+        {
+                $this->pengguna_model->insert_entry();
+                redirect(base_url() . 'administrator/pengguna');
         }
 }

@@ -35,7 +35,7 @@ class Migration_Add_pengguna extends CI_Migration {
                         ),
                         'hak_akses'=>
                         array(
-                                'type'          => 'ENUM("Ketua Jurusan","Sekretaris Jurusan","Dosen","Pegawai","Ketua Kelas","Mahasiswa")',
+                                'type'          => 'ENUM("Administrator","Ketua Jurusan","Sekretaris Jurusan","Koordinator TA","Koordinator KP","Kepala Laboratorium","Dosen","Pegawai","Ketua Kelas")',
                                 'null'          => FALSE,
                         ),
                         'date'=>
