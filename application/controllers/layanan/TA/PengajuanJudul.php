@@ -5,6 +5,7 @@ class PengajuanJudul extends CI_Controller {
         {
                 parent::__construct();
                 $this->load->model('ta_pengajuan_judul_model');
+                $this->load->model('pengguna_model');
                 $this->load->model('log_aktifitas_model');
                 date_default_timezone_set('Asia/Jakarta');
         }
@@ -48,7 +49,7 @@ class PengajuanJudul extends CI_Controller {
                     $data['title_bar'] = "Application";
                     $data['active'] = "Pengajuan Judul";
                     $data['page_title'] = "Penganjuan Judul";
-                    $data['query'] = "";
+                    $data['query'] = $this->pengguna_model->get_where_hak_akses("Dosen");
                     $data['activity'] = $this->log_aktifitas_model->get_where_entries();
                     $data['content'] = "layanan/formulir-layanan/ta/pengajuan-judul";
                     $data['this_page_plugin'] =

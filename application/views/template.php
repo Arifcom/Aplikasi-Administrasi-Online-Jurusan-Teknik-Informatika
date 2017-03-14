@@ -123,6 +123,15 @@
                             </li>
                         </ul>
                     </li>    
+                    <?php
+                    } else if ($this->session->userdata('hak_akses') == 'Dosen') {
+                    ?>
+                    <li class="xn-openable <?php if ($active == "KHS" | $active == "Transkip Nilai Sementara" | $active == "Transkip Nilai Akhir" | $active == "KP" | $active == "TA" | $active == "Surat Keterangan Aktif Kuliah" | $active == "Surat Keterangan Beasiswa" | $active == "Surat Keterangan Berkelakuan Baik" | $active == "Surat Keterangan Masih Kuliah" | $active == "Pengajuan Judul" | $active == "Seminar Proposal" | $active == "Seminar Hasil" | $active == "Sidang") { echo 'active'; } ?>">
+                        <a href="#"><span class="fa fa-users"></span> <span class="xn-text">Layanan</span></a>
+                        <ul>
+                            <li <?php if ($active == "Pengajun Judul") { echo 'class="active"'; } ?>><a href="<?php echo base_url(); ?>dosen/layanan/ta/pengajuan-judul"> Pengajuan Judul</a></li>
+                        </ul>
+                    </li>   
                     <?php 
                     } else if ($this->session->userdata('hak_akses') == 'Pegawai') {
                     ?>

@@ -37,7 +37,7 @@ class Dashboard extends CI_Controller {
                             <script type="text/javascript" src="' . base_url() . 'assets/js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js"></script>
                         ';
                     $this->parser->parse('template', $data);
-                } else if ($this->session->userdata('hak_akses') == 'Sekretaris Jurusan') {
+                } else if ($this->session->userdata('hak_akses') == 'Koordinator TA') {
                     $data['title_bar'] = "Application";
                     $data['folder'] = "";
                     $data['active'] = "Dashboard";
@@ -51,7 +51,7 @@ class Dashboard extends CI_Controller {
                             <script type="text/javascript" src="' . base_url() . 'assets/js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js"></script>
                         ';
                     $this->parser->parse('template', $data);
-                } else if ($this->session->userdata('hak_akses') == 'Koordinator TA') {
+                } else if ($this->session->userdata('hak_akses') == 'Koordinator KP') {
                     $data['title_bar'] = "Application";
                     $data['folder'] = "";
                     $data['active'] = "Dashboard";
@@ -65,7 +65,7 @@ class Dashboard extends CI_Controller {
                         <script type="text/javascript" src="' . base_url() . 'assets/js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js"></script>
                         ';
                     $this->parser->parse('template', $data);
-                } else if ($this->session->userdata('hak_akses') == 'Koordinator KP') {
+                } else if ($this->session->userdata('hak_akses') == 'Kepala Laboratorium') {
                     $data['title_bar'] = "Application";
                     $data['folder'] = "";
                     $data['active'] = "Dashboard";
@@ -79,7 +79,7 @@ class Dashboard extends CI_Controller {
                             <script type="text/javascript" src="' . base_url() . 'assets/js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js"></script>
                         ';
                     $this->parser->parse('template', $data);
-                } else if ($this->session->userdata('hak_akses') == 'Kepala Laboratorium') {
+                } else if ($this->session->userdata('hak_akses') == 'Dosen') {
                     $data['title_bar'] = "Application";
                     $data['folder'] = "";
                     $data['active'] = "Dashboard";

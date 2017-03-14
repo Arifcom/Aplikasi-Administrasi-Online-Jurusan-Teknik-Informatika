@@ -12,6 +12,11 @@ class Pengguna_model extends CI_Model {
         return $query;
     }
     
+    public function get_where_hak_akses($hak_akses) {
+        $query = $this->db->get_where('pengguna', array('hak_akses' => $hak_akses));
+        return $query->result();
+    }
+    
     public function insert_entry()
     {
         $data = array(

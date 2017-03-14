@@ -43,12 +43,20 @@
                                         </div>
                                 </div> 
                                 <div class="form-group">
-                                    <label class="col-md-3 control-label">Calon Pembimbing</label>  
-                                    <div class="col-md-6">
-                                        <input type="text" class="form-control" name="calon_pembimbing"/>
-                                        <span class="help-block">Isi calon pembimbing</span>
+                                    <label class="col-md-3 col-xs-12 control-label">Calon Pembimbing</label>
+                                    <div class="col-md-6 col-xs-12">                                                                                
+                                        <select class="form-control select" data-live-search="true" name="calon_pembimbing">
+                                            <?php
+                                            foreach ($query as $datas):
+                                                echo
+                                                "
+                                                <option>$datas->nama_depan $datas->nama_belakang</option>
+                                                ";
+                                            endforeach;
+                                            ?>  
+                                        </select>
+                                        <span class="help-block">Pilih Calon Pembimbing</span>
                                     </div>
-                                    <div class="col-md-3"></div>
                                 </div> 
                                 <div class="form-group">
                                     <label class="col-md-3 control-label"></label>
