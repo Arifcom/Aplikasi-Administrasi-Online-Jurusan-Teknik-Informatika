@@ -20,7 +20,7 @@
                                 <th style="text-align: center;">Nama</th>
                                 <th style="text-align: center;">Email</th>
                                 <th style="text-align: center;">Hak Akses</th>
-                                <th style="text-align: center;">Aksi</th>
+                                <th style="text-align: center;">Detail</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -32,7 +32,11 @@
                                     <td style='text-align: center;'>$datas->nama_depan $datas->nama_belakang</td>
                                     <td style='text-align: center;'>$datas->email</td>
                                     <td style='text-align: center;'>$datas->hak_akses</td>
-                                    <td style='text-align: center;'>-</td>
+                                    <td style='text-align: center;'>
+                                    <a href='" . base_url() . "administrator/kelola-pengguna/$datas->pengguna_id'>
+                                        <span class='fa fa-eye'></span>
+                                    </a>
+                                    </td>
                                 </tr>
                                 ";
                             endforeach;

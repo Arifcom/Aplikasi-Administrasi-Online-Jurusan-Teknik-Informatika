@@ -45,8 +45,6 @@
                             </tbody>
                         </table>
                     <?php            
-                    } else if($this->session->userdata('hak_akses') == 'Sekretaris Jurusan') {
-
                     } else if($this->session->userdata('hak_akses') == 'Pegawai') {
                     ?>
                         <table class="table datatable_simple">

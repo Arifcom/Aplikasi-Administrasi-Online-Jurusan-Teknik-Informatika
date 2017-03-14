@@ -4,7 +4,7 @@
         <div class="col-md-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h3 class="panel-title">Panel Title</h3>
+                    <h3 class="panel-title">Daftar Permohonan Transkip Nilai Sementara</h3>
                 </div>
                 <div class="panel-body">
                     <?php echo $this->session->flashdata('flash_data'); ?>
@@ -39,8 +39,6 @@
                             </tbody>
                         </table>
                     <?php            
-                    } else if($this->session->userdata('hak_akses') == 'Sekretaris Jurusan') {
-
                     } else if($this->session->userdata('hak_akses') == 'Pegawai') {
                     ?>
                         <table class="table datatable_simple">

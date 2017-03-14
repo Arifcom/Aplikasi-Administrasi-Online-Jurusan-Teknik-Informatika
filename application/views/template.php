@@ -108,8 +108,8 @@
                             <li class="xn-openable <?php if ($active == "Transkip Nilai Sementara" | $active == "Transkip Nilai Akhir") { echo 'active'; } ?>">
                                 <a href="#"> Transkip Nilai</a>
                                 <ul>
-                                    <li <?php if ($active == "Transkip Nilai Sementara") { echo 'class="active"'; } ?>><a href="<?php echo base_url(); ?>ketua-jurusan/layanan/trankip-nilai-sementara"> Transkip Nilai Sementara</a></li>
-                                    <li <?php if ($active == "Transkip Nilai Akhir") { echo 'class="active"'; } ?>><a href="<?php echo base_url(); ?>ketua-jurusan/layanan/trankip-nilai-akhir"> Transkip Nilai Akhir</a></li>
+                                    <li <?php if ($active == "Transkip Nilai Sementara") { echo 'class="active"'; } ?>><a href="<?php echo base_url(); ?>ketua-jurusan/layanan/transkip-nilai-sementara"> Transkip Nilai Sementara</a></li>
+                                    <li <?php if ($active == "Transkip Nilai Akhir") { echo 'class="active"'; } ?>><a href="<?php echo base_url(); ?>ketua-jurusan/layanan/transkip-nilai-akhir"> Transkip Nilai Akhir</a></li>
                                 </ul>
                             </li>
                             <li class="xn-openable <?php if ($active == "Surat Keterangan Aktif Kuliah" | $active == "Surat Keterangan Berkelakuan Baik" | $active == "Surat Keterangan Beasiswa" | $active == "Surat Keterangan Masih Kuliah") { echo 'active'; }?>">
@@ -142,8 +142,8 @@
                             <li class="xn-openable <?php if ($active == "Transkip Nilai Sementara" | $active == "Transkip Nilai Akhir") { echo 'active'; } ?>">
                                 <a href="#"> Transkip Nilai</a>
                                 <ul>
-                                    <li <?php if ($active == "Transkip Nilai Sementara") { echo 'class="active"'; } ?>><a href="<?php echo base_url(); ?>pegawai/layanan/trankip-nilai-sementara"> Transkip Nilai Sementara</a></li>
-                                    <li <?php if ($active == "Transkip Nilai Akhir") { echo 'class="active"'; } ?>><a href="<?php echo base_url(); ?>pegawai/layanan/trankip-nilai-akhir"> Transkip Nilai Akhir</a></li>
+                                    <li <?php if ($active == "Transkip Nilai Sementara") { echo 'class="active"'; } ?>><a href="<?php echo base_url(); ?>pegawai/layanan/transkip-nilai-sementara"> Transkip Nilai Sementara</a></li>
+                                    <li <?php if ($active == "Transkip Nilai Akhir") { echo 'class="active"'; } ?>><a href="<?php echo base_url(); ?>pegawai/layanan/transkip-nilai-akhir"> Transkip Nilai Akhir</a></li>
                                 </ul>
                             </li>
                             <li class="xn-openable <?php if ($active == "Surat Keterangan Aktif Kuliah" | $active == "Surat Keterangan Berkelakuan Baik" | $active == "Surat Keterangan Beasiswa" | $active == "Surat Keterangan Masih Kuliah") { echo 'active'; }?>">

@@ -35,7 +35,7 @@ class Transkip_nilai_akhir_model extends CI_Model {
     public function update_entry($id)
     {
         $data = array(
-            'surat_keterangan_aktif_kuliah_id'   => $id,
+            'transkip_nilai_akhir_id'   => $id,
             'nama_depan'        => $this->input->post('nama_depan'),
             'nama_belakang'     => $this->input->post('nama_belakang'),
             'nim'               => $this->input->post('nim'),

@@ -26,8 +26,6 @@ class SuratKeteranganBerkelakuanBaik extends CI_Controller {
                             <script type="text/javascript" src="' . base_url() . 'assets/js/plugins/datatables/jquery.dataTables.min.js"></script>
                         ';
                     $this->parser->parse('template', $data);
-                } else if ($this->session->userdata('hak_akses') == 'Sekretaris Jurusan') {
-                    
                 } else if ($this->session->userdata('hak_akses') == 'Pegawai') {
                     $data['title_bar'] = "Application";
                     $data['folder'] = "Layanan";
