@@ -91,6 +91,7 @@ $route['sekretaris-jurusan'] = 'dashboard';
 $route['koordinator-ta'] = 'dashboard';
 $route['koordinator-ta'] = 'dashboard';
 $route['dosen'] = 'dashboard';
+$route['dosen/layanan/ta/pengajuan-judul'] = 'layanan/ta/pengajuanjudul';
 $route['pegawai'] = 'dashboard';
 $route['pegawai/layanan/khs'] = 'layanan/khs';
 $route['pegawai/layanan/khs/(:num)'] = 'layanan/khs/detail/$1';

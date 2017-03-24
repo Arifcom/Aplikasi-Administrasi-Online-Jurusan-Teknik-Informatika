@@ -12,6 +12,11 @@ class TA_pengajuan_judul_model extends CI_Model {
         return $query->result();
     }
     
+    public function get_where_calon_pembimbing($nama) {
+        $query = $this->db->get_where('ta_pengajuan_judul', array('calon_pembimbing' => $nama));
+        return $query->result();
+    }
+    
     public function insert_entry()
     {
         $data = array(

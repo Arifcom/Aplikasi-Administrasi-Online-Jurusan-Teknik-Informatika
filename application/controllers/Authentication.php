@@ -25,7 +25,7 @@ class Authentication extends CI_Controller {
                     foreach ($query->result() as $datas) {
                         $session['id'] = $datas->pengguna_id;
                         $session['email'] = $datas->email;
-                        $session['nama'] = $datas->nama_depan . " " . $datas->nama_belakang;
+                        $session['nama'] = $datas->nama_depan . ' ' . $datas->nama_belakang;
                         $session['hak_akses'] = $datas->hak_akses;
                         $this->session->set_userdata($session);
                     }

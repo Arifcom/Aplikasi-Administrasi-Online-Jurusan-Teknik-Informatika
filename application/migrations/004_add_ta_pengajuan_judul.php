@@ -28,6 +28,11 @@ class Migration_Add_ta_pengajuan_judul extends CI_Migration {
                                 'type'          => 'VARCHAR',
                                 'constraint'    => '50'
                         ),
+                        'email'=>
+                        array(
+                                'type'          => 'VARCHAR',
+                                'constraint'    => '50'
+                        ),
                         'judul'=>
                         array(
                                 'type'          => 'TEXT'
@@ -39,12 +44,12 @@ class Migration_Add_ta_pengajuan_judul extends CI_Migration {
                         ),
                         'status_calon_pembimbing'=>
                         array(
-                                'type'          => 'ENUM("Diterima","ditolak")',
+                                'type'          => 'ENUM("Diterima","Ditolak")',
                                 'null'          => FALSE,
                         ),
                         'status'=>
                         array(
-                                'type'          => 'ENUM("Belum","Sedang","Selesai")',
+                                'type'          => 'ENUM("Terima","Terima Bersyarat","Revisi","Tolak")',
                                 'null'          => FALSE,
                         ),
                         'date'=>
