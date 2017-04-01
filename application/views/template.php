@@ -168,7 +168,6 @@
                             <li class="xn-openable <?php if ($active == "Pengajuan Judul" | $active == "Seminar Proposal" | $active == "Seminar Hasil" | $active == "Sidang") { echo 'active'; } ?>">
                                 <a href="#"> TA</a>
                                 <ul>
-                                    <li <?php if ($active == "Pengajuan Judul") { echo 'class="active"'; } ?>><a href="<?php echo base_url(); ?>pegawai/layanan/ta/pengajuan-judul"> Penagajuan Judul</a></li>
                                     <li <?php if ($active == "Seminar Proposal") { echo 'class="active"'; } ?>><a href="<?php echo base_url(); ?>pegawai/layanan/ta/seminar-proposal"> Seminar Proposal</a></li>
                                     <li <?php if ($active == "Seminar Hasil") { echo 'class="active"'; } ?>><a href="<?php echo base_url(); ?>pegawai/layanan/ta/seminar-hasil"> Seminar Hasil</a></li>
                                     <li <?php if ($active == "Sidang") { echo 'class="active"'; } ?>><a href="<?php echo base_url(); ?>pegawai/layanan/ta/sidang"> Sidang</a></li>

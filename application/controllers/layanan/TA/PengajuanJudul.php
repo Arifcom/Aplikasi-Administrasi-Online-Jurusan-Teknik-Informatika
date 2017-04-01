@@ -143,10 +143,60 @@ class PengajuanJudul extends CI_Controller {
                         '
                             <script type="text/javascript" src="' . base_url() . 'assets/js/plugins/icheck/icheck.min.js"></script>
                             <script type="text/javascript" src="' . base_url() . 'assets/js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js"></script>
-                                    
+                                
+                            <script type="text/javascript" src="' . base_url() . 'assets/js/plugins/bootstrap/bootstrap-datepicker.js"></script>  
+                            <script type="text/javascript" src="' . base_url() . 'assets/js/plugins/bootstrap/bootstrap-timepicker.min.js"></script>
                             <script type="text/javascript" src="' . base_url() . 'assets/js/plugins/bootstrap/bootstrap-select.js"></script>        
+
+                            <script type="text/javascript" src="' . base_url() . 'assets/js/plugins/validationengine/languages/jquery.validationEngine-en.js"></script>
+                            <script type="text/javascript" src="' . base_url() . 'assets/js/plugins/validationengine/jquery.validationEngine.js"></script>        
+
+                            <script type="text/javascript" src="' . base_url() . 'assets/js/plugins/jquery-validation/jquery.validate.js"></script>                
                         ';
-                    $data['extra'] = "";
+                    $data['extra'] =
+                        '
+                            <script type="text/javascript">
+                                var jvalidate = $("#jvalidate").validate({
+                                    ignore: [],
+                                    rules: {                                            
+                                            nama_depan: {
+                                                    required: true
+                                            },
+                                            nama_belakang: {
+                                                    required: true
+                                            },
+                                            nim: {
+                                                    required: true,
+                                                    maxlength: 11
+                                            },
+                                            judul: {
+                                                    required: true
+                                            },
+                                            pembimbing_1: {
+                                                    required: true
+                                            },
+                                            pembimbing_2: {
+                                                    required: true
+                                            },
+                                            penguji_1: {
+                                                    required: true
+                                            },
+                                            penguji_2: {
+                                                    required: true
+                                            },
+                                            tanggal_seminar: {
+                                                    required: true
+                                            },
+                                            waktu_seminar: {
+                                                    required: true
+                                            },
+                                            tempat_seminar: {
+                                                    required: true
+                                            },
+                                        }                                        
+                                    });                                    
+                            </script>
+                        ';
                     $this->parser->parse('template', $data);
                 } else if($this->session->userdata('hak_akses') == 'Dosen') {
                     $data['title_bar'] = "Application";
@@ -159,10 +209,60 @@ class PengajuanJudul extends CI_Controller {
                         '
                             <script type="text/javascript" src="' . base_url() . 'assets/js/plugins/icheck/icheck.min.js"></script>
                             <script type="text/javascript" src="' . base_url() . 'assets/js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js"></script>
-                                    
+                                
+                            <script type="text/javascript" src="' . base_url() . 'assets/js/plugins/bootstrap/bootstrap-datepicker.js"></script>  
+                            <script type="text/javascript" src="' . base_url() . 'assets/js/plugins/bootstrap/bootstrap-timepicker.min.js"></script>
                             <script type="text/javascript" src="' . base_url() . 'assets/js/plugins/bootstrap/bootstrap-select.js"></script>        
+
+                            <script type="text/javascript" src="' . base_url() . 'assets/js/plugins/validationengine/languages/jquery.validationEngine-en.js"></script>
+                            <script type="text/javascript" src="' . base_url() . 'assets/js/plugins/validationengine/jquery.validationEngine.js"></script>        
+
+                            <script type="text/javascript" src="' . base_url() . 'assets/js/plugins/jquery-validation/jquery.validate.js"></script>                
                         ';
-                    $data['extra'] = "";
+                    $data['extra'] =
+                        '
+                            <script type="text/javascript">
+                                var jvalidate = $("#jvalidate").validate({
+                                    ignore: [],
+                                    rules: {                                            
+                                            nama_depan: {
+                                                    required: true
+                                            },
+                                            nama_belakang: {
+                                                    required: true
+                                            },
+                                            nim: {
+                                                    required: true,
+                                                    maxlength: 11
+                                            },
+                                            judul: {
+                                                    required: true
+                                            },
+                                            pembimbing_1: {
+                                                    required: true
+                                            },
+                                            pembimbing_2: {
+                                                    required: true
+                                            },
+                                            penguji_1: {
+                                                    required: true
+                                            },
+                                            penguji_2: {
+                                                    required: true
+                                            },
+                                            tanggal_seminar: {
+                                                    required: true
+                                            },
+                                            waktu_seminar: {
+                                                    required: true
+                                            },
+                                            tempat_seminar: {
+                                                    required: true
+                                            },
+                                        }                                        
+                                    });                                    
+                            </script>
+                        ';
                     $this->parser->parse('template', $data);
                 } else {
                     redirect(base_url() . 'authentication');

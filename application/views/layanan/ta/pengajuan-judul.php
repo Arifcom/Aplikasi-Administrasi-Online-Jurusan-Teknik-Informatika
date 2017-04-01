@@ -105,40 +105,6 @@
                             </tbody>
                         </table>
                     <?php
-                    } else if($this->session->userdata('hak_akses') == 'Pegawai') {
-                    ?>
-                        <table class="table datatable_simple">
-                            <thead>
-                                <tr>
-                                    <th style="text-align: center;">NIM</th>
-                                    <th style="text-align: center;">Judul</th>
-                                    <th style="text-align: center;">Tanggal</th>
-                                    <th style="text-align: center;">Waktu</th>
-                                    <th style="text-align: center;">Detail</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php
-                                foreach ($query as $datas):
-                                    echo
-                                    "
-                                    <tr>
-                                        <td style='text-align: center;'>$datas->nim</td>
-                                        <td style='text-align: center;'>$datas->judul</td>
-                                        <td style='text-align: center;'>$datas->date</td>
-                                        <td style='text-align: center;'>$datas->time</td>
-                                        <td style='text-align: center;'>
-                                        <a href='" . base_url() . "pegawai/layanan/ta/pengajuan_judul/$datas->ta_pengajuan_judul_id'>
-                                        <span class='fa fa-eye'></span>
-                                        </a>
-                                        </td>
-                                    </tr>
-                                    ";
-                                endforeach;
-                                ?>                            
-                            </tbody>
-                        </table>
-                    <?php
                     }
                     ?>
                 </div>

@@ -4,7 +4,8 @@ class Log_aktifitas_model extends CI_Model {
     
     public function get_where_entries()
     {
-        $query = $this->db->get_where('log_aktifitas', array('pengguna_id' => $this->session->userdata('id')));
+        $this->db->order_by('log_aktifitas_id', 'DESC');
+        $query = $this->db->get_where('log_aktifitas', array('pengguna_id' => $this->session->userdata('id')), 5);
         return $query->result();
     }
     
