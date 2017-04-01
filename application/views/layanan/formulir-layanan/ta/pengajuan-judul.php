@@ -36,6 +36,14 @@
                                     <div class="col-md-3"></div>
                                 </div>                                                                                                                       
                                 <div class="form-group">
+                                    <label class="col-md-3 control-label">Email</label>  
+                                    <div class="col-md-6">
+                                        <input type="email" class="form-control" name="email"/>
+                                        <span class="help-block">Isi Email</span>
+                                    </div>
+                                    <div class="col-md-3"></div>
+                                </div>                                                                                                                       
+                                <div class="form-group">
                                         <label class="col-md-3 col-xs-12 control-label">Judul</label>
                                         <div class="col-md-6 col-xs-12">                                            
                                             <textarea class="form-control" rows="5" name="judul"></textarea>

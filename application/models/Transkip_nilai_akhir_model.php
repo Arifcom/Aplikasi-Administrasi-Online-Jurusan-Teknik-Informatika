@@ -46,6 +46,7 @@ class Transkip_nilai_akhir_model extends CI_Model {
             'tanggal_ijazah'      => $this->input->post('tanggal_ijazah'),
             'judul_bahasa_indonesia'      => $this->input->post('judul_bahasa_indonesia'),
             'judul_bahasa_inggris'      => $this->input->post('judul_bahasa_inggris'),
+            'status'      => $this->input->post('status'),
             'date'              => $this->input->post('date'),
             'time'              => $this->input->post('time')
         );

@@ -42,6 +42,7 @@ class Surat_keterangan_masih_kuliah_model extends CI_Model {
             'tanggal_lahir'     => $this->input->post('tanggal_lahir'),
             'alamat'            => $this->input->post('alamat'),
             'kontak_nomor'      => $this->input->post('kontak_nomor'),
+            'status'            => $this->input->post('status'),
             'date'              => $this->input->post('date'),
             'time'              => $this->input->post('time')
         );

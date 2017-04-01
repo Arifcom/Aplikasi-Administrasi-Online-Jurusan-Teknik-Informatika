@@ -88,7 +88,20 @@
                                             <span class="help-block"></span>
                                         </div>
                                         <div class="col-md-3"></div>
-                                    </div>                          
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-3 control-label">Status</label>  
+                                        <div class="col-md-6">
+                                            <select class="form-control select" name="status">
+                                                <option selected><?php echo $datas->status ?> diproses</option>
+                                                <option value="Belum">Belum diproses</option>
+                                                <option value="Sedang">Sedang diproses</option>
+                                                <option value="Selesai">Selesai diproses</option>
+                                            </select>
+                                            <span class="help-block"></span>
+                                        </div>
+                                        <div class="col-md-3"></div>
+                                    </div> 
                                     <input type="hidden" name="date" value="<?php echo $datas->date ?>"/>
                                     <input type="hidden" name="time" value="<?php echo $datas->time ?>"/>
                                     <div class="form-group">

@@ -36,6 +36,7 @@ class KHS_model extends CI_Model {
             'nim'               => $this->input->post('nim'),
             'semester'          => $this->input->post('semester'),
             'kontak_nomor'      => $this->input->post('kontak_nomor'),
+            'status'      => $this->input->post('status'),
             'date'              => $this->input->post('date'),
             'time'              => $this->input->post('time')
         );
