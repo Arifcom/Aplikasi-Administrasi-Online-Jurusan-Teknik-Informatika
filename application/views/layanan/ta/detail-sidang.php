@@ -6,6 +6,18 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h3 class="panel-title">Detail Sidang</h3>
+                    <?php
+                    if($this->session->userdata('hak_akses') == 'Pegawai') {
+                    ?>
+                    <div class="btn-group pull-right">
+                        <div>
+                            <a href="<?php echo base_url(); ?>pegawai/layanan/ta/sidang/download/<?php echo $datas->ta_sidang_id ?>" class="btn btn-default" type="button">Word</a>
+                            <a href="<?php echo base_url(); ?>pegawai/layanan/ta/sidang/delete/<?php echo $datas->ta_sidang_id ?>" class="btn btn-danger">Delete</a>
+                        </div>
+                    </div>
+                    <?php
+                    }
+                    ?>
                 </div>
                 <div class="panel-body">
                     <?php echo $this->session->flashdata('flash_data'); ?>

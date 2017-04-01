@@ -111,6 +111,7 @@ $route['pegawai/layanan/khs/delete/(:num)'] = 'layanan/khs/delete/$1';
 $route['pegawai/layanan/ta/pengajuan-judul'] = 'layanan/ta/pengajuanjudul';
 $route['pegawai/layanan/ta/seminar-proposal'] = 'layanan/ta/seminarproposal';
 $route['pegawai/layanan/ta/seminar-proposal/(:num)'] = 'layanan/ta/seminarproposal/detail/$1';
+$route['pegawai/layanan/ta/seminar-proposal/download/(:num)'] = 'layanan/ta/seminarproposal/download/$1';
 $route['pegawai/layanan/ta/seminar-hasil'] = 'layanan/ta/seminarhasil';
 $route['pegawai/layanan/ta/seminar-hasil/(:num)'] = 'layanan/ta/seminarhasil/detail/$1';
 $route['pegawai/layanan/ta/sidang'] = 'layanan/ta/sidang';

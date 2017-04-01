@@ -54,7 +54,14 @@ class TA_seminar_proposal_model extends CI_Model {
         return $this->db->replace('ta_seminar_proposal', $data);
     }
     
-     public function delete_entry($id) {
+    public function update_status($id,$status)
+    {
+        $this->db->set('status', $status);
+        $this->db->where('ta_seminar_proposal_id', $id);
+        $this->db->update('ta_seminar_proposal');
+    }
+    
+    public function delete_entry($id) {
         $this->db->delete('ta_seminar_proposal', array('ta_seminar_proposal_id' => $id));
     }
     

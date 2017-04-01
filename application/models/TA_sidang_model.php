@@ -54,7 +54,14 @@ class TA_sidang_model extends CI_Model {
         return $this->db->replace('ta_sidang', $data);
     }
     
-     public function delete_entry($id) {
+    public function update_status($id,$status)
+    {
+        $this->db->set('status', $status);
+        $this->db->where('ta_sidang_id', $id);
+        $this->db->update('ta_sidang');
+    }
+    
+    public function delete_entry($id) {
         $this->db->delete('ta_sidang', array('ta_sidang_id' => $id));
     }
     
