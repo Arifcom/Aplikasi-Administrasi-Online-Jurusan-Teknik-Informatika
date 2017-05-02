@@ -15,7 +15,7 @@ class SeminarProposal extends CI_Controller {
                     $data['title_bar'] = "Application";
                     $data['active'] = "Seminar Proposal";
                     $data['page_title'] = "Seminar Proposal";
-                    $data['query'] = "";
+                    $data['query'] = $this->ta_seminar_proposal_model->get_entries();
                     $data['activity'] = $this->log_aktifitas_model->get_where_entries();
                     $data['content'] = "layanan/ta/seminar-proposal";
                     $data['this_page_plugin'] =

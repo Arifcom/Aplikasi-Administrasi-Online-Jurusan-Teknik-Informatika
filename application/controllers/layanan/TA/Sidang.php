@@ -15,7 +15,7 @@ class Sidang extends CI_Controller {
                     $data['title_bar'] = "Application";
                     $data['active'] = "Sidang";
                     $data['page_title'] = "Sidang";
-                    $data['query'] = "";
+                    $data['query'] = $this->ta_sidang_model->get_entries();
                     $data['activity'] = $this->log_aktifitas_model->get_where_entries();
                     $data['content'] = "layanan/ta/sidang";
                     $data['this_page_plugin'] =
@@ -333,6 +333,62 @@ class Sidang extends CI_Controller {
                 } else {
                     redirect(base_url() . 'authentication');
                 }
+        }
+        
+        public function download($id)
+        {
+            if ($this->session->userdata('hak_akses') == 'Pegawai') {
+                $query = $this->ta_seminar_proposal_model->get_where_entries($id);
+                $this->load->library('PHPWord');
+                $document = $this->phpword->loadTemplate('application/public/word/surat-sidang-template.docx');
+                $moon = date('m');
+                switch ($moon) {
+                    case 1: $moon = 'Januari';
+                        break;
+                    case 2: $moon = 'Februari';
+                        break;
+                    case 3: $moon = 'Maret';
+                        break;
+                    case 4: $moon = 'April';
+                        break;
+                    case 5: $moon = 'Mei';
+                        break;
+                    case 6: $moon = 'Juni';
+                        break;
+                    case 7: $moon = 'Juli';
+                        break;
+                    case 8: $moon = 'Agustus';
+                        break;
+                    case 9: $moon = 'September';
+                        break;
+                    case 10: $moon = 'Oktober';
+                        break;
+                    case 11: $moon = 'November';
+                        break;
+                    case 12: $moon = 'Desember';
+                        break;
+                }
+                foreach ($query as $datas) {
+                    $document->setValue('Value1', 'Pekanbaru, ' . date('j ') . $moon . date(' Y'));
+                    $document->setValue('Value2', $datas->pembimbing_1);
+                    $document->setValue('Value3', $datas->penguji_1);
+                    $document->setValue('Value4', $datas->penguji_2);
+                    $document->setValue('Value5', $datas->nama_depan . ' ' . $datas->nama_belakang);
+                    $document->setValue('Value6', $datas->nim);
+                    $document->setValue('Value7', $datas->judul);
+                    $document->setValue('Value8', $datas->tanggal_seminar);
+                    $document->setValue('Value9', $datas->waktu_seminar);
+                    $document->setValue('Value10', $datas->tempat_seminar);
+                    $temp_file = tempnam(sys_get_temp_dir(), 'PHPWord');
+                    $document->save($temp_file);
+                }
+                header("Content-Disposition: attachment; filename='Surat Sidang-$datas->nim.docx'");
+                readfile($temp_file);
+                unlink($temp_file);
+                $this->ta_seminar_proposal_model->update_status($id,'Sedang');
+            } else {
+                    redirect(base_url() . 'authentication');
+            }
         }
         
         public function insert()
