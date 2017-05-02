@@ -81,7 +81,7 @@ class PengajuanJudul extends CI_Controller {
                     $data['title_bar'] = "Application";
                     $data['active'] = "Pengajuan Judul";
                     $data['page_title'] = "Pengajuan Judul";
-                    $data['query'] = "";
+                    $data['query'] = $this->pengguna_model->get_where_hak_akses('Dosen');
                     $data['activity'] = "";
                     $data['content'] = "layanan/formulir-layanan/ta/pengajuan-judul";
                     $data['this_page_plugin'] =
