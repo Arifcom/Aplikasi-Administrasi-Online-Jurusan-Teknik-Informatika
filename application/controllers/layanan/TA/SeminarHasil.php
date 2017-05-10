@@ -338,7 +338,7 @@ class SeminarHasil extends CI_Controller {
         public function download($id)
         {
             if ($this->session->userdata('hak_akses') == 'Pegawai') {
-                $query = $this->ta_seminar_proposal_model->get_where_entries($id);
+                $query = $this->ta_seminar_hasil_model->get_where_entries($id);
                 $this->load->library('PHPWord');
                 $document = $this->phpword->loadTemplate('application/public/word/surat-seminar-hasil-template.docx');
                 $moon = date('m');
@@ -385,7 +385,7 @@ class SeminarHasil extends CI_Controller {
                 header("Content-Disposition: attachment; filename='Surat Seminar Hasil-$datas->nim.docx'");
                 readfile($temp_file);
                 unlink($temp_file);
-                $this->ta_seminar_proposal_model->update_status($id,'Sedang');
+                $this->ta_seminar_hasil_model->update_status($id,'Sedang');
             } else {
                     redirect(base_url() . 'authentication');
             }
