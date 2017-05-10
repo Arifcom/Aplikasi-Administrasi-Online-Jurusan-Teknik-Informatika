@@ -376,9 +376,9 @@ class Sidang extends CI_Controller {
                     $document->setValue('Value5', $datas->nama_depan . ' ' . $datas->nama_belakang);
                     $document->setValue('Value6', $datas->nim);
                     $document->setValue('Value7', $datas->judul);
-                    $document->setValue('Value8', $datas->tanggal_seminar);
-                    $document->setValue('Value9', $datas->waktu_seminar);
-                    $document->setValue('Value10', $datas->tempat_seminar);
+                    $document->setValue('Value8', $datas->tanggal_sidang);
+                    $document->setValue('Value9', $datas->waktu_sidang);
+                    $document->setValue('Value10', $datas->tempat_sidang);
                     $temp_file = tempnam(sys_get_temp_dir(), 'PHPWord');
                     $document->save($temp_file);
                 }
