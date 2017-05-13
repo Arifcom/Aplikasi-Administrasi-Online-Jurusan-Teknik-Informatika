@@ -33,7 +33,19 @@
                         <a href="#"> <span class="xn-text">Layanan</span></a>
                         <ul class="animated zoomIn">
                             <li><a href="<?php echo base_url(); ?>layanan/khs"> KHS</a></li>
-                            <li><a href="https://apps-tif.uin-suska.ac.id:4433/kp/" target="blank"> KP</a></li>
+                            <li class="xn-openable">
+                                <a href="#"> <span class="xn-text">KP</span></a>
+                                <ul class="animated zoomIn">
+                                    <li><a href="<?php echo base_url(); ?>layanan/kp/permohonan"> Permohonan</a></li>
+                                    <li><a href="<?php echo base_url(); ?>layanan/kp/seminar"> Seminar</a></li>
+                                </ul>
+                            </li>
+                            <li class="xn-openable">
+                                <a href="#"> <span class="xn-text">Laboratorium</span></a>
+                                <ul class="animated zoomIn">
+                                    <li><a href="<?php echo base_url(); ?>layanan/laboratorium/surat-pernyataan-bebas-praktikum"> Surat Pernyataan Bebas Praktikum</a></li>
+                                </ul>
+                            </li>
                             <li class="xn-openable">
                                 <a href="#"> <span class="xn-text">TA</span></a>
                                 <ul class="animated zoomIn">
@@ -96,6 +108,19 @@
                         <a href="#"><span class="fa fa-users"></span> <span class="xn-text">Layanan</span></a>
                         <ul>
                             <li <?php if ($active == "KHS") { echo 'class="active"'; } ?>><a href="<?php echo base_url(); ?>ketua-jurusan/layanan/khs"> KHS</a></li>
+                            <li class="xn-openable">
+                                <a href="#"> <span class="xn-text">KP</span></a>
+                                <ul class="animated zoomIn">
+                                    <li><a href="<?php echo base_url(); ?>ketua-jurusan/layanan/kp/permohonan"> Permohonan</a></li>
+                                    <li><a href="<?php echo base_url(); ?>ketua-jurusan/layanan/kp/seminar"> Seminar</a></li>
+                                </ul>
+                            </li>
+                            <li class="xn-openable">
+                                <a href="#"> <span class="xn-text">Laboratorium</span></a>
+                                <ul class="animated zoomIn">
+                                    <li><a href="<?php echo base_url(); ?>ketua-jurusan/layanan/laboratorium/surat-pernyataan-bebas-praktikum"> Surat Pernyataan Bebas Praktikum</a></li>
+                                </ul>
+                            </li>
                             <li class="xn-openable <?php if ($active == "Pengajuan Judul" | $active == "Seminar Proposal" | $active == "Seminar Hasil" | $active == "Sidang") { echo 'active'; } ?>">
                                 <a href="#"> TA</a>
                                 <ul>
@@ -165,6 +190,19 @@
                         <a href="#"><span class="fa fa-users"></span> <span class="xn-text">Layanan</span></a>
                         <ul>
                             <li <?php if ($active == "KHS") { echo 'class="active"'; } ?>><a href="<?php echo base_url(); ?>pegawai/layanan/khs"> KHS</a></li>
+                            <li class="xn-openable">
+                                <a href="#"> <span class="xn-text">KP</span></a>
+                                <ul class="animated zoomIn">
+                                    <li><a href="<?php echo base_url(); ?>pegawai/layanan/kp/permohonan"> Permohonan</a></li>
+                                    <li><a href="<?php echo base_url(); ?>pegawai/layanan/kp/seminar"> Seminar</a></li>
+                                </ul>
+                            </li>
+                            <li class="xn-openable">
+                                <a href="#"> <span class="xn-text">Laboratorium</span></a>
+                                <ul class="animated zoomIn">
+                                    <li><a href="<?php echo base_url(); ?>pegawai/layanan/laboratorium/surat-pernyataan-bebas-praktikum"> Surat Pernyataan Bebas Praktikum</a></li>
+                                </ul>
+                            </li>
                             <li class="xn-openable <?php if ($active == "Pengajuan Judul" | $active == "Seminar Proposal" | $active == "Seminar Hasil" | $active == "Sidang") { echo 'active'; } ?>">
                                 <a href="#"> TA</a>
                                 <ul>
