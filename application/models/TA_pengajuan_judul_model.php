@@ -31,6 +31,7 @@ class TA_pengajuan_judul_model extends CI_Model {
             'email'             => $this->input->post('email'),
             'judul'             => $this->input->post('judul'),
             'calon_pembimbing'  => $this->input->post('calon_pembimbing'),
+            'status_calon_pembimbing'  => 'Ditolak',
             'date'              => date('Y-m-d'),
             'time'              => date('H:i:s')
         );
