@@ -33,7 +33,32 @@ class Migration_Add_kp_permohonan extends CI_Migration {
                                 'type'          => 'INT',
                                 'constraint'    => '2'
                         ),
+                        'alamat_mahasiswa'=>
+                        array(
+                                'type'          => 'VARCHAR',
+                                'constraint'    => '50'
+                        ),
                         'kontak_nomor'=>
+                        array(
+                                'type'          => 'VARCHAR',
+                                'constraint'    => '50'
+                        ),
+                        'instansi'=>
+                        array(
+                                'type'          => 'VARCHAR',
+                                'constraint'    => '50'
+                        ),
+                        'alamat_instansi'=>
+                        array(
+                                'type'          => 'VARCHAR',
+                                'constraint'    => '50'
+                        ),
+                        'judul'=>
+                        array(
+                                'type'          => 'VARCHAR',
+                                'constraint'    => '50'
+                        ),
+                        'waktu_pelaksanaan'=>
                         array(
                                 'type'          => 'VARCHAR',
                                 'constraint'    => '50'
