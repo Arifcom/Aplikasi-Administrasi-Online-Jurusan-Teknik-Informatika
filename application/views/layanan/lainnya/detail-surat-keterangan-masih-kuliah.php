@@ -14,6 +14,9 @@
                     </div>    
                 </div>
                 <div class="panel-body">
+                    <div class="row text-center">
+                        <img src="<?php echo base_url(); ?>assets/images/mahasiswa/ktm/<?php echo $datas->gambar ?>" class="img-thumbnail" height="200px" width="400px">
+                    </div>
                     <?php echo $this->session->flashdata('flash_data'); ?>
                         <div class="block">
                             <form id="jvalidate" role="form" class="form-horizontal" action="<?php echo base_url(); ?>pegawai/layanan/lainnya/surat-keterangan-masih-kuliah/replace/<?php echo $datas->surat_keterangan_masih_kuliah_id ?>" method="post">
