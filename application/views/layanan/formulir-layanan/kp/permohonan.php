@@ -91,7 +91,7 @@
                                         <label class="col-md-3 control-label">Instansi</label>  
                                         <div class="col-md-6">
                                             <input type="text" class="form-control" name="instansi"/>
-                                            <span class="help-block">Isi Instansi</span>
+                                            <span class="help-block">Isi instansi</span>
                                         </div>
                                         <div class="col-md-3"></div>
                                     </div>
@@ -99,7 +99,7 @@
                                         <label class="col-md-3 control-label">Alamat</label>  
                                         <div class="col-md-6">
                                             <input type="text" class="form-control" name="alamat_instansi"/>
-                                            <span class="help-block">Isi Alamat</span>
+                                            <span class="help-block">Isi alamat</span>
                                         </div>
                                         <div class="col-md-3"></div>
                                     </div>
@@ -107,7 +107,7 @@
                                         <label class="col-md-3 control-label">Judul</label>  
                                         <div class="col-md-6">
                                             <input type="text" class="form-control" name="judul"/>
-                                            <span class="help-block">Isi Judul</span>
+                                            <span class="help-block">Isi judul</span>
                                         </div>
                                         <div class="col-md-3"></div>
                                     </div>
@@ -115,7 +115,7 @@
                                         <label class="col-md-3 control-label">Waktu Pelaksanaan</label>  
                                         <div class="col-md-6">
                                             <input type="text" class="form-control" name="waktu_pelaksanaan"/>
-                                            <span class="help-block">Isi Waktu Pelaksanaan</span>
+                                            <span class="help-block">Isi waktu pelaksanaan</span>
                                         </div>
                                         <div class="col-md-3"></div>
                                     </div>

@@ -61,7 +61,10 @@ class SuratKeteranganMasihKuliah extends CI_Controller {
                             <script type="text/javascript" src="' . base_url() . 'assets/js/plugins/validationengine/languages/jquery.validationEngine-en.js"></script>
                             <script type="text/javascript" src="' . base_url() . 'assets/js/plugins/validationengine/jquery.validationEngine.js"></script>        
 
-                            <script type="text/javascript" src="' . base_url() . 'assets/js/plugins/jquery-validation/jquery.validate.js"></script>                
+                            <script type="text/javascript" src="' . base_url() . 'assets/js/plugins/jquery-validation/jquery.validate.js"></script>  
+                            <script type="text/javascript" src="' . base_url() . 'assets/js/plugins/dropzone/dropzone.min.js"></script>
+                            <script type="text/javascript" src="' . base_url() . 'assets/js/plugins/fileinput/fileinput.min.js"></script>        
+                            <script type="text/javascript" src="' . base_url() . 'assets/js/plugins/filetree/jqueryFileTree.js"></script>
                         ';
                     $data['extra'] =
                         '
@@ -188,6 +191,10 @@ class SuratKeteranganMasihKuliah extends CI_Controller {
         
         public function insert()
         {
+                $config['upload_path'] = './application/public/images/';
+                $config['allowed_types'] = 'gif|jpg|png';
+                $this->load->library('upload', $config);
+                $this->upload->do_upload('gambar');
                 $this->surat_keterangan_masih_kuliah_model->insert_entry();
                 $this->session->set_flashdata('flash_data',
                         '
