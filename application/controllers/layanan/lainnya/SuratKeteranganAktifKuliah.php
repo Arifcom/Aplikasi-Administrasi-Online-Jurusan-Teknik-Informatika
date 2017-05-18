@@ -188,6 +188,10 @@ class SuratKeteranganAktifKuliah extends CI_Controller {
 
         public function insert()
         {
+                $config['upload_path'] = './assets/images/mahasiswa/ktm/';
+                $config['allowed_types'] = 'gif|jpg|png';
+                $this->load->library('upload', $config);
+                $this->upload->do_upload('gambar');
                 $this->surat_keterangan_aktif_kuliah_model->insert_entry();
                 $this->session->set_flashdata('flash_data',
                         '
