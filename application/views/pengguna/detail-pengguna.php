@@ -19,7 +19,7 @@
                                 <div class="form-group">
                                     <label class="col-md-3 control-label">Identitas</label>  
                                     <div class="col-md-6">
-                                        <input type="text" class="form-control" name="identitas" value="<?php echo $datas->pengguna_id ?>"/>
+                                        <input type="text" class="form-control" name="identitas" value="<?php echo $datas->pengguna_id ?>" disabled/>
                                         <span class="help-block">Isi identitas</span>
                                     </div>
                                     <div class="col-md-3"></div>

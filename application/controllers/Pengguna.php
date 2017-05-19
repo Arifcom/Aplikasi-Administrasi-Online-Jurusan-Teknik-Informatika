@@ -148,6 +148,16 @@ class Pengguna extends CI_Controller {
                 redirect(base_url() . 'administrator/pengguna');
         }
         
+        public function replace($id)
+        {
+                if ($this->session->userdata('hak_akses') == 'Administrator') {
+                    $this->pengguna_model->update_entry($id);
+                    redirect(base_url() . 'administrator/pengguna/' . $id);
+                } else {
+                    redirect(base_url() . 'authentication');
+                }
+        }    
+        
         public function delete($id)
         {
                 if ($this->session->userdata('hak_akses') == 'Administrator') {
