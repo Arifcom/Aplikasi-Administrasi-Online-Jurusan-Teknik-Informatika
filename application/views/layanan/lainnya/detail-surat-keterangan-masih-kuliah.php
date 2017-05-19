@@ -20,6 +20,7 @@
                     <?php echo $this->session->flashdata('flash_data'); ?>
                         <div class="block">
                             <form id="jvalidate" role="form" class="form-horizontal" action="<?php echo base_url(); ?>pegawai/layanan/lainnya/surat-keterangan-masih-kuliah/replace/<?php echo $datas->surat_keterangan_masih_kuliah_id ?>" method="post">
+                            <input type="hidden" name="gambar" value="<?php echo $datas->gambar ?>"/>
                                 <div class="panel-body">                                    
                                     <div class="form-group">
                                         <label class="col-md-3 control-label">Nama Depan</label>  
