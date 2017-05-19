@@ -20,7 +20,7 @@ class Authentication extends CI_Controller {
                     'email' => $this->input->post('email', TRUE),
                     'password' => md5($this->input->post('password', TRUE))
                 );
-                $query = $this->pengguna_model->get_where_entry($data);
+                $query = $this->pengguna_model->get_where_user($data);
                 if ($query->num_rows() == 1) {
                     foreach ($query->result() as $datas) {
                         $session['id'] = $datas->pengguna_id;

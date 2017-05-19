@@ -13,11 +13,19 @@
                     </ul>                                
                 </div>
                 <div class="panel-body">
+                    <div class="col-md-4 text-right">
+                        <a href="" class="btn btn-info">---|</a>
+                    </div>
+                    <div class="col-md-4">
+                        <a href="<?php echo base_url(); ?>administrator/pengguna/tambah" class="btn btn-block btn-info">Tambah Pengguna</a>
+                    </div>
+                    <div class="col-md-4 text-left">
+                        <a href="" class="btn btn-info">|---</a>
+                    </div>
                     <?php echo $this->session->flashdata('flash_data'); ?>
-                    <a href="<?php echo base_url(); ?>administrator/pengguna/tambah" class="btn btn-info">Tambah Pengguna</a>
                     <div class="clearfix"></div>
                     <br>
-                    <table class="table datatable_simple">
+                    <table class="table datatable">
                         <thead>
                             <tr>
                                 <th style="text-align: center;">Nama</th>
@@ -32,11 +40,11 @@
                                 echo
                                 "
                                 <tr>
-                                    <td style='text-align: center;'>$datas->nama_depan $datas->nama_belakang</td>
-                                    <td style='text-align: center;'>$datas->email</td>
-                                    <td style='text-align: center;'>$datas->hak_akses</td>
+                                    <td style='text-align: left;'>$datas->nama_depan $datas->nama_belakang</td>
+                                    <td style='text-align: left;'>$datas->email</td>
+                                    <td style='text-align: left;'>$datas->hak_akses</td>
                                     <td style='text-align: center;'>
-                                    <a href='" . base_url() . "administrator/kelola-pengguna/$datas->pengguna_id'>
+                                    <a href='" . base_url() . "administrator/pengguna/$datas->pengguna_id'>
                                         <span class='fa fa-eye'></span>
                                     </a>
                                     </td>
@@ -52,4 +60,4 @@
         </div>
     </div>
 </div>
-<!-- END PAGE CONTENT WRAPPER -->                
+<!-- END PAGE CONTENT WRAPPER -->               

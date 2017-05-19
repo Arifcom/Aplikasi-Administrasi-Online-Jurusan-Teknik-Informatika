@@ -4,17 +4,17 @@
         <div class="col-md-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h3 class="panel-title">Formulir KHS</h3>
+                    <h3 class="panel-title">Tambah Pengguna</h3>
                 </div>
                 <div class="panel-body">
                     <div class="block">
                         <form id="jvalidate" role="form" class="form-horizontal" action="<?php echo base_url(); ?>pengguna/insert" method="post">
                             <div class="panel-body">  
                                 <div class="form-group">
-                                    <label class="col-md-3 control-label">NIP</label>  
+                                    <label class="col-md-3 control-label">Identitas</label>  
                                     <div class="col-md-6">
-                                        <input type="text" class="form-control" name="nip"/>
-                                        <span class="help-block">Isi nip</span>
+                                        <input type="text" class="form-control" name="identitas"/>
+                                        <span class="help-block">Isi identitas</span>
                                     </div>
                                     <div class="col-md-3"></div>
                                 </div> 
@@ -65,9 +65,9 @@
                                             <option>Administrator</option>
                                             <option>Ketua Jurusan</option>
                                             <option>Sekretaris Jurusan</option>
-                                            <option>Koordinator TA</option>
-                                            <option>Koordinator KP</option>
                                             <option>Kepala Laboratorium</option>
+                                            <option>Koordinator KP</option>
+                                            <option>Koordinator TA</option>
                                             <option>Dosen</option>
                                             <option>Pegawai</option>
                                             <option>Ketua Kelas</option>

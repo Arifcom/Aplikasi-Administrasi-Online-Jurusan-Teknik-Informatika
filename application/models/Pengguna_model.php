@@ -6,10 +6,15 @@ class Pengguna_model extends CI_Model {
         $query = $this->db->get('pengguna');
         return $query->result();
     }
-
-    public function get_where_entry($data) {
+    
+    public function get_where_user($data) {
         $query = $this->db->get_where('pengguna', $data);
         return $query;
+    }
+    
+    public function get_where_entry($id) {
+        $query = $this->db->get_where('pengguna', array('pengguna_id' => $id));
+        return $query->result();
     }
     
     public function get_where_hak_akses($hak_akses) {
@@ -20,7 +25,7 @@ class Pengguna_model extends CI_Model {
     public function insert_entry()
     {
         $data = array(
-            'pengguna_id'        => $this->input->post('nip'),
+            'pengguna_id'        => $this->input->post('identitas'),
             'email'        => $this->input->post('email'),
             'password'        =>  md5($this->input->post('password')),
             'nama_depan'        => $this->input->post('nama_depan'),
@@ -30,6 +35,11 @@ class Pengguna_model extends CI_Model {
             'time'              => date('H:i:s')
         );
         return $this->db->insert('pengguna', $data);
+    }
+    
+    public function delete_entry($id) {
+        $this->db->delete('log_aktifitas', array('pengguna_id' => $id));
+        $this->db->delete('pengguna', array('pengguna_id' => $id));
     }
     
 }
