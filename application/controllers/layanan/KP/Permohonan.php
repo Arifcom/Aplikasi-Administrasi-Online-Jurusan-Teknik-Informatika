@@ -13,8 +13,8 @@ class Permohonan extends CI_Controller {
     {
             if ($this->session->userdata('hak_akses') == 'Ketua Jurusan') {
                 $data['title_bar'] = "Application";
-                $data['active'] = "Permohonan KP";
-                $data['page_title'] = "Permohonan KP";
+                $data['active'] = "Permohonan";
+                $data['page_title'] = "Permohonan";
                 $data['query'] = "";
                 $data['activity'] = $this->log_aktifitas_model->get_where_entries();
                 $data['content'] = "layanan/kp/permohonan";
@@ -29,8 +29,8 @@ class Permohonan extends CI_Controller {
                 $this->parser->parse('template', $data);
             } else if ($this->session->userdata('hak_akses') == 'Pegawai') {
                 $data['title_bar'] = "Application";
-                $data['active'] = "Permohonan KP";
-                $data['page_title'] = "Permohonan KP";
+                $data['active'] = "Permohonan";
+                $data['page_title'] = "Permohonan";
                 $data['query'] = "";
                 $data['activity'] = $this->log_aktifitas_model->get_where_entries();
                 $data['content'] = "layanan/kp/permohonan";
@@ -45,8 +45,8 @@ class Permohonan extends CI_Controller {
                 $this->parser->parse('template', $data);
             } else {
                 $data['title_bar'] = "Application";
-                $data['active'] = "Permohonan KP";
-                $data['page_title'] = "Permohonan KP";
+                $data['active'] = "Permohonan";
+                $data['page_title'] = "Permohonan";
                 $data['query'] = "";
                 $data['activity'] = $this->log_aktifitas_model->get_where_entries();
                 $data['content'] = "layanan/formulir-layanan/kp/permohonan";

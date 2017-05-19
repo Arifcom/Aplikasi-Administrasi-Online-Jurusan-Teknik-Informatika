@@ -13,8 +13,8 @@ class Seminar extends CI_Controller {
     {
             if ($this->session->userdata('hak_akses') == 'Ketua Jurusan') {
                 $data['title_bar'] = "Application";
-                $data['active'] = "Seminar KP";
-                $data['page_title'] = "Seminar KP";
+                $data['active'] = "Seminar";
+                $data['page_title'] = "Seminar";
                 $data['query'] = "";
                 $data['activity'] = $this->log_aktifitas_model->get_where_entries();
                 $data['content'] = "layanan/kp/seminar";
@@ -29,8 +29,8 @@ class Seminar extends CI_Controller {
                 $this->parser->parse('template', $data);
             } else if ($this->session->userdata('hak_akses') == 'Pegawai') {
                 $data['title_bar'] = "Application";
-                $data['active'] = "Seminar KP";
-                $data['page_title'] = "Seminar KP";
+                $data['active'] = "Seminar";
+                $data['page_title'] = "Seminar";
                 $data['query'] = "";
                 $data['activity'] = $this->log_aktifitas_model->get_where_entries();
                 $data['content'] = "layanan/kp/seminar";
@@ -45,8 +45,8 @@ class Seminar extends CI_Controller {
                 $this->parser->parse('template', $data);
             } else {
                 $data['title_bar'] = "Application";
-                $data['active'] = "Seminar KP";
-                $data['page_title'] = "Seminar KP";
+                $data['active'] = "Seminar";
+                $data['page_title'] = "Seminar";
                 $data['query'] = "";
                 $data['activity'] = $this->log_aktifitas_model->get_where_entries();
                 $data['content'] = "layanan/formulir-layanan/kp/seminar";

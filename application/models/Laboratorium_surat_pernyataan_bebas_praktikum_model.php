@@ -11,6 +11,6 @@
  *
  * @author WIN 10
  */
-class Laboratorium_surat_pernyataan_bebas_praktikum {
+class Laboratorium_surat_pernyataan_bebas_praktikum_model extends CI_Model {
     //put your code here
 }

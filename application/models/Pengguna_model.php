@@ -39,6 +39,7 @@ class Pengguna_model extends CI_Model {
     
     public function update_entry($id)
     {
+        $this->db->delete('log_aktifitas', array('pengguna_id' => $id));
         $data = array(
             'pengguna_id'        => $this->input->post('identitas'),
             'email'        => $this->input->post('email'),

@@ -181,7 +181,7 @@
                                 </ul>
                             </li>
                         </ul>
-                        <li <?php if ($active == "Jadwal Mengajar") { echo 'class="active"'; } ?>><a href="<?php echo base_url(); ?>dosen/layanan/jadwal-mengajar"><span class="fa fa-clock-o"></span> <span class="xn-text">Jadwal Mengajar</span></a></li>
+                        <li <?php if ($active == "Jadwal") { echo 'class="active"'; } ?>><a href="<?php echo base_url(); ?>"><span class="fa fa-clock-o"></span> <span class="xn-text">Jadwal</span></a></li>
                     </li>   
                     <?php 
                     } else if ($this->session->userdata('hak_akses') == 'Pegawai') {
@@ -233,6 +233,7 @@
                     } else if ($this->session->userdata('hak_akses') == 'Administrator') {
                     ?>
                     <li <?php if ($active == "Pengguna") { echo 'class="active"'; }?>><a href="<?php echo base_url(); ?>administrator/pengguna"><span class="fa fa-user"></span> <span class="xn-text">Pengguna</span></a></li>
+                    <li <?php if ($active == "Jadwal") { echo 'class="active"'; } ?>><a href="<?php echo base_url(); ?>"><span class="fa fa-clock-o"></span> <span class="xn-text">Jadwal</span></a></li>
                     <?php
                     }
                     ?>
@@ -303,9 +304,11 @@
                 <!-- START BREADCRUMB -->
                 <ul class="breadcrumb">
                     <li>Menu</li>
-                    <?php if($active == "KHS" | $active == "Pengajuan Judul" | $active == "Seminar Proposal" | $active == "Seminar hasil" | $active == "Sidang" | $active == "Transkip Nilai Sementara" | $active == "Transkip Nilai Akhir" | $active == "Surat Keterangan Aktif Kuliah" | $active == "Surat Keterangan Beasiswa" | $active == "Surat Keterangan Berkelakuan Baik" | $active == "Surat Keterangan Masih Kuliah") { echo '<li>Layanan</li>'; } ?>
+                    <?php if($active == "KHS" | $active == "Pengajuan Judul" | $active == "Seminar Proposal" | $active == "Seminar hasil" | $active == "Sidang" | $active == "Transkip Nilai Sementara" | $active == "Transkip Nilai Akhir" | $active == "Surat Keterangan Aktif Kuliah" | $active == "Surat Keterangan Beasiswa" | $active == "Surat Keterangan Berkelakuan Baik" | $active == "Surat Keterangan Masih Kuliah" | $active == "Permohonan" | $active == "Seminar" | $active == "Surat Pernyataan Bebas Praktikum") { echo '<li>Layanan</li>'; } ?>
+                    <?php if($active == "Surat Pernyataan Bebas Praktikum") { echo '<li>Laboratorium</li>'; } ?>
+                    <?php if($active == "Permohonan" | $active == "Seminar") { echo '<li>KP</li>'; } ?>
                     <?php if($active == "Pengajuan Judul" | $active == "Seminar Proposal" | $active == "Seminar Hasil" | $active == "Sidang") { echo '<li>TA</li>'; } ?>
-                    <li <?php if($active == "KHS" | $active == "Transkip Nilai Sementara" | $active == "KP" | $active == "TA") {echo 'class="active"'; } ?>><?php echo $active; ?></li>
+                    <li><?php echo $active; ?></li>
                 </ul>
                 <!-- END BREADCRUMB -->
                 <div class="page-title">             

@@ -15,11 +15,12 @@
                 <div class="panel-body">
                     <div class="block">
                         <form id="jvalidate" role="form" class="form-horizontal" action="<?php echo base_url(); ?>administrator/pengguna/replace/<?php echo $datas->pengguna_id ?>" method="post">
+                        <input type="hidden" name="identitas" value="<?php echo $datas->pengguna_id ?>"/>
                             <div class="panel-body">  
                                 <div class="form-group">
                                     <label class="col-md-3 control-label">Identitas</label>  
                                     <div class="col-md-6">
-                                        <input type="text" class="form-control" name="identitas" value="<?php echo $datas->pengguna_id ?>" disabled/>
+                                        <input type="text" class="form-control" value="<?php echo $datas->pengguna_id ?>" disabled/>
                                         <span class="help-block">Isi identitas</span>
                                     </div>
                                     <div class="col-md-3"></div>

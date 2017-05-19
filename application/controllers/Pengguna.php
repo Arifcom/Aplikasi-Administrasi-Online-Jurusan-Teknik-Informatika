@@ -59,29 +59,8 @@ class Pengguna extends CI_Controller {
                             <script type="text/javascript">
                                 var jvalidate = $("#jvalidate").validate({
                                     ignore: [],
-                                    rules: {                                            
-                                            nama_depan: {
-                                                    required: true
-                                            },
-                                            nama_belakang: {
-                                                    required: true
-                                            },
-                                            nim: {
-                                                    required: true,
-                                                    maxlength: 11
-                                            },
-                                            tempat_lahir: {
-                                                    required: true
-                                            },
-                                            tanggal_lahir: {
-                                                    required: true
-                                            },
-                                            alamat: {
-                                                    required: true
-                                            },
-                                            kontak_nomor: {
-                                                    required: true
-                                            }
+                                    rules: {    
+                                            
                                         }                                        
                                     });                                    
                             </script>

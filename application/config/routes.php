@@ -52,7 +52,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'home';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
-$route['layanan/laboratorium/surat-pernyataan-bebas-praktikum'] = 'layanan/laboratorium/suratpernyataanbebaspraktikum';
+$route['layanan/laboratorium/surat-pernyataan-bebas-praktikum'] = 'layanan/suratpernyataanbebaspraktikum';
 $route['layanan/ta/pengajuan-judul'] = 'layanan/ta/pengajuanjudul';
 $route['layanan/ta/pengajuan-judul/insert'] = 'layanan/ta/pengajuanjudul/insert';
 $route['layanan/ta/seminar-proposal'] = 'layanan/ta/seminarproposal';
