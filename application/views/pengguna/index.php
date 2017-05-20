@@ -20,7 +20,7 @@
                         <button type="button" class="btn btn-block btn-info" data-toggle="modal" data-target="#impor_pengguna">Impor Tabel</button>
                     </div>
                     <div class="col-md-3 text-left">
-                        <a href="<?php echo base_url(); ?>" class="btn btn-block btn-info">Ekspor Tabel</a>
+                        <a href="<?php echo base_url(); ?>administrator/pengguna/ekspor" class="btn btn-block btn-info">Ekspor Tabel</a>
                     </div>
                     <div class="col-md-3 text-left">
                         
