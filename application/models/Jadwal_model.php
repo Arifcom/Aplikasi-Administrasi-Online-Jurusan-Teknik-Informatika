@@ -3,6 +3,8 @@
 class Jadwal_model extends CI_Model {
     
     public function get_entries() {
+        $this->db->order_by('kode_hari', 'ASC');
+        $this->db->order_by('jam', 'ASC');
         $query = $this->db->get('jadwal');
         return $query->result();
     }
