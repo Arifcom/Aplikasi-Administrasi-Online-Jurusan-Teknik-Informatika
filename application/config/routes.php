@@ -114,6 +114,7 @@ $route['dosen/layanan/ta/pengajuan-judul/(:num)'] = 'layanan/ta/pengajuanjudul/d
 $route['dosen/layanan/ta/pengajuan-judul/replace/(:num)'] = 'layanan/ta/pengajuanjudul/replace/$1';
 $route['dosen/layanan/ta/seminar-proposal'] = 'layanan/ta/seminarproposal';
 $route['dosen/jadwal'] = 'jadwal';
+$route['dosen/jadwal/konfirmasi_dosen/(:any)'] = 'jadwal/konfirmasi_dosen/$1';
 $route['pegawai'] = 'dashboard';
 $route['pegawai/layanan/khs'] = 'layanan/khs';
 $route['pegawai/layanan/khs/(:num)'] = 'layanan/khs/detail/$1';

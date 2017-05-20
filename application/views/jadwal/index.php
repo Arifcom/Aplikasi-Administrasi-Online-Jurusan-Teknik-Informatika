@@ -98,7 +98,7 @@
                                     <td style='text-align: center;'>$datas->kelas</td>
                                     <td style='text-align: left;'>$datas->ruangan</td>
                                     <td style='text-align: center;'>
-                                        <a href='" . base_url() . "dosen/jadwal/konfirmasi_dosen'>
+                                        <a href='" . base_url() . "dosen/jadwal/konfirmasi_dosen/$datas->jadwal_id'>
                                     <span class='fa fa-check-square-o'></td>
                                 </tr>
                                 ";

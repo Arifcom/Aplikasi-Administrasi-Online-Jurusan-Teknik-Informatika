@@ -105,6 +105,7 @@ class Jadwal extends CI_Controller {
                         "kode_hari" => $kode_hari,
                         "jam" => $rowData[0][4],
                         "ruangan"=> $rowData[0][5],
+                        "ketua_kelas"=> $rowData[0][6],
                         "date"=> date('Y-m-d'),
                         "time"=> date('H:i:s')
                     );
@@ -135,7 +136,8 @@ class Jadwal extends CI_Controller {
                         ->setCellValue("C1", "Dosen")
                         ->setCellValue("D1", "Hari")
                         ->setCellValue("E1", "Jam")
-                        ->setCellValue("F1", "Ruangan");
+                        ->setCellValue("F1", "Ruangan")
+                        ->setCellValue("G1", "Ketua Kelas");
                 $query = $this->jadwal_model->get_entries();
                 $i = 2;
                 foreach ($query as $datas):
@@ -144,7 +146,8 @@ class Jadwal extends CI_Controller {
                             ->setCellValue("C" . $i, $datas->dosen)
                             ->setCellValue("D" . $i, $datas->hari)
                             ->setCellValue("E" . $i, $datas->jam)
-                            ->setCellValue("F" . $i, $datas->ruangan);
+                            ->setCellValue("F" . $i, $datas->ruangan)
+                            ->setCellValue("G" . $i, $datas->ketua_kelas);
                     $i++;
                 endforeach;
                 header('Content-Type: application/vnd.ms-excel');
@@ -164,6 +167,28 @@ class Jadwal extends CI_Controller {
                     $this->laporan_jadwal_model->empty_table();
                     $this->jadwal_model->empty_table();
                     redirect(base_url() . 'administrator/jadwal');
+                } else {
+                    redirect(base_url() . 'authentication');
+                }
+        }
+        
+        public function konfirmasi_dosen($id)
+        {
+                if ($this->session->userdata('hak_akses') == 'Dosen') {
+                    $this->laporan_jadwal_model->laporan_status_dosen($id);
+                    $this->session->set_flashdata('flash_data',
+                        '
+                        <div class="col-md-3"></div>
+                        <div class="col-md-6">
+                        <div class="alert alert-info" role="alert">
+                        <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <strong>Status belajar mengajar kelas berhasil dikonfirmasi.</strong>
+                        </div>
+                        </div>
+                        <div class="col-md-3"></div>
+                        '
+                );
+                    redirect(base_url() . 'dosen/jadwal');
                 } else {
                     redirect(base_url() . 'authentication');
                 }
