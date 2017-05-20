@@ -211,7 +211,7 @@ class Jadwal extends CI_Controller {
                         </div>
                         <div class="col-md-3"></div>
                         '
-                );
+                    );
                     redirect(base_url() . 'dosen/jadwal');
                 } else {
                     redirect(base_url() . 'authentication');
