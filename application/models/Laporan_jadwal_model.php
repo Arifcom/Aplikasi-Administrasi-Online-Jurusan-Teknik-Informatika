@@ -8,7 +8,7 @@ class Laporan_jadwal_model extends CI_Model {
     }
     
     public function get_laporan() {
-        $query = $this->db->query("SELECT a.hari, a.jam, a.mata_kuliah, a.kelas, a.dosen, a.ruangan, b.konfirmasi_dosen, b.konfirmasi_ketua_kelas, b.date FROM jadwal AS a, laporan_jadwal AS b WHERE a.jadwal_id = b.jadwal_id");
+        $query = $this->db->query("SELECT a.hari, a.jam, a.mata_kuliah, a.kelas, a.dosen, a.ruangan, b.konfirmasi_dosen, b.konfirmasi_ketua_kelas, b.date FROM jadwal AS a, laporan_jadwal AS b WHERE a.jadwal_id = b.jadwal_id ORDER BY date ASC");
         return $query->result();
     }
     

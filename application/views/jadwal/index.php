@@ -75,7 +75,7 @@
                     <?php echo $this->session->flashdata('flash_data'); ?>
                     <div class="clearfix"></div>
                     <br>
-                    <table class="table datatable">
+                    <table class="table datatable_simple">
                         <thead>
                             <tr>
                                 <th style="text-align: center;">Hari</th>
