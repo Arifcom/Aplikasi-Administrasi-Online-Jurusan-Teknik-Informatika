@@ -6,7 +6,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="<?php echo base_url(); ?>assets/" type="image/x-icon" />
+        <link rel="icon" href="<?php echo base_url(); ?>assets/img/logo/logo.png" type="image/x-icon" />
         <!-- END META SECTION -->
         <!-- CSS INCLUDE -->        
         <link rel="stylesheet" type="text/css" id="theme" href="<?php echo base_url(); ?>assets/css/theme-default.css"/>
@@ -234,6 +234,7 @@
                     ?>
                     <li <?php if ($active == "Pengguna") { echo 'class="active"'; }?>><a href="<?php echo base_url(); ?>administrator/pengguna"><span class="fa fa-user"></span> <span class="xn-text">Pengguna</span></a></li>
                     <li <?php if ($active == "Jadwal") { echo 'class="active"'; } ?>><a href="<?php echo base_url(); ?>"><span class="fa fa-clock-o"></span> <span class="xn-text">Jadwal</span></a></li>
+                    <li <?php if ($active == "Laporan") { echo 'class="active"'; } ?>><a href="<?php echo base_url(); ?>"><span class="fa fa-folder-open"></span> <span class="xn-text">Laporan</span></a></li>
                     <?php
                     }
                     ?>
