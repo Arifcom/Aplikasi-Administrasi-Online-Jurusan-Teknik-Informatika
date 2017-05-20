@@ -159,3 +159,5 @@ $route['pegawai/layanan/lainnya/surat-keterangan-masih-kuliah/replace/(:num)'] =
 $route['pegawai/layanan/lainnya/surat-keterangan-masih-kuliah/download/(:num)'] = 'layanan/lainnya/suratketeranganmasihkuliah/download/$1';
 $route['pegawai/layanan/lainnya/surat-keterangan-masih-kuliah/delete/(:num)'] = 'layanan/lainnya/suratketeranganmasihkuliah/delete/$1';
 $route['ketua-kelas'] = 'dashboard';
+$route['ketua-kelas/jadwal'] = 'jadwal';
+$route['ketua-kelas/jadwal/konfirmasi-ketua-kelas/(:num)'] = 'jadwal/konfirmasi_ketua_kelas/$1';

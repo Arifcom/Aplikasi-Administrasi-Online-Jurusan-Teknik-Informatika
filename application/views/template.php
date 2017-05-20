@@ -229,6 +229,10 @@
                         </ul>
                     </li>    
                     <?php 
+                    } else if ($this->session->userdata('hak_akses') == 'Ketua Kelas') {
+                    ?>
+                    <li <?php if ($active == "Jadwal") { echo 'class="active"'; } ?>><a href="<?php echo base_url(); ?>ketua-kelas/jadwal"><span class="fa fa-clock-o"></span> <span class="xn-text">Jadwal</span></a></li>
+                    <?php 
                     } else if ($this->session->userdata('hak_akses') == 'Administrator') {
                     ?>
                     <li <?php if ($active == "Pengumuman") { echo 'class="active"'; }?>><a href="<?php echo base_url(); ?>"><span class="fa fa-bullhorn"></span> <span class="xn-text">Pengumuman</span></a></li>

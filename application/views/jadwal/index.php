@@ -110,6 +110,54 @@
             </div>
             <!-- END DEFAULT DATATABLE -->  
             <?php
+            } else if($this->session->userdata('hak_akses') == 'Ketua Kelas') {
+            ?>
+            <!-- START DEFAULT DATATABLE -->
+            <div class="panel panel-default">
+                <div class="panel-heading">                                
+                    <h3 class="panel-title">Daftar Jadwal</h3>      
+                </div>
+                <div class="panel-body">
+                    <?php echo $this->session->flashdata('flash_data'); ?>
+                    <div class="clearfix"></div>
+                    <br>
+                    <table class="table datatable_simple">
+                        <thead>
+                            <tr>
+                                <th style="text-align: center;">Hari</th>
+                                <th style="text-align: center;">Jam</th>
+                                <th style="text-align: center;">Mata Kuliah</th>
+                                <th style="text-align: center;">Kelas</th>
+                                <th style="text-align: center;">Dosen</th>
+                                <th style="text-align: center;">Ruangan</th>
+                                <th style="text-align: center;">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                            foreach ($query as $datas):
+                                echo
+                                "
+                                <tr>
+                                    <td style='text-align: left;'>$datas->hari</td>
+                                    <td style='text-align: center;'>$datas->jam</td>
+                                    <td style='text-align: left;'>$datas->mata_kuliah</td>
+                                    <td style='text-align: center;'>$datas->kelas</td>
+                                    <td style='text-align: left;'>$datas->dosen</td>
+                                    <td style='text-align: left;'>$datas->ruangan</td>
+                                    <td style='text-align: center;'>
+                                        <a href='" . base_url() . "ketua-kelas/jadwal/konfirmasi-ketua-kelas/$datas->jadwal_id'>
+                                    <span class='fa fa-check-square-o'></td>
+                                </tr>
+                                ";
+                            endforeach;
+                            ?>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- END DEFAULT DATATABLE -->
+            <?php
             }
             ?>
         </div>

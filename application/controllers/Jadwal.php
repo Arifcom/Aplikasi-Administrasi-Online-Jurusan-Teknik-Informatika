@@ -31,13 +31,15 @@ class Jadwal extends CI_Controller {
                     $data['title_bar'] = "Application";
                     $data['active'] = "Jadwal";
                     $data['page_title'] = "Jadwal";
-                    $data['query'] = "";
+                    $data['query'] = $this->jadwal_model->get_where_ketua_kelas($this->session->userdata('nama'));
                     $data['activity'] = $this->log_aktifitas_model->get_where_entries();
                     $data['content'] = "jadwal/index";
                     $data['this_page_plugin'] =
                         '
                             <script type="text/javascript" src="' . base_url() . 'assets/js/plugins/icheck/icheck.min.js"></script>
                             <script type="text/javascript" src="' . base_url() . 'assets/js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js"></script>
+
+                            <script type="text/javascript" src="' . base_url() . 'assets/js/plugins/datatables/jquery.dataTables.min.js"></script>
                         ';
                 $this->parser->parse('template', $data);
                 } else if ($this->session->userdata('hak_akses') == 'Administrator') {
@@ -176,6 +178,28 @@ class Jadwal extends CI_Controller {
         {
                 if ($this->session->userdata('hak_akses') == 'Dosen') {
                     $this->laporan_jadwal_model->laporan_status_dosen($id);
+                    $this->session->set_flashdata('flash_data',
+                        '
+                        <div class="col-md-3"></div>
+                        <div class="col-md-6">
+                        <div class="alert alert-info" role="alert">
+                        <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <strong>Status belajar mengajar kelas berhasil dikonfirmasi.</strong>
+                        </div>
+                        </div>
+                        <div class="col-md-3"></div>
+                        '
+                );
+                    redirect(base_url() . 'dosen/jadwal');
+                } else {
+                    redirect(base_url() . 'authentication');
+                }
+        }
+        
+        public function konfirmasi_ketua_kelas($id)
+        {
+                if ($this->session->userdata('hak_akses') == 'Ketua Kelas') {
+                    $this->laporan_jadwal_model->laporan_status_ketua_kelas($id);
                     $this->session->set_flashdata('flash_data',
                         '
                         <div class="col-md-3"></div>
