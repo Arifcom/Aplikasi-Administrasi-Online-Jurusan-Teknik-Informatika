@@ -6,7 +6,7 @@ class Home extends CI_Controller {
                 $data['title_bar'] = "Application";
                 $data['folder'] = "";
                 $data['active'] = "Beranda";
-                $data['page_title'] = "Page Title";
+                $data['page_title'] = "";
                 $data['query'] = "";
                 $data['content'] = "home";
                 $data['this_page_plugin'] = "";

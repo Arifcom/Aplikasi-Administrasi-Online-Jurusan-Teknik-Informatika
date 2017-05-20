@@ -28,7 +28,6 @@
                     </li>                     
                     <li <?php if ($active == "Beranda") { echo 'class="active"'; }?>><a href="<?php echo base_url(); ?>"> <span class="xn-text">Beranda</span></a></li>
                     <li <?php if ($active == "Tentang") { echo 'class="active"'; }?>><a href="<?php echo base_url(); ?>tentang"> <span class="xn-text">Tentang</span></a></li>
-                    <li <?php if ($active == "Kontak") { echo 'class="active"'; }?>><a href="<?php echo base_url(); ?>kontak"> <span class="xn-text">Kontak</span></a></li>
                     <li class="xn-openable">
                         <a href="#"> <span class="xn-text">Layanan</span></a>
                         <ul class="animated zoomIn">
