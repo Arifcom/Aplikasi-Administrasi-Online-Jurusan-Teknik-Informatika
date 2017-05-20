@@ -360,6 +360,27 @@
             </div>
         </div>
         <!-- END MODAL -->
+        <!-- MODAL -->
+        <div id="impor_jadwal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <?php echo form_open_multipart(base_url() . 'administrator/jadwal/impor', array('role'=>'form', 'class'=>'form-horizontal'));?>
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title text-center">Impor Excel</h4>
+                    </div>
+                    <div class="modal-body text-center">
+                        <input name="file" type="file" multiple/>
+                    </div>
+                    <div class="modal-footer text-center">
+                        <button type="submit" class="btn btn-info">Impor</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                    </div>
+                </div>
+                </form>
+            </div>
+        </div>
+        <!-- END MODAL -->
         <!-- START PRELOADS -->
         <audio id="audio-alert" src="<?php echo base_url(); ?>assets/audio/alert.mp3" preload="auto"></audio>
         <audio id="audio-fail" src="<?php echo base_url(); ?>assets/audio/fail.mp3" preload="auto"></audio>
