@@ -10,7 +10,6 @@ class Migration_Add_jadwal extends CI_Migration {
                         'jadwal_id'=>
                         array(
                                 'type'          => 'INT',
-                                'unsigned'      => TRUE,
                                 'auto_increment' => TRUE
                         ),
                         'mata_kuliah'=>

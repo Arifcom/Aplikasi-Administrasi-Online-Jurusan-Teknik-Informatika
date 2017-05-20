@@ -40,7 +40,21 @@
                             </tr>
                         </thead>
                         <tbody>
-                            
+                            <?php
+                            foreach ($query as $datas):
+                                echo
+                                "
+                                <tr>
+                                    <td style='text-align: left;'>$datas->mata_kuliah</td>
+                                    <td style='text-align: center;'>$datas->kelas</td>
+                                    <td style='text-align: left;'>$datas->dosen</td>
+                                    <td style='text-align: left;'>$datas->hari</td>
+                                    <td style='text-align: center;'>$datas->jam</td>
+                                    <td style='text-align: left;'>$datas->ruangan</td>
+                                </tr>
+                                ";
+                            endforeach;
+                            ?>
                         </tbody>
                     </table>
                 </div>

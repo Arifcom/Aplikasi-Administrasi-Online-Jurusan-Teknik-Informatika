@@ -13,6 +13,10 @@ class Migration_Add_laporan_jadwal extends CI_Migration {
                                 'unsigned'      => TRUE,
                                 'auto_increment' => TRUE
                         ),
+                        'jadwal_id'=>
+                        array(
+                                'type'          => 'INT'
+                        ),
                         'konfirmasi_dosen'=>
                         array(
                                 'type'          => 'ENUM("Iya","Tidak")',
@@ -34,6 +38,7 @@ class Migration_Add_laporan_jadwal extends CI_Migration {
                 ));
                 $this->dbforge->add_key('laporan_jadwal_id', TRUE);
                 $this->dbforge->create_table('laporan_jadwal');
+                $this->db->query("ALTER TABLE laporan_jadwal ADD FOREIGN KEY (jadwal_id) REFERENCES jadwal(jadwal_id)");
         }
 
         public function down()

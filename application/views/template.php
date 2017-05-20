@@ -312,9 +312,17 @@
                     <li><?php echo $active; ?></li>
                 </ul>
                 <!-- END BREADCRUMB -->
-                <div class="page-title">             
-                    <h2><span class="fa fa-arrow-circle-o-left"></span> <?php echo $page_title; ?></h2>
-                </div>
+                <?php
+                    if($active == "Beranda" | $active == "Tentang") {
+                        
+                    } else {
+                ?>
+                    <div class="page-title">             
+                        <h2><span class="fa fa-arrow-circle-o-left"></span> <?php echo $page_title; ?></h2>
+                    </div>
+                <?php
+                    }
+                ?>
                 <?php $this->load->view($content, $query); ?>       
             </div>            
             <!-- END PAGE CONTENT -->

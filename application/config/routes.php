@@ -83,6 +83,7 @@ $route['administrator/pengguna/replace/(:any)'] = 'pengguna/replace/$1';
 $route['administrator/pengguna/delete/(:any)'] = 'pengguna/delete/$1';
 $route['administrator/jadwal'] = 'jadwal';
 $route['administrator/jadwal/impor'] = 'jadwal/impor';
+$route['administrator/jadwal/reset'] = 'jadwal/reset';
 $route['ketua-jurusan'] = 'dashboard';
 $route['ketua-jurusan/layanan/khs'] = 'layanan/khs';
 $route['ketua-jurusan/layanan/ta/pengajuan-judul'] = 'layanan/ta/pengajuanjudul';

@@ -4,6 +4,8 @@ class Jadwal extends CI_Controller {
     public function __construct()
     {
             parent::__construct();
+            $this->load->model('jadwal_model');
+            $this->load->model('laporan_jadwal_model');
             $this->load->model('log_aktifitas_model');
             date_default_timezone_set('Asia/Jakarta');
     }
@@ -40,7 +42,7 @@ class Jadwal extends CI_Controller {
                     $data['title_bar'] = "Application";
                     $data['active'] = "Jadwal";
                     $data['page_title'] = "Jadwal";
-                    $data['query'] = "";
+                    $data['query'] = $this->jadwal_model->get_entries();
                     $data['activity'] = $this->log_aktifitas_model->get_where_entries();
                     $data['content'] = "jadwal/index";
                     $data['this_page_plugin'] =
@@ -95,6 +97,17 @@ class Jadwal extends CI_Controller {
             } else {
                 redirect(base_url() . 'beranda');
             }
+        }
+        
+        public function reset()
+        {
+                if ($this->session->userdata('hak_akses') == 'Administrator') {
+                    $this->laporan_jadwal_model->empty_table();
+                    $this->jadwal_model->empty_table();
+                    redirect(base_url() . 'administrator/jadwal');
+                } else {
+                    redirect(base_url() . 'authentication');
+                }
         }
         
 }
