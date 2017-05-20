@@ -16,38 +16,45 @@
         <div class="login-container">
             <div class="login-box animated fadeInDown">
                 <div class="login-body">
-                    <div class="login-title"><strong>Welcome</strong>, Please login</div>
                     <?php echo $this->session->flashdata('flash_data');?>
                     <form action="<?php echo base_url(); ?>authentication/login" class="form-horizontal" method="post">
-                        <div class="form-group">
+                        <div class="row text-center">
+                            <img src="<?php echo base_url(); ?>assets/img/logo/logo.png" height="100px" width="100px">
+                        </div>
+                        <div class="clearfix"></div><br>
+                        <div class="row text-center">
+                            <div class="login-title">UIN SUSKA RIAU</div>
+                        </div>
+                        <div class="row text-center">
+                            <div class="login-title">Assalammu'alaikum, silahkan masuk</div>
+                        </div>
+                        <div class="row">
                             <div class="col-md-12">
-                                <input name="email" type="email" class="form-control" placeholder="Username" required/>
+                                <div class="form-group text-center">
+                                    <div class="col-md-12">
+                                        <input style="text-align: center;" name="email" type="email" class="form-control" placeholder="email" required autofocus/>
+                                    </div>
+                                </div>
+                                <div class="form-group text-center">
+                                    <div class="col-md-12">
+                                        <input style="text-align: center;" name="password" type="password" class="form-control" placeholder="password" required/>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div><br>
+                                <div class="clearfix"></div><br>
+                                <div class="clearfix"></div><br>
+                                <div class="form-group text-center">
+                                    <div class="col-md-12">
+                                        <button class="btn btn-info btn-block btn-lg">Masuk</button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="form-group">
-                            <div class="col-md-12">
-                                <input name="password" type="password" class="form-control" placeholder="Password" required/>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="col-md-6">
-                                <a href="#" class="btn btn-link btn-block">Forgot your password?</a>
-                            </div>
-                            <div class="col-md-6">
-                                <button class="btn btn-info btn-block">Log In</button>
-                            </div>
                         </div>
                     </form>
                 </div>
                 <div class="login-footer">
-                    <div class="pull-left">
-                        &copy; 2014 AppName
-                    </div>
-                    <div class="pull-right">
-                        <a href="#">About</a> |
-                        <a href="#">Privacy</a> |
-                        <a href="#">Contact Us</a>
-                    </div>
+                    
                 </div>
             </div>
         </div>

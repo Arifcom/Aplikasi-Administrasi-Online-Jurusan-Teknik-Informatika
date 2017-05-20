@@ -13,14 +13,17 @@
                     </ul>                                
                 </div>
                 <div class="panel-body">
-                    <div class="col-md-4 text-right">
-                        <a href="" class="btn btn-info">---|</a>
+                    <div class="col-md-3 text-right">
+                        
                     </div>
-                    <div class="col-md-4">
-                        <a href="<?php echo base_url(); ?>administrator/pengguna/tambah" class="btn btn-block btn-info">Tambah Pengguna</a>
+                    <div class="col-md-3">
+                        <a href="<?php echo base_url(); ?>" class="btn btn-block btn-info">Impor Tabel</a>
                     </div>
-                    <div class="col-md-4 text-left">
-                        <a href="" class="btn btn-info">|---</a>
+                    <div class="col-md-3 text-left">
+                        <a href="<?php echo base_url(); ?>" class="btn btn-block btn-info">Ekspor Tabel</a>
+                    </div>
+                    <div class="col-md-3 text-left">
+                        
                     </div>
                     <?php echo $this->session->flashdata('flash_data'); ?>
                     <div class="clearfix"></div>
