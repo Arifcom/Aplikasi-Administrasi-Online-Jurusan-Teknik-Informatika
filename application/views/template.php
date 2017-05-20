@@ -146,6 +146,7 @@
                                 </ul>
                             </li>
                         </ul>
+                        <li <?php if ($active == "Jadwal") { echo 'class="active"'; } ?>><a href="<?php echo base_url(); ?>ketua-jurusan/jadwal"><span class="fa fa-clock-o"></span> <span class="xn-text">Jadwal</span></a></li>
                     </li>
                     <?php
                     } else if ($this->session->userdata('hak_akses') == 'Koordinator TA') {
@@ -238,7 +239,6 @@
                     <li <?php if ($active == "Pengumuman") { echo 'class="active"'; }?>><a href="<?php echo base_url(); ?>"><span class="fa fa-bullhorn"></span> <span class="xn-text">Pengumuman</span></a></li>
                     <li <?php if ($active == "Pengguna") { echo 'class="active"'; }?>><a href="<?php echo base_url(); ?>administrator/pengguna"><span class="fa fa-user"></span> <span class="xn-text">Pengguna</span></a></li>
                     <li <?php if ($active == "Jadwal") { echo 'class="active"'; } ?>><a href="<?php echo base_url(); ?>administrator/jadwal"><span class="fa fa-clock-o"></span> <span class="xn-text">Jadwal</span></a></li>
-                    <li <?php if ($active == "Laporan") { echo 'class="active"'; } ?>><a href="<?php echo base_url(); ?>"><span class="fa fa-folder-open"></span> <span class="xn-text">Laporan</span></a></li>
                     <?php
                     }
                     ?>

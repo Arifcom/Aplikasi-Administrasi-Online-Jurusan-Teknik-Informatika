@@ -97,6 +97,7 @@ $route['ketua-jurusan/layanan/lainnya/surat-keterangan-aktif-kuliah'] = 'layanan
 $route['ketua-jurusan/layanan/lainnya/surat-keterangan-beasiswa'] = 'layanan/lainnya/suratketeranganbeasiswa';
 $route['ketua-jurusan/layanan/lainnya/surat-keterangan-berkelakuan-baik'] = 'layanan/lainnya/suratketeranganberkelakuanbaik';
 $route['ketua-jurusan/layanan/lainnya/surat-keterangan-masih-kuliah'] = 'layanan/lainnya/suratketeranganmasihkuliah';
+$route['ketua-jurusan/jadwal'] = 'jadwal';
 $route['sekretaris-jurusan'] = 'dashboard';
 $route['koordinator-ta'] = 'dashboard';
 $route['koordinator-ta/layanan/ta/pengajuan-judul'] = 'layanan/ta/pengajuanjudul';

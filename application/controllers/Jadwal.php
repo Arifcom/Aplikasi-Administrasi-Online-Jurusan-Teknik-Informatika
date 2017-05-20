@@ -12,7 +12,22 @@ class Jadwal extends CI_Controller {
     
     public function index()
         {
-                if ($this->session->userdata('hak_akses') == 'Dosen') {
+                if ($this->session->userdata('hak_akses') == 'Ketua Jurusan') {
+                    $data['title_bar'] = "Application";
+                    $data['active'] = "Jadwal";
+                    $data['page_title'] = "Jadwal";
+                    $data['query'] = $this->laporan_jadwal_model->get_laporan();
+                    $data['activity'] = $this->log_aktifitas_model->get_where_entries();
+                    $data['content'] = "jadwal/index";
+                    $data['this_page_plugin'] =
+                        '
+                            <script type="text/javascript" src="' . base_url() . 'assets/js/plugins/icheck/icheck.min.js"></script>
+                            <script type="text/javascript" src="' . base_url() . 'assets/js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js"></script>
+
+                            <script type="text/javascript" src="' . base_url() . 'assets/js/plugins/datatables/jquery.dataTables.min.js"></script>
+                        ';
+                    $this->parser->parse('template', $data);
+                } else if ($this->session->userdata('hak_akses') == 'Dosen') {
                     $data['title_bar'] = "Application";
                     $data['active'] = "Jadwal";
                     $data['page_title'] = "Jadwal";
@@ -58,7 +73,7 @@ class Jadwal extends CI_Controller {
                         ';
                     $this->parser->parse('template', $data);
                 } else {
-                    redirect('authentication');
+                    redirect(base_url() . 'authentication');
                 }
         }
         
@@ -116,7 +131,7 @@ class Jadwal extends CI_Controller {
                 delete_files('./application/public/excel/');
                 redirect(base_url() . 'administrator/jadwal');
             } else {
-                redirect(base_url() . 'beranda');
+                redirect(base_url() . 'authentication');
             }
         }
         

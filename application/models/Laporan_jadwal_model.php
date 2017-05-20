@@ -7,6 +7,11 @@ class Laporan_jadwal_model extends CI_Model {
         return $query->result();
     }
     
+    public function get_laporan() {
+        $query = $this->db->query("SELECT a.hari, a.jam, a.mata_kuliah, a.kelas, a.dosen, a.ruangan, b.konfirmasi_dosen, b.konfirmasi_ketua_kelas, b.date FROM jadwal AS a, laporan_jadwal AS b WHERE a.jadwal_id = b.jadwal_id");
+        return $query->result();
+    }
+    
     public function laporan_status_dosen($id) {
         $query = $this->db->get_where('laporan_jadwal', array('jadwal_id' => $id, 'date' => date('Y-m-d')));
         if ($query->num_rows() < 1) {
