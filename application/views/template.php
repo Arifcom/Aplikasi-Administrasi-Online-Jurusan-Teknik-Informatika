@@ -180,7 +180,7 @@
                                 </ul>
                             </li>
                         </ul>
-                        <li <?php if ($active == "Jadwal") { echo 'class="active"'; } ?>><a href="<?php echo base_url(); ?>"><span class="fa fa-clock-o"></span> <span class="xn-text">Jadwal</span></a></li>
+                        <li <?php if ($active == "Jadwal") { echo 'class="active"'; } ?>><a href="<?php echo base_url(); ?>dosen/jadwal"><span class="fa fa-clock-o"></span> <span class="xn-text">Jadwal</span></a></li>
                     </li>   
                     <?php 
                     } else if ($this->session->userdata('hak_akses') == 'Pegawai') {

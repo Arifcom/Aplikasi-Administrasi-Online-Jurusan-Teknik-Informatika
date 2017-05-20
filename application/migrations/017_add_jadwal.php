@@ -32,10 +32,13 @@ class Migration_Add_jadwal extends CI_Migration {
                                 'type'          => 'VARCHAR',
                                 'constraint'    => '50'
                         ),
+                        'kode_hari'=>
+                        array(
+                                'type'          => 'INT'
+                        ),
                         'jam'=>
                         array(
-                                'type'          => 'VARCHAR',
-                                'constraint'    => '50'
+                                'type'          => 'TIME'
                         ),
                         'ruangan'=>
                         array(

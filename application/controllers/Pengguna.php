@@ -178,7 +178,7 @@ class Pengguna extends CI_Controller {
                 $file->createSheet(NULL, 0);
                 $file->setActiveSheetIndex(0);
                 $sheet = $file->getActiveSheet(0);
-                $sheet->setTitle("Daftar Anggota Pengguna");
+                $sheet->setTitle("Daftar Pengguna");
                 $file->getDefaultStyle()
                         ->getAlignment()
                         ->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
