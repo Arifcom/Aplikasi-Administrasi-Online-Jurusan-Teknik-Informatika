@@ -6,6 +6,7 @@ class Pengguna extends CI_Controller {
                 parent::__construct();
                 $this->load->model('pengguna_model');
                 $this->load->model('log_aktifitas_model');
+                date_default_timezone_set('Asia/Jakarta');
         }
 
         public function index()
@@ -125,6 +126,47 @@ class Pengguna extends CI_Controller {
         {
                 $this->pengguna_model->insert_entry();
                 redirect(base_url() . 'administrator/pengguna');
+        }
+        
+        public function impor() {
+            if ($this->session->userdata('hak_akses') == 'Administrator') {
+                $this->load->library('PHPExcel');
+                $config['upload_path'] = './application/public/excel/';
+                $config['file_name'] = $_FILES['file']['name'];
+                $config['allowed_types'] = 'xls|xlsx|csv';
+                $config['max_size'] = 1000000;
+                $this->load->library('upload', $config);
+                $this->upload->do_upload('file');
+                $file_name = './application/public/excel/' . $this->upload->data('file_name');
+                try {
+                    $file_type = PHPExcel_IOFactory::identify($file_name);
+                    $object_reader = PHPExcel_IOFactory::createReader($file_type);
+                    $object_PHPExcel = $object_reader->load($file_name);
+                } catch (Exception $e) {
+                    die('Gagal mengupload file "' . pathinfo($file_name, PATHINFO_BASENAME) . '": ' . $e->getMessage());
+                }
+                $sheet = $object_PHPExcel->getSheet(0);
+                $highest_row = $sheet->getHighestDataRow();
+                $highest_column = $sheet->getHighestDataColumn();
+                for ($row = 2; $row <= $highest_row; $row++) {
+                    $rowData = $sheet->rangeToArray('A' . $row . ':' . $highest_column . $row, NULL, TRUE, FALSE);
+                    $akun = array(
+                        "pengguna_id" => $rowData[0][0],
+                        "email" => $rowData[0][1],
+                        "password" => md5($rowData[0][0]),
+                        "nama_depan" => $rowData[0][2],
+                        "nama_belakang" => $rowData[0][3],
+                        "hak_akses"=> $rowData[0][4],
+                        "date"=> date('Y-m-d'),
+                        "time"=> date('H:i:s')
+                    );
+                    $insert = $this->db->insert("pengguna", $akun);
+                }
+                delete_files('./application/public/excel/');
+                redirect(base_url() . 'administrator/pengguna');
+            } else {
+                redirect(base_url() . 'beranda');
+            }
         }
         
         public function replace($id)

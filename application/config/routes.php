@@ -76,6 +76,7 @@ $route['administrator'] = 'dashboard';
 $route['administrator/pengguna'] = 'pengguna';
 $route['administrator/pengguna/(:num)'] = 'pengguna/detail/$1';
 $route['administrator/pengguna/tambah'] = 'pengguna/create';
+$route['administrator/pengguna/impor'] = 'pengguna/impor';
 $route['administrator/pengguna/insert'] = 'pengguna/insert';
 $route['administrator/pengguna/replace/(:any)'] = 'pengguna/replace/$1';
 $route['administrator/pengguna/delete/(:any)'] = 'pengguna/delete/$1';
