@@ -45,7 +45,7 @@
                                 <div class="clearfix"></div><br>
                                 <div class="form-group text-center">
                                     <div class="col-md-12">
-                                        <button class="btn btn-info btn-block btn-lg">Masuk</button>
+                                        <button class="btn btn-info btn-block btn-lg">masuk</button>
                                     </div>
                                 </div>
                             </div>
