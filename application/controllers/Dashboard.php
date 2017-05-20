@@ -11,7 +11,6 @@ class Dashboard extends CI_Controller {
         {
                 if ($this->session->userdata('hak_akses') == 'Ketua Jurusan') {
                     $data['title_bar'] = "Application";
-                    $data['folder'] = "";
                     $data['active'] = "Dashboard";
                     $data['page_title'] = "Page Title";
                     $data['query'] = "";
@@ -25,7 +24,6 @@ class Dashboard extends CI_Controller {
                     $this->parser->parse('template', $data);
                 } else if ($this->session->userdata('hak_akses') == 'Sekretaris Jurusan') {
                     $data['title_bar'] = "Application";
-                    $data['folder'] = "";
                     $data['active'] = "Dashboard";
                     $data['page_title'] = "Page Title";
                     $data['query'] = "";
@@ -39,7 +37,6 @@ class Dashboard extends CI_Controller {
                     $this->parser->parse('template', $data);
                 } else if ($this->session->userdata('hak_akses') == 'Koordinator TA') {
                     $data['title_bar'] = "Application";
-                    $data['folder'] = "";
                     $data['active'] = "Dashboard";
                     $data['page_title'] = "Page Title";
                     $data['query'] = "";
@@ -53,7 +50,6 @@ class Dashboard extends CI_Controller {
                     $this->parser->parse('template', $data);
                 } else if ($this->session->userdata('hak_akses') == 'Koordinator KP') {
                     $data['title_bar'] = "Application";
-                    $data['folder'] = "";
                     $data['active'] = "Dashboard";
                     $data['page_title'] = "Page Title";
                     $data['query'] = "";
@@ -67,7 +63,6 @@ class Dashboard extends CI_Controller {
                     $this->parser->parse('template', $data);
                 } else if ($this->session->userdata('hak_akses') == 'Kepala Laboratorium') {
                     $data['title_bar'] = "Application";
-                    $data['folder'] = "";
                     $data['active'] = "Dashboard";
                     $data['page_title'] = "Page Title";
                     $data['query'] = "";
@@ -81,7 +76,6 @@ class Dashboard extends CI_Controller {
                     $this->parser->parse('template', $data);
                 } else if ($this->session->userdata('hak_akses') == 'Dosen') {
                     $data['title_bar'] = "Application";
-                    $data['folder'] = "";
                     $data['active'] = "Dashboard";
                     $data['page_title'] = "Page Title";
                     $data['query'] = "";
@@ -95,7 +89,6 @@ class Dashboard extends CI_Controller {
                     $this->parser->parse('template', $data);
                 } else if ($this->session->userdata('hak_akses') == 'Pegawai') {
                     $data['title_bar'] = "Application";
-                    $data['folder'] = "";
                     $data['active'] = "Dashboard";
                     $data['page_title'] = "Page Title";
                     $data['query'] = "";
@@ -109,7 +102,6 @@ class Dashboard extends CI_Controller {
                 $this->parser->parse('template', $data);
                 } else if ($this->session->userdata('hak_akses') == 'Ketua Kelas') {
                     $data['title_bar'] = "Application";
-                    $data['folder'] = "";
                     $data['active'] = "Dashboard";
                     $data['page_title'] = "Page Title";
                     $data['query'] = "";

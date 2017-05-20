@@ -14,7 +14,7 @@
     </head>
     <body>
         <?php
-        if ($content == "home" | $content == "tentang" | $content == "kontak" | $content == "layanan/formulir-layanan/khs" | $content == "layanan/formulir-layanan/laboratorium/surat-pernyataan-bebas-praktikum" | $content == "layanan/formulir-layanan/kp/permohonan" | $content == "layanan/formulir-layanan/kp/seminar" | $content == "layanan/formulir-layanan/transkip-nilai-sementara" | $content == "layanan/formulir-layanan/transkip-nilai-akhir" | $content == "layanan/formulir-layanan/lainnya/surat-keterangan-aktif-kuliah" | $content == "layanan/formulir-layanan/lainnya/surat-keterangan-berkelakuan-baik" | $content == "layanan/formulir-layanan/lainnya/surat-keterangan-masih-kuliah" | $content == "layanan/formulir-layanan/lainnya/surat-keterangan-beasiswa" | $content == "layanan/formulir-layanan/ta/pengajuan-judul" | $content == "layanan/formulir-layanan/ta/seminar-proposal" | $content == "layanan/formulir-layanan/ta/seminar-hasil" | $content == "layanan/formulir-layanan/ta/sidang") {
+        if ($content == "home" | $content == "tentang" | $content == "layanan/formulir-layanan/khs" | $content == "layanan/formulir-layanan/laboratorium/surat-pernyataan-bebas-praktikum" | $content == "layanan/formulir-layanan/kp/permohonan" | $content == "layanan/formulir-layanan/kp/seminar" | $content == "layanan/formulir-layanan/transkip-nilai-sementara" | $content == "layanan/formulir-layanan/transkip-nilai-akhir" | $content == "layanan/formulir-layanan/lainnya/surat-keterangan-aktif-kuliah" | $content == "layanan/formulir-layanan/lainnya/surat-keterangan-berkelakuan-baik" | $content == "layanan/formulir-layanan/lainnya/surat-keterangan-masih-kuliah" | $content == "layanan/formulir-layanan/lainnya/surat-keterangan-beasiswa" | $content == "layanan/formulir-layanan/ta/pengajuan-judul" | $content == "layanan/formulir-layanan/ta/seminar-proposal" | $content == "layanan/formulir-layanan/ta/seminar-hasil" | $content == "layanan/formulir-layanan/ta/sidang") {
         ?>
         <!-- START PAGE CONTAINER -->
         <div class="page-container page-navigation-top">            
@@ -232,8 +232,9 @@
                     <?php 
                     } else if ($this->session->userdata('hak_akses') == 'Administrator') {
                     ?>
+                    <li <?php if ($active == "Pengumuman") { echo 'class="active"'; }?>><a href="<?php echo base_url(); ?>"><span class="fa fa-bullhorn"></span> <span class="xn-text">Pengumuman</span></a></li>
                     <li <?php if ($active == "Pengguna") { echo 'class="active"'; }?>><a href="<?php echo base_url(); ?>administrator/pengguna"><span class="fa fa-user"></span> <span class="xn-text">Pengguna</span></a></li>
-                    <li <?php if ($active == "Jadwal") { echo 'class="active"'; } ?>><a href="<?php echo base_url(); ?>"><span class="fa fa-clock-o"></span> <span class="xn-text">Jadwal</span></a></li>
+                    <li <?php if ($active == "Jadwal") { echo 'class="active"'; } ?>><a href="<?php echo base_url(); ?>administrator/jadwal"><span class="fa fa-clock-o"></span> <span class="xn-text">Jadwal</span></a></li>
                     <li <?php if ($active == "Laporan") { echo 'class="active"'; } ?>><a href="<?php echo base_url(); ?>"><span class="fa fa-folder-open"></span> <span class="xn-text">Laporan</span></a></li>
                     <?php
                     }
