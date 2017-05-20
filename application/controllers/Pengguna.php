@@ -173,38 +173,38 @@ class Pengguna extends CI_Controller {
             if ($this->session->userdata('hak_akses') == 'Administrator') {
                 $this->load->library('PHPExcel');
                 $file = new PHPExcel ();
-        $file->getProperties()->setCreator("Teknik Informatika UIN SUSKA Riau");
-        $file->getProperties()->setLastModifiedBy("Teknik Informatika UIN SUSKA Riau");
-        $file->createSheet(NULL, 0);
-        $file->setActiveSheetIndex(0);
-        $sheet = $file->getActiveSheet(0);
-        $sheet->setTitle("Daftar Anggota Pengguna");
-        $file->getDefaultStyle()
-                ->getAlignment()
-                ->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
-        $sheet->setCellValue("A1", "Identitas")
-                ->setCellValue("B1", "Email")
-                ->setCellValue("C1", "Nama Depan")
-                ->setCellValue("D1", "Nama Belakang")
-                ->setCellValue("E1", "Hak Akses");
-        $query = $this->pengguna_model->get_entries();
-        $i = 2;
-        while ($row = ) {
-            $sheet->setCellValue("A" . $i, $row["pengguna_id"])
-                    ->setCellValue("B" . $i, $row["email"])
-                    ->setCellValue("C" . $i, $row["nama_depan"])
-                    ->setCellValue("D" . $i, $row["nama_belakang"])
-                    ->setCellValue("E" . $i, $row["hak_akses"]);
-            $i++;
-        }
-        header('Content-Type: application/vnd.ms-excel');
-        header('Content-Disposition: attachment;filename="Daftar Anggota Perpustakaan.xls"');
-        header('Cache-Control: max-age=0');
-        $writer = \PHPExcel_IOFactory::createWriter($file, 'Excel5');
-        $writer->save('php://output');
+                $file->getProperties()->setCreator("Teknik Informatika UIN SUSKA Riau");
+                $file->getProperties()->setLastModifiedBy("Teknik Informatika UIN SUSKA Riau");
+                $file->createSheet(NULL, 0);
+                $file->setActiveSheetIndex(0);
+                $sheet = $file->getActiveSheet(0);
+                $sheet->setTitle("Daftar Anggota Pengguna");
+                $file->getDefaultStyle()
+                        ->getAlignment()
+                        ->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
+                $sheet->setCellValue("A1", "Identitas")
+                        ->setCellValue("B1", "Email")
+                        ->setCellValue("C1", "Nama Depan")
+                        ->setCellValue("D1", "Nama Belakang")
+                        ->setCellValue("E1", "Hak Akses");
+                $query = $this->pengguna_model->get_entries();
+                $i = 2;
+                foreach ($query as $datas):
+                    $sheet->setCellValue("A" . $i, $datas->pengguna_id)
+                            ->setCellValue("B" . $i, $datas->email)
+                            ->setCellValue("C" . $i, $datas->nama_depan)
+                            ->setCellValue("D" . $i, $datas->nama_belakang)
+                            ->setCellValue("E" . $i, $datas->hak_akses);
+                    $i++;
+                endforeach;
+                header('Content-Type: application/vnd.ms-excel');
+                header('Content-Disposition: attachment;filename="Daftar Pengguna.xls"');
+                header('Cache-Control: max-age=0');
+                $writer = \PHPExcel_IOFactory::createWriter($file, 'Excel5');
+                $writer->save('php://output');
                 redirect(base_url() . 'administrator/pengguna');
             } else {
-                redirect(base_url() . 'beranda');
+                redirect(base_url() . 'authentication');
             }
         }
         

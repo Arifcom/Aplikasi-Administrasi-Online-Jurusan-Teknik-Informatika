@@ -11,7 +11,11 @@ class Authentication extends CI_Controller {
 
         public function index()
         {
-                $this->load->view('authentication');
+                if($this->session->has_userdata('id')) {
+                    redirect(base_url() . 'dashboard');
+                } else {
+                    $this->load->view('authentication');
+                }
         }
         
         public function login()
