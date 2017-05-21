@@ -14,6 +14,7 @@ class Surat_keterangan_berkelakuan_baik_model extends CI_Model {
     
     public function insert_entry()
     {
+        $result = $this->upload->data();
         $data = array(
             'nama_depan'        => $this->input->post('nama_depan'),
             'nama_belakang'     => $this->input->post('nama_belakang'),
@@ -23,6 +24,7 @@ class Surat_keterangan_berkelakuan_baik_model extends CI_Model {
             'tanggal_lahir'     => $this->input->post('tanggal_lahir'),
             'alamat'            => $this->input->post('alamat'),
             'kontak_nomor'      => $this->input->post('kontak_nomor'),
+            'gambar'            => $result['file_name'],
             'status'            => 'Belum',
             'date'              => date('Y-m-d'),
             'time'              => date('H:i:s')
@@ -42,6 +44,7 @@ class Surat_keterangan_berkelakuan_baik_model extends CI_Model {
             'tanggal_lahir'     => $this->input->post('tanggal_lahir'),
             'alamat'            => $this->input->post('alamat'),
             'kontak_nomor'      => $this->input->post('kontak_nomor'),
+            'gambar'            => $this->input->post('gambar'),
             'status'            => $this->input->post('status'),
             'date'              => $this->input->post('date'),
             'time'              => $this->input->post('time')

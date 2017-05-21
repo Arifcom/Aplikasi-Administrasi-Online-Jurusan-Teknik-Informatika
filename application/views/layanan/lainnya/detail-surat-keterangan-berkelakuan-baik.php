@@ -14,9 +14,13 @@
                     </div>    
                 </div>
                 <div class="panel-body">
+                    <div class="row text-center">
+                        <img src="<?php echo base_url(); ?>assets/images/mahasiswa/ktm/<?php echo $datas->gambar ?>" class="img-thumbnail" height="200px" width="400px">
+                    </div>
                     <?php echo $this->session->flashdata('flash_data'); ?>
                         <div class="block">
                             <form id="jvalidate" role="form" class="form-horizontal" action="<?php echo base_url(); ?>pegawai/layanan/lainnya/surat-keterangan-berkelakuan-baik/replace/<?php echo $datas->surat_keterangan_berkelakuan_baik_id ?>" method="post">
+                            <input type="hidden" name="gambar" value="<?php echo $datas->gambar ?>"/>
                                 <div class="panel-body">                                    
                                     <div class="form-group">
                                         <label class="col-md-3 control-label">Nama Depan</label>  
