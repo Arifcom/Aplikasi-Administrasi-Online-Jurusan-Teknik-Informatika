@@ -33,16 +33,16 @@
                         <ul class="animated zoomIn">
                             <li><a href="<?php echo base_url(); ?>layanan/khs"> KHS</a></li>
                             <li class="xn-openable">
+                                <a href="#"> <span class="xn-text">Laboratorium</span></a>
+                                <ul class="animated zoomIn">
+                                    <li><a href="<?php echo base_url(); ?>layanan/laboratorium/surat-pernyataan-bebas-praktikum"> Surat Pernyataan Bebas Praktikum</a></li>
+                                </ul>
+                            </li>
+                            <li class="xn-openable">
                                 <a href="#"> <span class="xn-text">KP</span></a>
                                 <ul class="animated zoomIn">
                                     <li><a href="<?php echo base_url(); ?>layanan/kp/permohonan"> Permohonan</a></li>
                                     <li><a href="<?php echo base_url(); ?>layanan/kp/seminar"> Seminar</a></li>
-                                </ul>
-                            </li>
-                            <li class="xn-openable">
-                                <a href="#"> <span class="xn-text">Laboratorium</span></a>
-                                <ul class="animated zoomIn">
-                                    <li><a href="<?php echo base_url(); ?>layanan/laboratorium/surat-pernyataan-bebas-praktikum"> Surat Pernyataan Bebas Praktikum</a></li>
                                 </ul>
                             </li>
                             <li class="xn-openable">
