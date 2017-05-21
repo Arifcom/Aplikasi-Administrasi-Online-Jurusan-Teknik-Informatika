@@ -93,7 +93,7 @@
                                         <label class="col-md-3 control-label">Status</label>  
                                         <div class="col-md-6">
                                             <select class="form-control select" name="status">
-                                                <option selected><?php echo $datas->status ?> diproses</option>
+                                                <option value="<?php echo $datas->status ?>" selected><?php echo $datas->status ?> diproses</option>
                                                 <option value="Belum">Belum diproses</option>
                                                 <option value="Sedang">Sedang diproses</option>
                                                 <option value="Selesai">Selesai diproses</option>
