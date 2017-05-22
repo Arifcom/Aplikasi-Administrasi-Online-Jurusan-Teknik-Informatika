@@ -429,4 +429,44 @@ class Sidang extends CI_Controller {
                 }
                 redirect(base_url() . 'layanan/ta/sidang');
         }
+        
+        public function replace($id)
+        {
+                if ($this->session->userdata('hak_akses') == 'Pegawai') {
+                    $this->ta_sidang_model->update_entry($id);
+                    $this->session->set_flashdata('flash_data',
+                        '
+                        <div class="col-md-3"></div>
+                        <div class="col-md-6">
+                        <div class="alert alert-info" role="alert">
+                        <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <strong>Surat permohonan berhasil disimpan.</strong>
+                        </div>
+                        </div>
+                        <div class="col-md-3"></div>
+                        '
+                    );
+                    redirect(base_url() . 'pegawai/layanan/ta/sidang/' . $id);
+                } else {
+                    redirect(base_url() . 'authentication');
+                }
+        }    
+        
+        public function delete($id)
+        {
+                if ($this->session->userdata('hak_akses') == 'Pegawai') {
+                    $this->ta_sidang_model->delete_entry($id);
+                    $this->session->set_flashdata('flash_data',
+                        '
+                        <div class="alert alert-danger" role="alert">
+                        <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <strong>Satu surat permohonan berhasil dihapus.</strong>
+                        </div>
+                        '
+                    );
+                    redirect(base_url() . 'pegawai/layanan/ta/sidang');
+                } else {
+                    redirect(base_url() . 'authentication');
+                }
+        }
 }
