@@ -14,6 +14,7 @@ class TA_sidang_model extends CI_Model {
     
     public function insert_entry()
     {
+        $result = $this->upload->data();
         $data = array(
             'nama_depan'        => $this->input->post('nama_depan'),
             'nama_belakang'     => $this->input->post('nama_belakang'),
@@ -26,6 +27,7 @@ class TA_sidang_model extends CI_Model {
             'tanggal_sidang'      => $this->input->post('tanggal_sidang'),
             'waktu_sidang'      => $this->input->post('waktu_sidang'),
             'tempat_sidang'      => $this->input->post('tempat_sidang'),
+            'gambar'            => $result['file_name'],
             'status'            => 'Belum',
             'date'              => date('Y-m-d'),
             'time'              => date('H:i:s')
@@ -48,6 +50,8 @@ class TA_sidang_model extends CI_Model {
             'tanggal_sidang'      => $this->input->post('tanggal_sidang'),
             'waktu_sidang'      => $this->input->post('waktu_sidang'),
             'tempat_sidang'      => $this->input->post('tempat_sidang'),
+            'gambar'            => $this->input->post('gambar'),
+            'status'            => $this->input->post('status'),
             'date'              => $this->input->post('date'),
             'time'              => $this->input->post('time')
         );

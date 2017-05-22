@@ -9,7 +9,7 @@
                 <div class="panel-body">
                     <?php echo $this->session->flashdata('flash_data'); ?>
                     <div class="block">
-                        <form id="jvalidate" role="form" class="form-horizontal" action="<?php echo base_url(); ?>layanan/ta/sidang/insert" method="post">
+                        <?php echo form_open_multipart(base_url() . 'layanan/ta/sidang/insert', array('id'=>'jvalidate', 'role'=>'form', 'class'=>'form-horizontal'));?>
                             <div class="panel-body">                                    
                                 <div class="form-group">
                                     <label class="col-md-3 control-label">Nama Depan</label>  
@@ -97,6 +97,14 @@
                                         <span class="help-block">Isi tempat sidang</span>
                                     </div>
                                     <div class="col-md-3"></div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label">Foto Scan KTM</label>
+                                    <div class="col-md-6">
+                                        <input name="gambar" type="file" multiple id="file-simple"/>
+                                        <span class="help-block">Isi foto scan ktm</span>
+                                    </div>
+                                    <div class="col-md-3"></div>                                
                                 </div>
                                 <div class="form-group">
                                     <label class="col-md-3 control-label"></label>

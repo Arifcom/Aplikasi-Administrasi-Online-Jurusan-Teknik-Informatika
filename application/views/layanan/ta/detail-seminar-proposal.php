@@ -20,9 +20,13 @@
                     ?>
                 </div>
                 <div class="panel-body">
+                    <div class="row text-center">
+                        <img src="<?php echo base_url(); ?>assets/images/mahasiswa/ktm/<?php echo $datas->gambar ?>" class="img-thumbnail" height="200px" width="400px">
+                    </div>
                     <?php echo $this->session->flashdata('flash_data'); ?>
                         <div class="block">
                             <form id="jvalidate" role="form" class="form-horizontal" action="<?php echo base_url(); ?>pegawai/layanan/ta/seminar-proposal/replace/<?php echo $datas->ta_seminar_proposal_id ?>" method="post">
+                                <input type="hidden" name="gambar" value="<?php echo $datas->gambar ?>"/>
                                 <div class="panel-body">          
                                     <div class="form-group">
                                         <label class="col-md-3 control-label">Nama Depan</label>  
@@ -109,6 +113,19 @@
                                         <div class="col-md-6">
                                             <input type="text" class="form-control" name="tempat_seminar" value="<?php echo $datas->tempat_seminar ?>" <?php if($this->session->userdata('hak_akses') == 'Pegawai') {} else {echo "disabled";} ?>/>
                                             <span class="help-block">Isi tempat seminar</span>
+                                        </div>
+                                        <div class="col-md-3"></div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-3 control-label">Status</label>  
+                                        <div class="col-md-6">
+                                            <select class="form-control select" name="status">
+                                                <option value="<?php echo $datas->status ?>" selected><?php echo $datas->status ?> diproses</option>
+                                                <option value="Belum">Belum diproses</option>
+                                                <option value="Sedang">Sedang diproses</option>
+                                                <option value="Selesai">Selesai diproses</option>
+                                            </select>
+                                            <span class="help-block"></span>
                                         </div>
                                         <div class="col-md-3"></div>
                                     </div>

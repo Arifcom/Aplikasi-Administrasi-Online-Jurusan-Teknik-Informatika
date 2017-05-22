@@ -14,6 +14,7 @@ class TA_seminar_proposal_model extends CI_Model {
     
     public function insert_entry()
     {
+        $result = $this->upload->data();
         $data = array(
             'nama_depan'        => $this->input->post('nama_depan'),
             'nama_belakang'     => $this->input->post('nama_belakang'),
@@ -26,6 +27,7 @@ class TA_seminar_proposal_model extends CI_Model {
             'tanggal_seminar'      => $this->input->post('tanggal_seminar'),
             'waktu_seminar'      => $this->input->post('waktu_seminar'),
             'tempat_seminar'      => $this->input->post('tempat_seminar'),
+            'gambar'            => $result['file_name'],
             'status'            => 'Belum',
             'date'              => date('Y-m-d'),
             'time'              => date('H:i:s')
@@ -48,6 +50,8 @@ class TA_seminar_proposal_model extends CI_Model {
             'tanggal_seminar'      => $this->input->post('tanggal_seminar'),
             'waktu_seminar'      => $this->input->post('waktu_seminar'),
             'tempat_seminar'      => $this->input->post('tempat_seminar'),
+            'gambar'            => $this->input->post('gambar'),
+            'status'            => $this->input->post('status'),
             'date'              => $this->input->post('date'),
             'time'              => $this->input->post('time')
         );
