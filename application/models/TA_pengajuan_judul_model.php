@@ -24,6 +24,7 @@ class TA_pengajuan_judul_model extends CI_Model {
     
     public function insert_entry()
     {
+        $result = $this->upload->data();
         $data = array(
             'nama_depan'        => $this->input->post('nama_depan'),
             'nama_belakang'     => $this->input->post('nama_belakang'),
@@ -32,6 +33,7 @@ class TA_pengajuan_judul_model extends CI_Model {
             'judul'             => $this->input->post('judul'),
             'calon_pembimbing'  => $this->input->post('calon_pembimbing'),
             'status_calon_pembimbing'  => 'Ditolak',
+            'file'            => $result['file_name'],
             'date'              => date('Y-m-d'),
             'time'              => date('H:i:s')
         );
@@ -48,6 +50,7 @@ class TA_pengajuan_judul_model extends CI_Model {
             'email'                                 => $this->input->post('email'),
             'judul'                                 => $this->input->post('judul'),
             'calon_pembimbing'                      => $this->input->post('calon_pembimbing'),
+            'file'                      => $this->input->post('file'),
             'date'                                  => $this->input->post('date'),
             'time'                                  => $this->input->post('time')
         );

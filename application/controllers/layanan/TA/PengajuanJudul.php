@@ -271,19 +271,40 @@ class PengajuanJudul extends CI_Controller {
         
         public function insert()
         {
-                $this->ta_pengajuan_judul_model->insert_entry();
-                $this->session->set_flashdata('flash_data',
-                        '
-                        <div class="col-md-3"></div>
-                        <div class="col-md-6">
-                        <div class="alert alert-info" role="alert">
-                        <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                        <strong>Surat permohonan Anda berhasil disimpan dan akan segera diproses.</strong>
-                        </div>
-                        </div>
-                        <div class="col-md-3"></div>
-                        '
-                );
+                $config['upload_path'] = './assets/files/ta/';
+                $config['allowed_types'] = 'zip|rar';
+                $this->load->library('upload', $config);
+                if ( ! $this->upload->do_upload('file'))
+                {
+                        $this->session->set_flashdata('flash_data',
+                                '
+                                <div class="col-md-3"></div>
+                                <div class="col-md-6">
+                                <div class="alert alert-danger" role="alert">
+                                <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                                <strong>Gagal mengupload file.</strong>
+                                </div>
+                                </div>
+                                <div class="col-md-3"></div>
+                                '
+                        );
+                }
+                else
+                {
+                        $this->ta_pengajuan_judul_model->insert_entry();
+                        $this->session->set_flashdata('flash_data',
+                                '
+                                <div class="col-md-3"></div>
+                                <div class="col-md-6">
+                                <div class="alert alert-info" role="alert">
+                                <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                                <strong>Surat permohonan Anda berhasil disimpan dan akan segera diproses.</strong>
+                                </div>
+                                </div>
+                                <div class="col-md-3"></div>
+                                '
+                        );
+                }
                 redirect(base_url() . 'layanan/ta/pengajuan-judul');
         }
         
@@ -394,5 +415,14 @@ class PengajuanJudul extends CI_Controller {
                 } else {
                     redirect(base_url() . 'authentication');
                 }
-        }    
+        }
+        
+        public function download($file)
+        {
+            if ($this->session->userdata('hak_akses') == 'Koordinator TA' | $this->session->userdata('hak_akses') == 'Dosen') {
+                force_download('./assets/files/ta/' . $file, NULL);
+            } else {
+                redirect(base_url() . 'authentication');
+            }
+        }
 }

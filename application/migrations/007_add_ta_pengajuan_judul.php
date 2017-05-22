@@ -52,6 +52,7 @@ class Migration_Add_ta_pengajuan_judul extends CI_Migration {
                         array(
                                 'type'          => 'ENUM("Terima","Terima Bersyarat","Revisi","Tolak")',
                                 'null'          => FALSE,
+                                'default'       => 'Tolak'
                         ),
                         'komentar'=>
                         array(

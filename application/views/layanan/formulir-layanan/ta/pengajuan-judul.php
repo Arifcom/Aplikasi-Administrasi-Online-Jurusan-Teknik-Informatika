@@ -9,7 +9,7 @@
                 <div class="panel-body">
                     <?php echo $this->session->flashdata('flash_data'); ?>
                     <div class="block">
-                        <form id="jvalidate" role="form" class="form-horizontal" action="<?php echo base_url(); ?>layanan/ta/pengajuan-judul/insert" method="post">
+                        <?php echo form_open_multipart(base_url() . 'layanan/ta/pengajuan-judul/insert', array('id'=>'jvalidate', 'role'=>'form', 'class'=>'form-horizontal'));?>
                             <div class="panel-body">                                    
                                 <div class="form-group">
                                     <label class="col-md-3 control-label">Nama Depan</label>  
@@ -65,7 +65,15 @@
                                         </select>
                                         <span class="help-block">Pilih Calon Pembimbing</span>
                                     </div>
-                                </div> 
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label">File Persyaratan</label>
+                                    <div class="col-md-6">
+                                        <input name="file" type="file" multiple id="file-simple"/>
+                                        <span class="help-block">Isi file persyaratan</span>
+                                    </div>
+                                    <div class="col-md-3"></div>                                
+                                </div>
                                 <div class="form-group">
                                     <label class="col-md-3 control-label"></label>
                                     <div class="col-md-6">

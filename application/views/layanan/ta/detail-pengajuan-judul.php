@@ -6,6 +6,21 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h3 class="panel-title">Detail Pengajuan Judul</h3>
+                    <div class="btn-group pull-right">
+                        <div>
+                            <?php            
+                            if($this->session->userdata('hak_akses') == 'Koordinator TA') {
+                            ?>
+                            <a href="<?php echo base_url(); ?>koordinator-ta/layanan/ta/pengajuan-judul/download/<?php echo $datas->file ?>" class="btn btn-default" type="button">File</a>
+                            <?php
+                            } else if($this->session->userdata('hak_akses') == 'Dosen') {
+                            ?>
+                            <a href="<?php echo base_url(); ?>dosen/layanan/ta/pengajuan-judul/download/<?php echo $datas->file ?>" class="btn btn-default" type="button">File</a>
+                            <?php
+                            }
+                            ?>
+                        </div>
+                    </div>
                 </div>
                 <div class="panel-body">
                     <?php echo $this->session->flashdata('flash_data'); ?>
@@ -21,6 +36,7 @@
                             <?php
                             }
                             ?>
+                            <input type="hidden" name="file" value="<?php echo $datas->file ?>"/>
                                 <div class="panel-body">          
                                     <div class="form-group">
                                         <label class="col-md-3 control-label">Nama Depan</label>  
