@@ -66,6 +66,12 @@ class Migration_Add_kp_seminar extends CI_Migration {
                                 'type'          => 'VARCHAR',
                                 'constraint'    => '50'
                         ),
+                        'keterangan'=>
+                        array(
+                                'type'          => 'ENUM("Memohon pembuatan surat seminar kp.")',
+                                'null'          => FALSE,
+                                'default'       => 'Memohon pembuatan surat seminar kp.',
+                        ),
                         'status'=>
                         array(
                                 'type'          => 'ENUM("Belum","Sedang","Selesai")',

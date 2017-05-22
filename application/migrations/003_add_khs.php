@@ -43,6 +43,12 @@ class Migration_Add_khs extends CI_Migration {
                                 'type'          => 'VARCHAR',
                                 'constraint'    => '50'
                         ),
+                        'keterangan'=>
+                        array(
+                                'type'          => 'ENUM("Memohon pembuatan surat khs.")',
+                                'null'          => FALSE,
+                                'default'       => 'Memohon pembuatan surat khs.',
+                        ),
                         'status'=>
                         array(
                                 'type'          => 'ENUM("Belum","Sedang","Selesai")',

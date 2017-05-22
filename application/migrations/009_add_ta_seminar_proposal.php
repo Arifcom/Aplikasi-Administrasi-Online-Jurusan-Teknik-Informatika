@@ -66,6 +66,17 @@ class Migration_Add_ta_seminar_proposal extends CI_Migration {
                                 'type'          => 'VARCHAR',
                                 'constraint'    => '50'
                         ),
+                        'gambar'=>
+                        array(
+                                'type'          => 'VARCHAR',
+                                'constraint'    => '50'
+                        ),
+                        'keterangan'=>
+                        array(
+                                'type'          => 'ENUM("Memohon pembuatan surat proposal hasil ta.")',
+                                'null'          => FALSE,
+                                'default'       => 'Memohon pembuatan surat proposal hasil ta.',
+                        ),
                         'status'=>
                         array(
                                 'type'          => 'ENUM("Belum","Sedang","Selesai")',

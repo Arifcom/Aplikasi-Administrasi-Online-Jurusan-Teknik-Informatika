@@ -38,6 +38,17 @@ class Migration_Add_laboratorium_surat extends CI_Migration {
                                 'type'          => 'VARCHAR',
                                 'constraint'    => '50'
                         ),
+                        'gambar'=>
+                        array(
+                                'type'          => 'VARCHAR',
+                                'constraint'    => '50'
+                        ),
+                        'keterangan'=>
+                        array(
+                                'type'          => 'ENUM("Memohon pembuatan surat pernyataan bebas praktikum.")',
+                                'null'          => FALSE,
+                                'default'       => 'Memohon pembuatan surat pernyataan bebas praktikum.',
+                        ),
                         'status'=>
                         array(
                                 'type'          => 'ENUM("Belum","Sedang","Selesai")',

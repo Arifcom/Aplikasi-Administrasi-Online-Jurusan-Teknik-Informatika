@@ -57,6 +57,11 @@ class Migration_Add_ta_pengajuan_judul extends CI_Migration {
                         array(
                                 'type'          => 'TEXT'
                         ),
+                        'file'=>
+                        array(
+                                'type'          => 'VARCHAR',
+                                'constraint'    => '50'
+                        ),
                         'date'=>
                         array(
                                 'type'          => 'DATE'

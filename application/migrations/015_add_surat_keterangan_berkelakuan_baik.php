@@ -57,6 +57,12 @@ class Migration_Add_surat_keterangan_berkelakuan_baik extends CI_Migration {
                                 'type'          => 'VARCHAR',
                                 'constraint'    => '50'
                         ),
+                        'keterangan'=>
+                        array(
+                                'type'          => 'ENUM("Memohon pembuatan surat keterangan berkelakuan baik.")',
+                                'null'          => FALSE,
+                                'default'       => 'Memohon pembuatan surat keterangan berkelakuan baik.',
+                        ),
                         'status'=>
                         array(
                                 'type'          => 'ENUM("Belum","Sedang","Selesai")',

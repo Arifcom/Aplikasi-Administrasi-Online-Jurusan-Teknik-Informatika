@@ -63,6 +63,12 @@ class Migration_Add_kp_permohonan extends CI_Migration {
                                 'type'          => 'VARCHAR',
                                 'constraint'    => '50'
                         ),
+                        'keterangan'=>
+                        array(
+                                'type'          => 'ENUM("Memohon pembuatan surat permohonan kp.")',
+                                'null'          => FALSE,
+                                'default'       => 'Memohon pembuatan surat permohonan kp.',
+                        ),
                         'status'=>
                         array(
                                 'type'          => 'ENUM("Belum","Sedang","Selesai")',

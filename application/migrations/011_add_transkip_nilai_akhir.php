@@ -64,6 +64,17 @@ class Migration_Add_transkip_nilai_akhir extends CI_Migration {
                                 'type'          => 'VARCHAR',
                                 'constraint'    => '50'
                         ),
+                        'gambar'=>
+                        array(
+                                'type'          => 'VARCHAR',
+                                'constraint'    => '50'
+                        ),
+                        'keterangan'=>
+                        array(
+                                'type'          => 'ENUM("Memohon pembuatan surat transkip nilai akhir.")',
+                                'null'          => FALSE,
+                                'default'       => 'Memohon pembuatan surat transkip nilai akhir.',
+                        ),
                         'status'=>
                         array(
                                 'type'          => 'ENUM("Belum","Sedang","Selesai")',

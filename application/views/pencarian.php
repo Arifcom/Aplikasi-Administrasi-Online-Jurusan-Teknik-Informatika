@@ -30,7 +30,7 @@
                                 <tr>
                                     <td style='text-align: center;'>$datas->nim</td>
                                     <td style='text-align: left;'>$datas->nama_depan $datas->nama_belakang</td>
-                                    <td style='text-align: left;'></td>
+                                    <td style='text-align: left;'>$datas->keterangan</td>
                                     <td style='text-align: center;'>$datas->status diproses</td>
                                 </tr>
                                 ";

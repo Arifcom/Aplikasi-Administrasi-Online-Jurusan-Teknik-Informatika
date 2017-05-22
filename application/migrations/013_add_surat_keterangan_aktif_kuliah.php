@@ -57,6 +57,12 @@ class Migration_Add_surat_keterangan_aktif_kuliah extends CI_Migration {
                                 'type'          => 'VARCHAR',
                                 'constraint'    => '50'
                         ),
+                        'keterangan'=>
+                        array(
+                                'type'          => 'ENUM("Memohon pembuatan surat keterangan aktif kuliah.")',
+                                'null'          => FALSE,
+                                'default'       => 'Memohon pembuatan surat keterangan aktif kuliah.',
+                        ),
                         'status'=>
                         array(
                                 'type'          => 'ENUM("Belum","Sedang","Selesai")',
