@@ -127,6 +127,7 @@ $route['pegawai/layanan/khs/delete/(:num)'] = 'layanan/khs/delete/$1';
 $route['pegawai/layanan/kp/permohonan'] = 'layanan/kp/permohonan';
 $route['pegawai/layanan/kp/seminar'] = 'layanan/kp/seminar';
 $route['pegawai/layanan/laboratorium/surat-pernyataan-bebas-praktikum'] = 'layanan/suratpernyataanbebaspraktikum';
+$route['pegawai/layanan/laboratorium/surat-pernyataan-bebas-praktikum/(:num)'] = 'layanan/suratpernyataanbebaspraktikum/detail/$1';
 $route['pegawai/layanan/ta/pengajuan-judul'] = 'layanan/ta/pengajuanjudul';
 $route['pegawai/layanan/ta/seminar-proposal'] = 'layanan/ta/seminarproposal';
 $route['pegawai/layanan/ta/seminar-proposal/(:num)'] = 'layanan/ta/seminarproposal/detail/$1';

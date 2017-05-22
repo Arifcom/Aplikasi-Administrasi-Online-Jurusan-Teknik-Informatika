@@ -46,7 +46,7 @@ class KHS_model extends CI_Model {
         return $this->db->replace('khs', $data);
     }
     
-     public function delete_entry($id) {
+    public function delete_entry($id) {
         $this->db->delete('khs', array('khs_id' => $id));
     }
     

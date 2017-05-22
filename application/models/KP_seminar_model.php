@@ -7,6 +7,11 @@ class KP_seminar_model extends CI_Model {
         return $query->result();
     }
     
+    public function get_where_entries($id) {
+        $query = $this->db->get_where('kp_seminar', array('kp_seminar_id' => $id));
+        return $query->result();
+    }
+    
     public function insert_entry()
     {
         $result = $this->upload->data();
@@ -27,6 +32,10 @@ class KP_seminar_model extends CI_Model {
             'time'              => date('H:i:s')
         );
         return $this->db->insert('kp_seminar', $data);
+    }
+    
+    public function delete_entry($id) {
+        $this->db->delete('kp_seminar', array('kp_seminar_id' => $id));
     }
     
 }

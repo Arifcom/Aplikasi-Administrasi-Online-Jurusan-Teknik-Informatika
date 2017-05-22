@@ -64,7 +64,7 @@
                                         <td style='text-align: center;'>$datas->time</td>
                                         <td style='text-align: center;'>$datas->status diproses</td>
                                         <td style='text-align: center;'>
-                                        <a href='" . base_url() . "pegawai/layanan/kp/seminar/$datas->laboratorium_surat_id'>
+                                        <a href='" . base_url() . "pegawai/layanan/laboratorium/surat-pernyataan-bebas-praktikum/$datas->laboratorium_surat_id'>
                                         <span class='fa fa-eye'></span>
                                         </a>
                                         </td>

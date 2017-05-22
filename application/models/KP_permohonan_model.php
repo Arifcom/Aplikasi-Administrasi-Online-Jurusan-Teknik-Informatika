@@ -7,6 +7,11 @@ class KP_permohonan_model extends CI_Model {
         return $query->result();
     }
     
+    public function get_where_entries($id) {
+        $query = $this->db->get_where('kp_permohonan', array('kp_permohonan_id' => $id));
+        return $query->result();
+    }
+    
     public function insert_entry()
     {
         $data = array(
@@ -25,5 +30,9 @@ class KP_permohonan_model extends CI_Model {
             'time'              => date('H:i:s')
         );
         return $this->db->insert('kp_permohonan', $data);
+    }
+    
+    public function delete_entry($id) {
+        $this->db->delete('kp_permohonan', array('kp_permohonan_id' => $id));
     }
 }
