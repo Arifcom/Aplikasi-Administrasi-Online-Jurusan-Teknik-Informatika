@@ -15,7 +15,7 @@ class SuratPernyataanBebasPraktikum extends CI_Controller {
                 $data['title_bar'] = "Application";
                 $data['active'] = "Surat Pernyataan Bebas Praktikum";
                 $data['page_title'] = "Surat Pernyataan Bebas Praktikum";
-                $data['query'] = "";
+                $data['query'] = $this->laboratorium_surat_pernyataan_bebas_praktikum_model->get_entries();
                 $data['activity'] = $this->log_aktifitas_model->get_where_entries();
                 $data['content'] = "layanan/laboratorium/surat-pernyataan-bebas-praktikum";
                 $data['this_page_plugin'] =
@@ -31,7 +31,7 @@ class SuratPernyataanBebasPraktikum extends CI_Controller {
                 $data['title_bar'] = "Application";
                 $data['active'] = "Surat Pernyataan Bebas Praktikum";
                 $data['page_title'] = "Surat Pernyataan Bebas Praktikum";
-                $data['query'] = "";
+                $data['query'] = $this->laboratorium_surat_pernyataan_bebas_praktikum_model->get_entries();
                 $data['activity'] = $this->log_aktifitas_model->get_where_entries();
                 $data['content'] = "layanan/laboratorium/surat-pernyataan-bebas-praktikum";
                 $data['this_page_plugin'] =

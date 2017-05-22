@@ -15,7 +15,7 @@ class Seminar extends CI_Controller {
                 $data['title_bar'] = "Application";
                 $data['active'] = "Seminar";
                 $data['page_title'] = "Seminar";
-                $data['query'] = "";
+                $data['query'] = $this->kp_seminar_model->get_entries();
                 $data['activity'] = $this->log_aktifitas_model->get_where_entries();
                 $data['content'] = "layanan/kp/seminar";
                 $data['this_page_plugin'] =
@@ -31,7 +31,7 @@ class Seminar extends CI_Controller {
                 $data['title_bar'] = "Application";
                 $data['active'] = "Seminar";
                 $data['page_title'] = "Seminar";
-                $data['query'] = "";
+                $data['query'] = $this->kp_seminar_model->get_entries();
                 $data['activity'] = $this->log_aktifitas_model->get_where_entries();
                 $data['content'] = "layanan/kp/seminar";
                 $data['this_page_plugin'] =

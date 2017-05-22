@@ -15,7 +15,7 @@ class Permohonan extends CI_Controller {
                 $data['title_bar'] = "Application";
                 $data['active'] = "Permohonan";
                 $data['page_title'] = "Permohonan";
-                $data['query'] = "";
+                $data['query'] = $this->kp_permohonan_model->get_entries();
                 $data['activity'] = $this->log_aktifitas_model->get_where_entries();
                 $data['content'] = "layanan/kp/permohonan";
                 $data['this_page_plugin'] =
@@ -31,7 +31,7 @@ class Permohonan extends CI_Controller {
                 $data['title_bar'] = "Application";
                 $data['active'] = "Permohonan";
                 $data['page_title'] = "Permohonan";
-                $data['query'] = "";
+                $data['query'] = $this->kp_permohonan_model->get_entries();
                 $data['activity'] = $this->log_aktifitas_model->get_where_entries();
                 $data['content'] = "layanan/kp/permohonan";
                 $data['this_page_plugin'] =
@@ -70,36 +70,7 @@ class Permohonan extends CI_Controller {
                             var jvalidate = $("#jvalidate").validate({
                                 ignore: [],
                                 rules: {                                            
-                                        nama_depan: {
-                                                required: true
-                                        },
-                                        nama_belakang: {
-                                                required: true
-                                        },
-                                        nim: {
-                                                required: true,
-                                                maxlength: 11
-                                        },
-                                        semester: {
-                                                required: true,
-                                                maxlength: 11
-                                        },
-                                        alamat: {
-                                                required: true,
-                                                maxlength: 11
-                                        },
-                                        kontak: {
-                                                required: true,
-                                                maxlength: 11
-                                        },
-                                        judul: {
-                                                required: true,
-                                                maxlength: 11
-                                        },
-                                        waktu: {
-                                                required: true,
-                                                maxlength: 11
-                                        },
+                                        
                                     }                                        
                                 });                                    
                         </script>

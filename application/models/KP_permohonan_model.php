@@ -2,6 +2,11 @@
 
 class KP_permohonan_model extends CI_Model {
     
+    public function get_entries() {
+        $query = $this->db->get('kp_permohonan');
+        return $query->result();
+    }
+    
     public function insert_entry()
     {
         $data = array(

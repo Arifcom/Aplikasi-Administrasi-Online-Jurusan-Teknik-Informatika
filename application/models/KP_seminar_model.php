@@ -2,6 +2,11 @@
 
 class KP_seminar_model extends CI_Model {
     
+    public function get_entries() {
+        $query = $this->db->get('kp_seminar');
+        return $query->result();
+    }
+    
     public function insert_entry()
     {
         $result = $this->upload->data();
