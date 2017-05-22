@@ -7,7 +7,7 @@
                 <h3 style="margin-top: 40px;">Teknik Informatika</h3>
             </div>
             <div class="clearfix"></div><br>
-            <div class="row text-center">
+            <div class="row text-center animated zoomInUp">
                 <h1 style="font-family: 'Lato','Helvetica Neue',Helvetica,Arial,sans-serif; font-size: 80px;"><b>Selamat Datang</b></h1>
                 <h3 style="font-family: 'Lato','Helvetica Neue',Helvetica,Arial,sans-serif; font-size: 25px;">Sistem Layanan Jurusan Teknik Informatika</h3>
             </div>

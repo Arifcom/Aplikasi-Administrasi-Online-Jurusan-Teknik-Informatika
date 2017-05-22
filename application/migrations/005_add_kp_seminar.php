@@ -28,12 +28,40 @@ class Migration_Add_kp_seminar extends CI_Migration {
                                 'type'          => 'VARCHAR',
                                 'constraint'    => '50'
                         ),
-                        'semester'=>
+                        'judul'=>
                         array(
-                                'type'          => 'INT',
-                                'constraint'    => '2'
+                                'type'          => 'TEXT'
                         ),
-                        'kontak_nomor'=>
+                        'instansi'=>
+                        array(
+                                'type'          => 'VARCHAR',
+                                'constraint'    => '50'
+                        ),
+                        'waktu_pelaksanaan'=>
+                        array(
+                                'type'          => 'VARCHAR',
+                                'constraint'    => '50'
+                        ),
+                        'pembimbing'=>
+                        array(
+                                'type'          => 'VARCHAR',
+                                'constraint'    => '50'
+                        ),
+                        'tanggal_seminar'=>
+                        array(
+                                'type'          => 'DATE'
+                        ),
+                        'waktu_seminar'=>
+                        array(
+                                'type'          => 'VARCHAR',
+                                'constraint'    => '50'
+                        ),
+                        'tempat_seminar'=>
+                        array(
+                                'type'          => 'VARCHAR',
+                                'constraint'    => '50'
+                        ),
+                        'gambar'=>
                         array(
                                 'type'          => 'VARCHAR',
                                 'constraint'    => '50'
