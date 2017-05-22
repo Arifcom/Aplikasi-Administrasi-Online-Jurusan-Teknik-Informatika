@@ -149,6 +149,54 @@
                         <li <?php if ($active == "Jadwal") { echo 'class="active"'; } ?>><a href="<?php echo base_url(); ?>ketua-jurusan/jadwal"><span class="fa fa-clock-o"></span> <span class="xn-text">Jadwal</span></a></li>
                     </li>
                     <?php
+                    } else if ($this->session->userdata('hak_akses') == 'Sekretaris Jurusan') {
+                    ?>
+                    <li class="xn-openable <?php if ($active == "KHS" | $active == "Permohonan" | $active == "Seminar" | $active == "Surat Pernyataan Bebas Praktikum" | $active == "Transkip Nilai Sementara" | $active == "Transkip Nilai Akhir" | $active == "KP" | $active == "TA" | $active == "Surat Keterangan Aktif Kuliah" | $active == "Surat Keterangan Beasiswa" | $active == "Surat Keterangan Berkelakuan Baik" | $active == "Surat Keterangan Masih Kuliah" | $active == "Pengajuan Judul" | $active == "Seminar Proposal" | $active == "Seminar Hasil" | $active == "Sidang") { echo 'active'; } ?>">
+                        <a href="#"><span class="fa fa-users"></span> <span class="xn-text">Layanan</span></a>
+                        <ul>
+                            <li <?php if ($active == "KHS") { echo 'class="active"'; } ?>><a href="<?php echo base_url(); ?>ketua-jurusan/layanan/khs"> KHS</a></li>
+                            <li class="xn-openable <?php if ($active == "Permohonan" | $active == "Seminar") { echo 'active'; } ?>">
+                                <a href="#"> <span class="xn-text">KP</span></a>
+                                <ul>
+                                    <li <?php if ($active == "Permohonan") { echo 'class="active"'; } ?>><a href="<?php echo base_url(); ?>ketua-jurusan/layanan/kp/permohonan"> Permohonan</a></li>
+                                    <li <?php if ($active == "Seminar") { echo 'class="active"'; } ?>><a href="<?php echo base_url(); ?>ketua-jurusan/layanan/kp/seminar"> Seminar</a></li>
+                                </ul>
+                            </li>
+                            <li class="xn-openable <?php if ($active == "Surat Pernyataan Bebas Praktikum") { echo 'active'; } ?>">
+                                <a href="#"> <span class="xn-text">Laboratorium</span></a>
+                                <ul>
+                                    <li <?php if ($active == "Surat Pernyataan Bebas Praktikum") { echo 'class="active"'; } ?>><a href="<?php echo base_url(); ?>ketua-jurusan/layanan/laboratorium/surat-pernyataan-bebas-praktikum"> Surat Pernyataan Bebas Praktikum</a></li>
+                                </ul>
+                            </li>
+                            <li class="xn-openable <?php if ($active == "Pengajuan Judul" | $active == "Seminar Proposal" | $active == "Seminar Hasil" | $active == "Sidang") { echo 'active'; } ?>">
+                                <a href="#"> TA</a>
+                                <ul>
+                                    <li <?php if ($active == "Pengajuan Judul") { echo 'class="active"'; } ?>><a href="<?php echo base_url(); ?>ketua-jurusan/layanan/ta/pengajuan-judul"> Penagajuan Judul</a></li>
+                                    <li <?php if ($active == "Seminar Proposal") { echo 'class="active"'; } ?>><a href="<?php echo base_url(); ?>ketua-jurusan/layanan/ta/seminar-proposal"> Seminar Proposal</a></li>
+                                    <li <?php if ($active == "Seminar Hasil") { echo 'class="active"'; } ?>><a href="<?php echo base_url(); ?>ketua-jurusan/layanan/ta/seminar-hasil"> Seminar Hasil</a></li>
+                                    <li <?php if ($active == "Sidang") { echo 'class="active"'; } ?>><a href="<?php echo base_url(); ?>ketua-jurusan/layanan/ta/sidang"> Sidang</a></li>
+                                </ul>
+                            </li>
+                            <li class="xn-openable <?php if ($active == "Transkip Nilai Sementara" | $active == "Transkip Nilai Akhir") { echo 'active'; } ?>">
+                                <a href="#"> Transkip Nilai</a>
+                                <ul>
+                                    <li <?php if ($active == "Transkip Nilai Sementara") { echo 'class="active"'; } ?>><a href="<?php echo base_url(); ?>ketua-jurusan/layanan/transkip-nilai-sementara"> Transkip Nilai Sementara</a></li>
+                                    <li <?php if ($active == "Transkip Nilai Akhir") { echo 'class="active"'; } ?>><a href="<?php echo base_url(); ?>ketua-jurusan/layanan/transkip-nilai-akhir"> Transkip Nilai Akhir</a></li>
+                                </ul>
+                            </li>
+                            <li class="xn-openable <?php if ($active == "Surat Keterangan Aktif Kuliah" | $active == "Surat Keterangan Berkelakuan Baik" | $active == "Surat Keterangan Beasiswa" | $active == "Surat Keterangan Masih Kuliah") { echo 'active'; }?>">
+                                <a href="#"> Lainnya</a>
+                                <ul>
+                                    <li <?php if ($active == "Surat Keterangan Aktif Kuliah") { echo 'class="active"'; }?>><a href="<?php echo base_url(); ?>ketua-jurusan/layanan/lainnya/surat-keterangan-aktif-kuliah"> Surat Keterangan Aktif Kuliah</a></li>
+                                    <li <?php if ($active == "Surat Keterangan Beasiswa") { echo 'class="active"'; }?>><a href="<?php echo base_url(); ?>ketua-jurusan/layanan/lainnya/surat-keterangan-beasiswa"> Surat Keterangan Beasiswa</a></li>
+                                    <li <?php if ($active == "Surat Keterangan Berkelakuan Baik") { echo 'class="active"'; }?>><a href="<?php echo base_url(); ?>ketua-jurusan/layanan/lainnya/surat-keterangan-berkelakuan-baik"> Surat Keterangan Berkelakuan Baik</a></li>
+                                    <li <?php if ($active == "Surat Keterangan Masih Kuliah") { echo 'class="active"'; }?>><a href="<?php echo base_url(); ?>ketua-jurusan/layanan/lainnya/surat-keterangan-masih-kuliah"> Surat Keterangan Masih Kuliah</a></li>                                        
+                                </ul>
+                            </li>
+                        </ul>
+                        <li <?php if ($active == "Jadwal") { echo 'class="active"'; } ?>><a href="<?php echo base_url(); ?>ketua-jurusan/jadwal"><span class="fa fa-clock-o"></span> <span class="xn-text">Jadwal</span></a></li>
+                    </li>
+                    <?php
                     } else if ($this->session->userdata('hak_akses') == 'Kepala Laboratorium') {
                     ?>
                     <li class="xn-openable <?php if ($active == "Surat Pernyataan Bebas Praktikum") { echo 'active'; } ?>">
