@@ -39,6 +39,36 @@
                             </tbody>
                         </table>
                     <?php            
+                    } else if($this->session->userdata('hak_akses') == 'Kepala Laboratorium') {
+                    ?>
+                        <table class="table datatable">
+                            <thead>
+                                <tr>
+                                    <th style="text-align: center;">NIM</th>
+                                    <th>Keterangan</th>
+                                    <th style="text-align: center;">Tanggal</th>
+                                    <th style="text-align: center;">Waktu</th>
+                                    <th style="text-align: center;">Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php
+                                foreach ($query as $datas):
+                                    echo
+                                    "
+                                    <tr>
+                                        <td style='text-align: center;'>$datas->nim</td>
+                                        <td>Memohon pembuatan surat keterangan bebas praktikum.</td>
+                                        <td style='text-align: center;'>$datas->date</td>
+                                        <td style='text-align: center;'>$datas->time</td>
+                                        <td style='text-align: center;'>$datas->status diproses</td>
+                                    </tr>
+                                    ";
+                                endforeach;
+                                ?>                            
+                            </tbody>
+                        </table>
+                    <?php            
                     } else if($this->session->userdata('hak_akses') == 'Pegawai') {
                     ?>
                         <table class="table datatable_simple">

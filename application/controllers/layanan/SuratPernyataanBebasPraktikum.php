@@ -27,6 +27,22 @@ class SuratPernyataanBebasPraktikum extends CI_Controller {
                     ';
                 $data['extra'] = "";
                 $this->parser->parse('template', $data);
+            } else if ($this->session->userdata('hak_akses') == 'Kepala Laboratorium') {
+                $data['title_bar'] = "Application";
+                $data['active'] = "Surat Pernyataan Bebas Praktikum";
+                $data['page_title'] = "Surat Pernyataan Bebas Praktikum";
+                $data['query'] = $this->laboratorium_surat_pernyataan_bebas_praktikum_model->get_entries();
+                $data['activity'] = $this->log_aktifitas_model->get_where_entries();
+                $data['content'] = "layanan/laboratorium/surat-pernyataan-bebas-praktikum";
+                $data['this_page_plugin'] =
+                    '
+                        <script type="text/javascript" src="' . base_url() . 'assets/js/plugins/icheck/icheck.min.js"></script>
+                        <script type="text/javascript" src="' . base_url() . 'assets/js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js"></script>
+
+                        <script type="text/javascript" src="' . base_url() . 'assets/js/plugins/datatables/jquery.dataTables.min.js"></script>
+                    ';
+                $data['extra'] = "";
+                $this->parser->parse('template', $data);
             } else if ($this->session->userdata('hak_akses') == 'Pegawai') {
                 $data['title_bar'] = "Application";
                 $data['active'] = "Surat Pernyataan Bebas Praktikum";
