@@ -21,11 +21,13 @@ class Migration_Add_laporan_jadwal extends CI_Migration {
                         array(
                                 'type'          => 'ENUM("Iya","Tidak")',
                                 'null'          => FALSE,
+                                'default'       => 'Tidak'
                         ),
                         'konfirmasi_ketua_kelas'=>
                         array(
                                 'type'          => 'ENUM("Iya","Tidak")',
                                 'null'          => FALSE,
+                                'default'       => 'Tidak'
                         ),
                         'date'=>
                         array(

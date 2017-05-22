@@ -46,6 +46,7 @@ class Migration_Add_ta_pengajuan_judul extends CI_Migration {
                         array(
                                 'type'          => 'ENUM("Diterima","Ditolak")',
                                 'null'          => FALSE,
+                                'default'       => 'Ditolak'
                         ),
                         'status'=>
                         array(
