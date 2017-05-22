@@ -38,7 +38,7 @@ class Migration_Add_laboratorium_surat extends CI_Migration {
                                 'type'          => 'VARCHAR',
                                 'constraint'    => '50'
                         ),
-                        'gambar'=>
+                        'file'=>
                         array(
                                 'type'          => 'VARCHAR',
                                 'constraint'    => '50'
@@ -61,7 +61,7 @@ class Migration_Add_laboratorium_surat extends CI_Migration {
                         'time'=>
                         array(
                                 'type'          => 'TIME'
-                        ),
+                        ), 
                 ));
                 $this->dbforge->add_key('laboratorium_surat_id', TRUE);
                 $this->dbforge->create_table('laboratorium_surat');

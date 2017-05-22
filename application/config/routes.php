@@ -53,6 +53,7 @@ $route['default_controller'] = 'home';
 $route['404_override'] = 'errors';
 $route['translate_uri_dashes'] = FALSE;
 $route['layanan/laboratorium/surat-pernyataan-bebas-praktikum'] = 'layanan/suratpernyataanbebaspraktikum';
+$route['layanan/laboratorium/surat-pernyataan-bebas-praktikum/insert'] = 'layanan/suratpernyataanbebaspraktikum/insert';
 $route['layanan/ta/pengajuan-judul'] = 'layanan/ta/pengajuanjudul';
 $route['layanan/ta/pengajuan-judul/insert'] = 'layanan/ta/pengajuanjudul/insert';
 $route['layanan/ta/seminar-proposal'] = 'layanan/ta/seminarproposal';

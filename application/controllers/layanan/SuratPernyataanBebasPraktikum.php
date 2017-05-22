@@ -69,12 +69,63 @@ class SuratPernyataanBebasPraktikum extends CI_Controller {
                             var jvalidate = $("#jvalidate").validate({
                                 ignore: [],
                                 rules: {                                            
-                                        
-                                    }                                        
+                                        nama_depan: {
+                                                required: true
+                                        },
+                                        nama_belakang: {
+                                                required: true
+                                        },
+                                        nim: {
+                                                required: true,
+                                                maxlength: 11
+                                        },
+                                        kontak_nomor: {
+                                                required: true
+                                        }
+                                    }                                      
                                 });                                    
                         </script>
                     ';
                 $this->parser->parse('template', $data);
             }
+    }
+    
+    public function insert()
+    {
+            $config['upload_path'] = './assets/files/laboratorium/';
+            $config['allowed_types'] = 'zip|rar';
+            $this->load->library('upload', $config);
+            if ( ! $this->upload->do_upload('file'))
+            {
+                    $this->session->set_flashdata('flash_data',
+                            '
+                            <div class="col-md-3"></div>
+                            <div class="col-md-6">
+                            <div class="alert alert-danger" role="alert">
+                            <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                            <strong>Gagal mengupload file.</strong>
+                            </div>
+                            </div>
+                            <div class="col-md-3"></div>
+                            '
+                    );
+            }
+            else
+            {
+                    $this->laboratorium_surat_pernyataan_bebas_praktikum_model->insert_entry();
+                    $this->session->set_flashdata('flash_data',
+                            '
+                            <div class="col-md-3"></div>
+                            <div class="col-md-6">
+                            <div class="alert alert-info" role="alert">
+                            <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                            <strong>Surat permohonan Anda berhasil disimpan dan akan segera diproses.</strong>
+                            </div>
+                            </div>
+                            <div class="col-md-3"></div>
+                            '
+                    );
+            }
+            redirect(base_url() . 'layanan/khs');
     }
 }

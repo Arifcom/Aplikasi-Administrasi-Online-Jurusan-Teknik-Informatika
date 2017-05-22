@@ -10,6 +10,14 @@
                     <h3 class="panel-title">Hasil Pencarian</h3>                               
                 </div>
                 <div class="panel-body">
+                    <form role="form" action="<?php echo base_url(); ?>pencarian/index" method="post">
+                    <div class="input-group">
+                        <input type="text" name="nim" placeholder="NIM" class="form-control"/>
+                        <div class="input-group-btn">
+                            <button class="btn btn-primary"><span class="fa fa-search"></span></button>
+                        </div>
+                    </div>
+                    </form>
                     <?php echo $this->session->flashdata('flash_data'); ?>
                     <div class="clearfix"></div>
                     <br>
