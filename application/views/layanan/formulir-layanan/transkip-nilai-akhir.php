@@ -9,7 +9,7 @@
                 <div class="panel-body">
                     <?php echo $this->session->flashdata('flash_data'); ?>
                     <div class="block">
-                        <form id="jvalidate" role="form" class="form-horizontal" action="<?php echo base_url(); ?>layanan/transkip-nilai-akhir/insert" method="post">
+                        <?php echo form_open_multipart(base_url() . 'layanan/transkip-nilai-akhir/insert', array('id'=>'jvalidate', 'role'=>'form', 'class'=>'form-horizontal'));?>
                             <div class="panel-body">                                    
                                 <div class="form-group">
                                     <label class="col-md-3 control-label">Nama Depan</label>  
@@ -94,6 +94,14 @@
                                             <textarea class="form-control" rows="5" name="judul_bahasa_inggris"></textarea>
                                             <span class="help-block">Isi judul TA</span>
                                         </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label">Foto Scan KTM</label>
+                                    <div class="col-md-6">
+                                        <input name="gambar" type="file" multiple id="file-simple"/>
+                                        <span class="help-block">Isi foto scan ktm</span>
+                                    </div>
+                                    <div class="col-md-3"></div>                                
                                 </div>
                                 <div class="form-group">
                                     <label class="col-md-3 control-label"></label>

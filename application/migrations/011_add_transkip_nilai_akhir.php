@@ -59,6 +59,11 @@ class Migration_Add_transkip_nilai_akhir extends CI_Migration {
                         array(
                                 'type'          => 'TEXT'
                         ),
+                        'gambar'=>
+                        array(
+                                'type'          => 'VARCHAR',
+                                'constraint'    => '50'
+                        ),
                         'status'=>
                         array(
                                 'type'          => 'ENUM("Belum","Sedang","Selesai")',

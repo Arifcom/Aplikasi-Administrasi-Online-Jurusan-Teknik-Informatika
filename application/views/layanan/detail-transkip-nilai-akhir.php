@@ -13,9 +13,13 @@
                     </div>
                 </div>
                 <div class="panel-body">
+                    <div class="row text-center">
+                        <img src="<?php echo base_url(); ?>assets/images/mahasiswa/ktm/<?php echo $datas->gambar ?>" class="img-thumbnail" height="200px" width="400px">
+                    </div>
                     <?php echo $this->session->flashdata('flash_data'); ?>
                         <div class="block">
                             <form id="jvalidate" role="form" class="form-horizontal" action="<?php echo base_url(); ?>pegawai/layanan/transkip-nilai-akhir/replace/<?php echo $datas->transkip_nilai_akhir_id ?>" method="post">
+                            <input type="hidden" name="gambar" value="<?php echo $datas->gambar ?>"/>
                                 <div class="panel-body">          
                                     <div class="form-group">
                                         <label class="col-md-3 control-label">Nama Depan</label>  
@@ -106,7 +110,7 @@
                                         <label class="col-md-3 control-label">Status</label>  
                                         <div class="col-md-6">
                                             <select class="form-control select" name="status">
-                                                <option selected><?php echo $datas->status ?> diproses</option>
+                                                <option value="<?php echo $datas->status ?>" selected><?php echo $datas->status ?> diproses</option>
                                                 <option value="Belum">Belum diproses</option>
                                                 <option value="Sedang">Sedang diproses</option>
                                                 <option value="Selesai">Selesai diproses</option>

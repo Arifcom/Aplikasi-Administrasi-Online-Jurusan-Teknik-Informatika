@@ -38,6 +38,11 @@ class Migration_Add_transkip_nilai_sementara extends CI_Migration {
                                 'type'          => 'VARCHAR',
                                 'constraint'    => '50'
                         ),
+                        'gambar'=>
+                        array(
+                                'type'          => 'VARCHAR',
+                                'constraint'    => '50'
+                        ),
                         'status'=>
                         array(
                                 'type'          => 'ENUM("Belum","Sedang","Selesai")',

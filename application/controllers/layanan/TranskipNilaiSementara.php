@@ -152,20 +152,41 @@ class TranskipNilaiSementara extends CI_Controller {
         
         public function insert()
         {
-                $this->transkip_nilai_sementara_model->insert_entry();
-                $this->session->set_flashdata('flash_data',
-                        '
-                        <div class="col-md-3"></div>
-                        <div class="col-md-6">
-                        <div class="alert alert-info" role="alert">
-                        <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                        <strong>Surat permohonan Anda berhasil disimpan dan akan segera diproses.</strong>
-                        </div>
-                        </div>
-                        <div class="col-md-3"></div>
-                        '
-                );
-                redirect(base_url() . 'layanan/khs');
+                $config['upload_path'] = './assets/images/mahasiswa/ktm/';
+                $config['allowed_types'] = 'gif|jpg|png';
+                $this->load->library('upload', $config);
+                if ( ! $this->upload->do_upload('gambar'))
+                {
+                        $this->session->set_flashdata('flash_data',
+                                '
+                                <div class="col-md-3"></div>
+                                <div class="col-md-6">
+                                <div class="alert alert-danger" role="alert">
+                                <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                                <strong>Gagal mengupload foto scan ktm.</strong>
+                                </div>
+                                </div>
+                                <div class="col-md-3"></div>
+                                '
+                        );
+                }
+                else
+                {
+                        $this->transkip_nilai_sementara_model->insert_entry();
+                        $this->session->set_flashdata('flash_data',
+                                '
+                                <div class="col-md-3"></div>
+                                <div class="col-md-6">
+                                <div class="alert alert-info" role="alert">
+                                <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                                <strong>Surat permohonan Anda berhasil disimpan dan akan segera diproses.</strong>
+                                </div>
+                                </div>
+                                <div class="col-md-3"></div>
+                                '
+                        );
+                }
+                redirect(base_url() . 'layanan/transkip-nilai-sementara');
         }
         
         public function replace($id)

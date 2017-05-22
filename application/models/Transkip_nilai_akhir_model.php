@@ -14,6 +14,7 @@ class Transkip_nilai_akhir_model extends CI_Model {
     
     public function insert_entry()
     {
+        $result = $this->upload->data();
         $data = array(
             'nama_depan'        => $this->input->post('nama_depan'),
             'nama_belakang'     => $this->input->post('nama_belakang'),
@@ -25,6 +26,7 @@ class Transkip_nilai_akhir_model extends CI_Model {
             'tanggal_ijazah'      => $this->input->post('tanggal_ijazah'),
             'judul_bahasa_indonesia'      => $this->input->post('judul_bahasa_indonesia'),
             'judul_bahasa_inggris'      => $this->input->post('judul_bahasa_inggris'),
+            'gambar'            => $result['file_name'],
             'status'            => 'Belum',
             'date'              => date('Y-m-d'),
             'time'              => date('H:i:s')
@@ -46,6 +48,7 @@ class Transkip_nilai_akhir_model extends CI_Model {
             'tanggal_ijazah'      => $this->input->post('tanggal_ijazah'),
             'judul_bahasa_indonesia'      => $this->input->post('judul_bahasa_indonesia'),
             'judul_bahasa_inggris'      => $this->input->post('judul_bahasa_inggris'),
+            'gambar'            => $this->input->post('gambar'),
             'status'      => $this->input->post('status'),
             'date'              => $this->input->post('date'),
             'time'              => $this->input->post('time')

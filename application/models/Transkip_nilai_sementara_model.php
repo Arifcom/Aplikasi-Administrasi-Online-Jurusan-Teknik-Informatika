@@ -14,12 +14,14 @@ class Transkip_nilai_sementara_model extends CI_Model {
     
     public function insert_entry()
     {
+        $result = $this->upload->data();
         $data = array(
             'nama_depan'        => $this->input->post('nama_depan'),
             'nama_belakang'     => $this->input->post('nama_belakang'),
             'nim'               => $this->input->post('nim'),
             'semester'          => $this->input->post('semester'),
             'kontak_nomor'      => $this->input->post('kontak_nomor'),
+            'gambar'            => $result['file_name'],
             'status'            => 'Belum',
             'date'              => date('Y-m-d'),
             'time'              => date('H:i:s')
@@ -36,6 +38,7 @@ class Transkip_nilai_sementara_model extends CI_Model {
             'nim'               => $this->input->post('nim'),
             'semester'          => $this->input->post('semester'),
             'kontak_nomor'      => $this->input->post('kontak_nomor'),
+            'gambar'            => $this->input->post('gambar'),
             'status'            => $this->input->post('status'),
             'date'              => $this->input->post('date'),
             'time'              => $this->input->post('time')
