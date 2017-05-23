@@ -11,7 +11,7 @@
                     <?php
                     if($this->session->userdata('hak_akses') == 'Ketua Jurusan') {
                     ?>
-                        <table class="table datatable">
+                        <table class="table datatable_simple">
                             <thead>
                                 <tr>
                                     <th style="text-align: center;">NIM</th>
@@ -41,7 +41,7 @@
                     <?php            
                     } else if($this->session->userdata('hak_akses') == 'Koordinator KP') {
                     ?>
-                        <table class="table datatable">
+                        <table class="table datatable_simple">
                             <thead>
                                 <tr>
                                     <th style="text-align: center;">NIM</th>
