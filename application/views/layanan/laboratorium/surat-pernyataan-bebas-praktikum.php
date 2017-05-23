@@ -9,9 +9,9 @@
                 <div class="panel-body">
                     <?php echo $this->session->flashdata('flash_data'); ?>
                     <?php
-                    if($this->session->userdata('hak_akses') == 'Ketua Jurusan') {
+                    if($this->session->userdata('hak_akses') == 'Ketua Jurusan' | $this->session->userdata('hak_akses') == 'Sekretaris Jurusan') {
                     ?>
-                        <table class="table datatable_simple">
+                        <table class="table datatable">
                             <thead>
                                 <tr>
                                     <th style="text-align: center;">NIM</th>
@@ -41,7 +41,7 @@
                     <?php            
                     } else if($this->session->userdata('hak_akses') == 'Kepala Laboratorium') {
                     ?>
-                        <table class="table datatable_simple">
+                        <table class="table datatable">
                             <thead>
                                 <tr>
                                     <th style="text-align: center;">NIM</th>

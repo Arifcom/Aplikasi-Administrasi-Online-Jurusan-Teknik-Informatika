@@ -11,7 +11,7 @@ class TranskipNilaiAkhir extends CI_Controller {
 
         public function index()
         {
-                if ($this->session->userdata('hak_akses') == 'Ketua Jurusan') {
+                if ($this->session->userdata('hak_akses') == 'Ketua Jurusan' | $this->session->userdata('hak_akses') == 'Sekretaris Jurusan') {
                     $data['title_bar'] = "Application";
                     $data['active'] = "Transkip Nilai Akhir";
                     $data['page_title'] = "Page Title";

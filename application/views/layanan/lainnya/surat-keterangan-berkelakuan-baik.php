@@ -14,7 +14,7 @@
                 <div class="panel-body">
                     <?php echo $this->session->flashdata('flash_data'); ?>
                     <?php
-                    if($this->session->userdata('hak_akses') == 'Ketua Jurusan') {
+                    if($this->session->userdata('hak_akses') == 'Ketua Jurusan' | $this->session->userdata('hak_akses') == 'Sekretaris Jurusan') {
                     ?>
                         <table class="table datatable">
                             <thead>

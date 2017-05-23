@@ -64,7 +64,7 @@
             </div>
             <!-- END DEFAULT DATATABLE -->
             <?php
-            } else if($this->session->userdata('hak_akses') == 'Ketua Jurusan') {
+            } else if($this->session->userdata('hak_akses') == 'Ketua Jurusan' | $this->session->userdata('hak_akses') == 'Sekretaris Jurusan') {
             ?>
             <!-- START DEFAULT DATATABLE -->
             <div class="panel panel-default">
