@@ -27,6 +27,7 @@
                                 <th style="text-align: center;">NIM</th>
                                 <th style="text-align: center;">Nama</th>
                                 <th style="text-align: center;">Keterangan</th>
+                                <th style="text-align: center;">Tanggal</th>
                                 <th style="text-align: center;">Status</th>
                             </tr>
                         </thead>
@@ -39,6 +40,7 @@
                                     <td style='text-align: center;'>$datas->nim</td>
                                     <td style='text-align: left;'>$datas->nama_depan $datas->nama_belakang</td>
                                     <td style='text-align: left;'>$datas->keterangan</td>
+                                    <td style='text-align: center;'>$datas->date</td>
                                     <td style='text-align: center;'>$datas->status diproses</td>
                                 </tr>
                                 ";
