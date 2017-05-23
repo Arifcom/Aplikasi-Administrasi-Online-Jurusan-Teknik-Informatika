@@ -23,7 +23,7 @@
                 <!-- START X-NAVIGATION VERTICAL -->
                 <ul class="x-navigation x-navigation-horizontal">
                     <li class="xn-logo">
-                        <a href="index.html">Application</a>
+                        <a href="<?php echo base_url(); ?>">Application</a>
                         <a href="#" class="x-navigation-control"></a>
                     </li>                     
                     <li <?php if ($active == "Beranda") { echo 'class="active"'; }?>><a href="<?php echo base_url(); ?>"> <span class="xn-text">Beranda</span></a></li>
@@ -95,7 +95,7 @@
                 <!-- START X-NAVIGATION -->
                 <ul class="x-navigation">
                     <li class="xn-logo">
-                        <a href="index.html">Application</a>
+                        <a href="">Application</a>
                         <a href="#" class="x-navigation-control"></a>
                     </li>                                                                      
                     <li class="xn-title">Navigation</li>
@@ -437,7 +437,7 @@
                     <div class="modal-body text-center">
                         <input name="file" type="file" multiple/>
                     </div>
-                    <div class="modal-footer text-center">
+                    <div class="modal-footer text-center" style="text-align: center;">
                         <button type="submit" class="btn btn-info">Impor</button>
                         <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
                     </div>
@@ -458,7 +458,7 @@
                     <div class="modal-body text-center">
                         <input name="file" type="file" multiple/>
                     </div>
-                    <div class="modal-footer text-center">
+                    <div class="modal-footer text-center" style="text-align: center;">
                         <button type="submit" class="btn btn-info">Impor</button>
                         <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
                     </div>
