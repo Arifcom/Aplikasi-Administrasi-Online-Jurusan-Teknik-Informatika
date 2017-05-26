@@ -55,8 +55,7 @@ class Migration_Add_kp_permohonan extends CI_Migration {
                         ),
                         'judul'=>
                         array(
-                                'type'          => 'VARCHAR',
-                                'constraint'    => '50'
+                                'type'          => 'TEXT'
                         ),
                         'waktu_pelaksanaan'=>
                         array(

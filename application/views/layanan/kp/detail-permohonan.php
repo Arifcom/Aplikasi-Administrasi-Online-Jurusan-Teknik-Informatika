@@ -60,7 +60,7 @@
                                     <div class="form-group">
                                         <label class="col-md-3 control-label">Alamat</label>
                                         <div class="col-md-6">
-                                            <input type="text" class="form-control" name="alamat" value="<?php echo $datas->alamat_mahasiswa ?>"/>
+                                            <input type="text" class="form-control" name="alamat_mahasiswa" value="<?php echo $datas->alamat_mahasiswa ?>"/>
                                             <span class="help-block"></span>
                                         </div>
                                         <div class="col-md-3"></div>

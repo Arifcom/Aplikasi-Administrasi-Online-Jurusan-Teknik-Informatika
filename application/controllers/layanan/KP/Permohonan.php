@@ -134,6 +134,34 @@ class Permohonan extends CI_Controller {
             }
     }
     
+    public function download($id)
+    {
+        if ($this->session->userdata('hak_akses') == 'Pegawai') {
+            $query = $this->kp_permohonan_model->get_where_entries($id);
+            $this->load->library('PHPWord');
+            $document = $this->phpword->loadTemplate('application/public/word/surat-permohonan-template.docx');
+            foreach ($query as $datas) {
+                $document->setValue('Value1', $datas->nama_depan . ' ' . $datas->nama_belakang);
+                $document->setValue('Value2', $datas->nim);
+                $document->setValue('Value3', $datas->semester);
+                $document->setValue('Value4', $datas->alamat_mahasiswa);
+                $document->setValue('Value5', $datas->kontak_nomor);
+                $document->setValue('Value6', $datas->instansi);
+                $document->setValue('Value7', $datas->alamat_instansi);
+                $document->setValue('Value8', $datas->judul);
+                $document->setValue('Value9', $datas->waktu_pelaksanaan);
+                $temp_file = tempnam(sys_get_temp_dir(), 'PHPWord');
+                $document->save($temp_file);
+            }
+            header("Content-Disposition: attachment; filename='Surat Permohonan Kerja Praktek-$datas->nim.docx'");
+            readfile($temp_file);
+            unlink($temp_file);
+            $this->kp_permohonan_model->update_status($id,'Sedang');
+        } else {
+                redirect(base_url() . 'authentication');
+        }
+    }
+    
     public function insert()
     {
             $this->kp_permohonan_model->insert_entry();
@@ -150,5 +178,45 @@ class Permohonan extends CI_Controller {
                     '
             );
             redirect(base_url() . 'layanan/kp/permohonan');
+    }
+    
+    public function replace($id)
+    {
+            if ($this->session->userdata('hak_akses') == 'Pegawai') {
+                $this->kp_permohonan_model->update_entry($id);
+                $this->session->set_flashdata('flash_data',
+                    '
+                    <div class="col-md-3"></div>
+                    <div class="col-md-6">
+                    <div class="alert alert-info" role="alert">
+                    <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <strong>Surat permohonan berhasil disimpan.</strong>
+                    </div>
+                    </div>
+                    <div class="col-md-3"></div>
+                    '
+                );
+                redirect(base_url() . 'pegawai/layanan/kp/permohonan/' . $id);
+            } else {
+                redirect(base_url() . 'authentication');
+            }
+    }
+    
+    public function delete($id)
+    {
+            if ($this->session->userdata('hak_akses') == 'Pegawai') {
+                $this->kp_permohonan_model->delete_entry($id);
+                $this->session->set_flashdata('flash_data',
+                    '
+                    <div class="alert alert-danger" role="alert">
+                    <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <strong>Satu surat permohonan berhasil dihapus.</strong>
+                    </div>
+                    '
+                );
+                redirect(base_url() . 'pegawai/layanan/kp/permohonan');
+            } else {
+                redirect(base_url() . 'authentication');
+            }
     }
 }
