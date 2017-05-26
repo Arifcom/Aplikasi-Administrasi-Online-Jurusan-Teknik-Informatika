@@ -34,6 +34,28 @@ class KP_seminar_model extends CI_Model {
         return $this->db->insert('kp_seminar', $data);
     }
     
+    public function update_entry($id)
+    {
+        $data = array(
+            'kp_seminar_id'   => $id,
+            'nama_depan'        => $this->input->post('nama_depan'),
+            'nama_belakang'     => $this->input->post('nama_belakang'),
+            'nim'               => $this->input->post('nim'),
+            'judul'               => $this->input->post('judul'),
+            'instansi'            => $this->input->post('instansi'),
+            'waktu_pelaksanaan'            => $this->input->post('waktu_pelaksanaan'),
+            'pembimbing'            => $this->input->post('pembimbing'),
+            'tanggal_seminar'            => $this->input->post('tanggal_seminar'),
+            'waktu_seminar'            => $this->input->post('waktu_seminar'),
+            'tempat_seminar'            => $this->input->post('tempat_seminar'),
+            'gambar'            => $this->input->post('gambar'),
+            'status'            => $this->input->post('status'),
+            'date'              => date('Y-m-d'),
+            'time'              => date('H:i:s')
+        );
+        return $this->db->replace('kp_seminar', $data);
+    }
+    
     public function delete_entry($id) {
         $this->db->delete('kp_seminar', array('kp_seminar_id' => $id));
     }
