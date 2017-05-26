@@ -7,13 +7,14 @@
                     <div class="panel-heading">
                         <h3 class="panel-title">Detail Surat Keterangan Aktif Kuliah</h3>
                         <div class="btn-group pull-right">
-
+                            <a href="<?php echo base_url(); ?>pegawai/layanan/laboratorium/surat-pernyataan-bebas-praktikum/delete/<?php echo $datas->laboratorium_surat_id ?>" class="btn btn-danger">Delete</a>
                         </div>    
                     </div>
                     <div class="panel-body">
                         <?php echo $this->session->flashdata('flash_data'); ?>
                         <div class="block">
-                            <form id="jvalidate" role="form" class="form-horizontal" action="<?php echo base_url(); ?>" method="post">
+                            <form id="jvalidate" role="form" class="form-horizontal" action="<?php echo base_url(); ?>pegawai/layanan/laboratorium/surat-pernyataan-bebas-praktikum/replace/<?php echo $datas->laboratorium_surat_id ?>" method="post">
+                            <input type="hidden" name="file" value="<?php echo $datas->file ?>"/>
                                 <div class="panel-body">                                    
                                     <div class="form-group">
                                         <label class="col-md-3 control-label">Nama Depan</label>  
