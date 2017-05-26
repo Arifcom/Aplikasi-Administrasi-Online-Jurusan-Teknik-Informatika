@@ -14,7 +14,7 @@ class SuratKeteranganAktifKuliah extends CI_Controller {
                 if ($this->session->userdata('hak_akses') == 'Ketua Jurusan' | $this->session->userdata('hak_akses') == 'Sekretaris Jurusan') {
                     $data['title_bar'] = "Application";
                     $data['active'] = "Surat Keterangan Aktif Kuliah";
-                    $data['page_title'] = "Page Title";
+                    $data['page_title'] = "Surat Keterangan Aktif Kuliah";
                     $data['query'] = $this->surat_keterangan_aktif_kuliah_model->get_entries();
                     $data['activity'] = $this->log_aktifitas_model->get_where_entries();
                     $data['content'] = "layanan/lainnya/surat-keterangan-aktif-kuliah";

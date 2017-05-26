@@ -16,7 +16,6 @@
         <div class="login-container">
             <div class="login-box animated fadeInDown">
                 <div class="login-body">
-                    <?php echo $this->session->flashdata('flash_data');?>
                     <form action="<?php echo base_url(); ?>authentication/login" class="form-horizontal" method="post">
                         <div class="row text-center">
                             <img src="<?php echo base_url(); ?>assets/img/logo/logo.png" height="100px" width="100px">
@@ -28,6 +27,7 @@
                         <div class="row text-center">
                             <div class="login-title">Assalammu'alaikum, silahkan masuk</div>
                         </div>
+                        <?php echo $this->session->flashdata('flash_data');?>
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="form-group text-center">
