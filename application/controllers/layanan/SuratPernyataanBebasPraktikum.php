@@ -235,4 +235,13 @@ class SuratPernyataanBebasPraktikum extends CI_Controller {
                 redirect(base_url() . 'authentication');
             }
     }
+    
+    public function download($file)
+    {
+        if ($this->session->userdata('hak_akses') == 'Pegawai') {
+            force_download('./assets/files/laboratorium/' . $file, NULL);
+        } else {
+            redirect(base_url() . 'authentication');
+        }
+    }
 }

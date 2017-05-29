@@ -7,7 +7,10 @@
                     <div class="panel-heading">
                         <h3 class="panel-title">Detail Surat Keterangan Aktif Kuliah</h3>
                         <div class="btn-group pull-right">
-                            <a href="<?php echo base_url(); ?>pegawai/layanan/laboratorium/surat-pernyataan-bebas-praktikum/delete/<?php echo $datas->laboratorium_surat_id ?>" class="btn btn-danger">Delete</a>
+                            <div>
+                                <a href="<?php echo base_url(); ?>pegawai/layanan/laboratorium/surat-pernyataan-bebas-praktikum/download/<?php echo $datas->file ?>" class="btn btn-default">File</a>
+                                <a href="<?php echo base_url(); ?>pegawai/layanan/laboratorium/surat-pernyataan-bebas-praktikum/delete/<?php echo $datas->laboratorium_surat_id ?>" class="btn btn-danger">Delete</a>
+                            </div>
                         </div>    
                     </div>
                     <div class="panel-body">

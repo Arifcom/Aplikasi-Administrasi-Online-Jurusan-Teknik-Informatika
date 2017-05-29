@@ -162,6 +162,7 @@ $route['pegawai/layanan/laboratorium/surat-pernyataan-bebas-praktikum'] = 'layan
 $route['pegawai/layanan/laboratorium/surat-pernyataan-bebas-praktikum/(:num)'] = 'layanan/suratpernyataanbebaspraktikum/detail/$1';
 $route['pegawai/layanan/laboratorium/surat-pernyataan-bebas-praktikum/replace/(:num)'] = 'layanan/suratpernyataanbebaspraktikum/replace/$1';
 $route['pegawai/layanan/laboratorium/surat-pernyataan-bebas-praktikum/delete/(:num)'] = 'layanan/suratpernyataanbebaspraktikum/delete/$1';
+$route['pegawai/layanan/laboratorium/surat-pernyataan-bebas-praktikum/download/(:any)'] = 'layanan/suratpernyataanbebaspraktikum/download/$1';
 $route['pegawai/layanan/ta/pengajuan-judul'] = 'layanan/ta/pengajuanjudul';
 $route['pegawai/layanan/ta/seminar-proposal'] = 'layanan/ta/seminarproposal';
 $route['pegawai/layanan/ta/seminar-proposal/(:num)'] = 'layanan/ta/seminarproposal/detail/$1';
