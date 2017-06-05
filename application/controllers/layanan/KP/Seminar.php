@@ -234,6 +234,33 @@ class Seminar extends CI_Controller {
             redirect(base_url() . 'layanan/kp/seminar');
     }
     
+    public function download($id)
+    {
+        if ($this->session->userdata('hak_akses') == 'Pegawai') {
+            $query = $this->kp_seminar_model->get_where_entries($id);
+            $this->load->library('PHPWord');
+            $document = $this->phpword->loadTemplate('application/public/word/surat-seminar-template.docx');
+            foreach ($query as $datas) {
+                $document->setValue('Value1', $datas->pembimbing);
+                $document->setValue('Value2', $datas->nama_depan . ' ' . $datas->nama_belakang);
+                $document->setValue('Value3', $datas->nim);
+                $document->setValue('Value4', $datas->judul);
+                $document->setValue('Value5', $datas->instansi);
+                $document->setValue('Value6', $datas->tanggal_seminar);
+                $document->setValue('Value7', $datas->waktu_seminar);
+                $document->setValue('Value8', $datas->tempat_seminar);
+                $temp_file = tempnam(sys_get_temp_dir(), 'PHPWord');
+                $document->save($temp_file);
+            }
+            header("Content-Disposition: attachment; filename='Surat Seminar Kerja Praktek-$datas->nim.docx'");
+            readfile($temp_file);
+            unlink($temp_file);
+            $this->kp_seminar_model->update_status($id,'Sedang');
+        } else {
+                redirect(base_url() . 'authentication');
+        }
+    }
+    
     public function replace($id)
     {
             if ($this->session->userdata('hak_akses') == 'Pegawai') {

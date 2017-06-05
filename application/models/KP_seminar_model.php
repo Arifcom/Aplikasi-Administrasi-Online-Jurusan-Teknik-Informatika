@@ -56,6 +56,13 @@ class KP_seminar_model extends CI_Model {
         return $this->db->replace('kp_seminar', $data);
     }
     
+    public function update_status($id,$status)
+    {
+        $this->db->set('status', $status);
+        $this->db->where('kp_seminar_id', $id);
+        $this->db->update('kp_seminar');
+    }
+    
     public function delete_entry($id) {
         $this->db->delete('kp_seminar', array('kp_seminar_id' => $id));
     }
